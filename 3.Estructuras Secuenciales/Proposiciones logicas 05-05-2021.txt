@@ -1,0 +1,69 @@
+Lógica Proposicional
+en un intento por sistematizar el razonamiento matemático, surge el concepto de Lógica Proposicional. Como su nombre lo explícita, trabajaremos con proposiciones lógicas; las cuales poseen un valor de verdad (verdadero o falso). Por convención, las denotaremos con letras minusculas. Por ejemplo; p,q,r,s.p,q,r,s.
+
+osea la logica proposicional busca definir con una estructura simple soluciones para problemas matemáticos complejos en este caso crear sistemas de razonamiento matematico
+
+En la lógica proposicional, las conectivas lógicas se tratan como funciones de verdad. Es decir, como funciones que toman conjuntos de valores de verdad y devuelven valores de verdad.
+Existen proposiciones simples y compuestas. 
+En el Ejemplo 1, p,q,sp,q,s son proposiciones simples, mientras que rr es compuesta.
+Las proposciones compuestas están formadas por más de una proposición simple, las cuales están unidas a través de conectivos lógicos
+ejemplo 2 .(Negación): Sea pp una proposición lógica. La negación de pp se denota ¯¯¯pp¯ y toma el valor de verdad contrario a p.
+
+Lógica Proposicional
+
+osea la logica proposicional busca definir con una estructura simple soluciones para problemas matemáticos complejos en este caso crear sistemas de razonamiento matematico
+las cuales poseen un valor de verdad (verdadero o falso) 
+Existen proposiciones simples y compuestas. 
+En la lógica proposicional, las conectivas lógicas se tratan como funciones de verdad. Es decir, como funciones que toman conjuntos de valores de verdad y devuelven valores de verdad.
+        Existen proposiciones         simples y compuestas. 
+
+Definición 1.1.7.
+(Conectivos Lógicos) Se definen los conectivos lógicos:
+        
+        ∧: Conjunción         ("y")
+        
+        ∨: Disyunción         ("o").
+        
+        ⊻: Disyunción         Exclusiva ("o bien").
+        
+        ⇒: Implicancia         ("entonces").
+        
+        ⇔: Equivalencia         ("si y sólo si").
+
+
+(Conjunción, "y lógico") Dados p,q; dos proposiciones lógicas, se construye su conjunción como (p∧q).Se lee: p y q.
+(p∧q) es verdadera si p y q son simultaneamente verdaderas. En los demás casos, es falsa. La conjunción posee la tabla de verdad
+permalink
+                                                       
+                        p
+                                 
+                        q
+                                 
+                        (p∧q)
+                                                   
+V
+                                 
+V
+                                 
+V
+                                                   
+V
+                                 
+F
+                                 
+F
+                                                   
+F
+                                 
+V
+                                 
+F
+                                                   
+                        F
+                                 
+                        F
+                                 
+                        F
+                         
+
+

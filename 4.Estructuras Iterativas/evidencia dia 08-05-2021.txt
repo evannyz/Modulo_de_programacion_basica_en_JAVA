@@ -1,0 +1,247 @@
+
+Ejercicio 1------------------------------------------------------------------------
+
+
+Evzm algoritmo que verifica si un numero ingresado por el usuario es primo o no y que
+y lo multiplica los primos ingresados
+
+inicio
+
+integer num_ingresado
+integer comparador
+integer multiplicacion=1
+integer num_tope
+integer contador
+
+
+escribe("ingrese cuantos numeros desea ingresar")
+leer num_tope
+
+
+mientras (num_tope<=0) hacer //mientras el tope no se reduzca a cero sigue iterando
+	
+	Escribe "Ingrese el numero que desea multiplicar"
+	leer num_ingresado
+	comparador=num_ingresado //comparador para restar desde el numero ingresado hacia abajo
+		
+		mientras (comparador>=0 hacer)
+		si num_ingresado%comparador==0
+		contador=contador+1
+		finsi
+		comparador=comparador-1
+		fin mientras
+
+		si contador==2 //con 2 cuentas significa que saco dos veces el modulo y el numero es primo
+		multiplicacion=multiplicacion*num_ingresado
+		
+		sino
+			si contador>2 
+			escribe ("Su numero ingresado no es primo reingrese su numero")
+			num_tope= num_tope+1
+
+			si contador<2
+			escribe ("Su numero ingresado es 1 o 0 reingrese su numero )
+			num_tope=num_tope+1
+			
+			fin si
+			fin si
+		finsi
+	
+
+
+num_tope= num_tope-1
+fin mientras 
+
+
+Ejercicio2----------------------------------------------------------------------------------
+
+
+Evzm algoritmo que verifica que un numero ingresado sea par y exige un numero finito de sumas
+
+inicio 
+
+integer num_tope
+integer num
+integer suma=0
+
+escribe("ingrese cuantos numeros desea ingresar")
+leer num_tope
+
+mientras num_tope>=0
+escribe ("ingrese su numero par para ser sumado")
+leer num
+
+si num%2==0 
+suma=suma+num
+
+sino escribe("su numero ingresado no es par")
+
+num_tope=num_tope-1
+
+
+fin mientras 
+
+Escribe ("Su suma de numeros pares es: " suma)
+fin
+
+
+Ejercicio 3------------------------------------------------------------------------
+
+
+Evzm algoritmo que verifica si el numero ingresado es multiplo de 5 y lo agrega a un contador
+
+inicio 
+
+integer num_tope
+integer num
+integer contador=0
+
+escribe("ingrese cuantos numeros desea ingresar")
+leer num_tope
+
+mientras num_tope>=0
+Escribe ("Ingresa tu numero")
+leer num
+
+si num%5==0
+
+contador=contador+1
+
+num_tope=num_tope-1
+fin mientras 
+
+Escribe ("La cantidad de numeros ingresados multiplos de 5 es: " contador)
+fin
+
+
+Ejercicio 4------------------------------------------------------------------------------------
+
+Evzm algoritmo que verifica que un numero ingresado sea par o impar y los suma exige un numero finito de sumas
+
+inicio 
+
+integer num_tope
+integer num
+integer suma=0
+integer suma_impar=0
+integer cont_num_par=0
+integer cont_num_impar=0
+
+escribe("ingrese cuantos numeros desea ingresar")
+leer num_tope
+
+mientras num_tope>=0
+escribe ("ingrese su numero par o impar para ser sumado")
+leer num
+
+si num%2==0 
+suma=suma+num
+cont_num_par=cont_num_par+1
+
+sino 
+suma_impar=suma_impar+num
+cont_num_impar=cont_num_impar+1
+
+num_tope=num_tope-1
+
+
+fin mientras 
+
+Escribe ("Su suma de numeros pares es: " suma " y la cantidad de numeros pares sumados es de "cont_num_par)
+Escribe ("Su suma de numeros impares es: " suma_impar " y la cantidad de numeros impares sumados es de "cont_num_impar)
+fin
+
+
+Ejercicio 5--------------------------------------------------------
+
+Evzm algoritmo que verifica que un numero ingresado sea par o impar y suma los pares y multiplicas los impares exige un numero finito de sumas y nos dice si hubo mas pares o impares
+
+inicio 
+
+integer num_tope
+integer num
+integer suma=0
+integer mult_impar=1
+integer cont_num_par=0
+integer cont_num_impar=0
+
+escribe("ingrese cuantos numeros desea ingresar")
+leer num_tope
+
+mientras num_tope>=0
+escribe ("ingrese su numero par o impar para ser sumado")
+leer num
+
+si num%2==0 
+suma=suma+num
+cont_num_par=cont_num_par+1
+
+sino 
+mult_impar=mult_impar*num
+cont_num_impar=cont_num_impar+1
+
+num_tope=num_tope-1
+
+fin mientras 
+
+si cont_num_par>cont_num_impar
+escribe("En esta operacion hubo mayor cantidad de numeros pares")
+
+si cont_num_par==cont_num_impar
+escribe("La cantidad numeros pares e impares es la misma")
+
+sino 
+escribe("En esta operacion hubo mayor cantidad de numeros impares")
+
+finsi
+finsi
+
+Escribe ("Su suma de numeros pares es: " suma " y la cantidad de numeros pares sumados es de "cont_num_par)
+Escribe ("Su multiplicacion de numeros impares es: " suma_impar " y la cantidad de numeros impares sumados es de "cont_num_impar)
+fin
+
+Ejercicio 7----------------------------------------------------------------------------------------------------------------
+
+Evzm algoritmo que saca el promedio de n notas ingresadas por el usuario y que nos informa si aprobó o no
+
+inicio 
+
+integer num_tope
+integer num
+integer sum=0
+integer prom
+integer contador=0
+integer divisor
+integer com_nota_minima=40
+
+escribe("ingrese cuantos notas desea ingresar")
+leer num_tope
+num_tope=divisor
+
+
+mientras num_tope>=0
+Escribe ("Ingresa tu numero")
+leer num
+
+sum=prom+num 
+
+si numero_tope==0 hacer
+prom=sum/divisor
+
+
+num_tope=num_tope-1
+
+fin mientras 
+
+
+Escribe ("su promedio es: " prom)
+
+si prom>=com_nota_minima
+Escribe ("¡Usted aprobo, felicidades!")
+
+sino
+Escribe ("Su nota fue insuficiente para aprobar")
+
+
+fin
+

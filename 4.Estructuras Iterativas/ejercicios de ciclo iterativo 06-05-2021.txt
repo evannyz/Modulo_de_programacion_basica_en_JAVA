@@ -1,0 +1,32 @@
+
+
+
+
+algoritmo que imprime los numeros del 1 al 100 y del 100 al 1
+
+inicio
+para (i=1; i<=100; i++) hacer
+    escribe (i)
+fin para
+
+para(i=100; i>=1; i--) hacer 
+    escribe(i)
+fin para
+
+fin
+
+
+otra manera es 
+
+1 al 100 
+
+i=1
+mientras (i<=100)
+	escribir (i)
+fin mientras 
+
+i=100 
+mientras (i>=1)
+	escribir (i)
+fin mientras 
+

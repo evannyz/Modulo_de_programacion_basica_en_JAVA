@@ -1,0 +1,114 @@
+Ejercicio 1----------------------------------------EVZM
+
+algoritmo que permite sumar dos numeros
+
+Inicio 
+
+short A=0
+short B=0
+short suma=0
+
+Escribe ("ingrese dos numeros para ser sumados")
+Escribe ("ingrese su primer valor")
+Leer A
+Escribe ("ingrese su segundo valor")
+Leer B
+
+suma=A+B
+
+Escribe ("Su resultado es " suma)
+
+fin 
+
+Ejercicio 2----------------------------------------EVZM
+
+algoritmo que permite sacar promedio de 3 notas
+
+Inicio 
+
+short A=0
+short B=0
+Short C=0
+short suma=0
+float promedio=0
+
+Escribe ("ingrese tres numeros para ser obtener promedio")
+Escribe ("ingrese su primer valor")
+Leer A
+Escribe ("ingrese su segundo valor")
+Leer B
+Escribe ("ingrese su tercer valor")
+Leer C
+
+suma=A+B+C
+Promedio= suma/3
+
+Escribe ("Su resultado es " promedio)
+
+fin 
+
+Ejercicio 3------------------------------------------EVZM
+
+algoritmo que permite obtener cuadrado de un numero
+
+Inicio 
+
+short A=0
+short Cuadrado=0
+
+
+Escribe ("ingrese el numeros para ser obtener su cuadrado")
+Escribe ("ingrese su valor")
+Leer A
+
+Cuadrado
+
+Cuadrado= A*A
+
+Escribe ("Su resultado es " Cuadrado)
+
+fin 
+
+Ejercicio 4--------------------------------------------EVZM
+
+Algoritmo que invierte un capital mensual y obtiene un 2% mensual
+
+Inicio 
+
+double Capital=0
+double devolucion_mensual=0
+Double Suma_Total
+
+Escribe ("Ingrese su capital para obtener su ganancia mensual")
+
+Leer Capital
+
+devolucion_mensual=Capital*0.02 
+Suma Total= Capital+devolucion_mensual
+
+Escribe ("Su ganancia por mes es" devolucion mensual)
+Escribe ("Su ganancia mensual total es " SumaTotal)
+
+
+fin
+
+Ejercicio 5--------------------------------------------EVZM
+
+algoritmo que muestra datos de auto por pantalla
+
+Inicio
+
+string marca
+string modelo
+
+Escribe ("Ingrese Marca de vehiculo")
+
+Leer marca
+
+Escribe ("Ingrese Modelo de vehiculo")
+
+Leer modelo
+
+Escribe ("La marca ingresada de su vehiculo es " marca " y su modelo ingresado de vehiculo es" modelo)
+
+Fin

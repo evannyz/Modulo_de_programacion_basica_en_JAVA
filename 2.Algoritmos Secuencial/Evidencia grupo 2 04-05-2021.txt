@@ -1,0 +1,64 @@
+Control de inventario
+
+
+1)Agregar producto con descripcion y cantidad
+
+var: id_producto,nombre, decripcion, cantidad
+
+proceso: crear producto.
+
+entrar en plataforma 
+ingresar formulario,caracteristicas de producto
+ingresar codigo de barra 
+grabar producto en base de datos.
+
+
+2)control de  stock
+
+listado de productos y agregar manualmente la cantidad d stock por cada producto.
+presionar boton + o -
+
+3) informe de productos existentes en bodega
+
+
+sistema debe ir a base de datos y mostrar todos los productos de la bodega
+
+
+
+
+Problematica 2 
+
+punto de venta
+
+
+1) Buscar producto
+
+
+variables:
+
+sku, descripcion, precio, cantidad de producto.
+
+Entrar pantalla de software, seleccionar producto que desea el cliente y cantidad, desplegar  informacion del producto.
+Se debe agregar esta venta al carrito.
+
+2) generar boleta de venta
+
+
+variables : nombre, sku, descripcion, precio, .
+constante : iva
+
+Al presionar boton pagar  se deben :
+desplegar los metodos de pago, se selecciona uno de ellos , se genera el importe se 
+guardar la informacion en base de datos, imprimir boleta.
+
+3) Eliminar peoductos del pedido
+
+Al seleccionar producto permitir elmininar producto.
+Al seleccionar producto preguntar si esta seguro de elminar. si usuario lo desea se debe borrar del carrito.
+
+
+
+
+
+
+

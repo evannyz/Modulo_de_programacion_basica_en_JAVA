@@ -1,0 +1,104 @@
+Ejercicio 1------------------------------------------------
+
+algoritmo que suma los numeros del 1 al 100(mientras)
+
+inicio 
+
+integer suma = 0
+integer contador = 1
+
+mientras (contador<=100)hacer
+
+suma=suma+contador
+
+contador=contador+1
+
+fin mientras
+
+Escribe("La suma de los 100 numeros es: "suma)
+
+fin 
+
+
+
+resultados (compañero)
+
+Suma de los números del 1 al 100
+Int suma
+Int i
+I=1
+Suma=0
+Mientras(i<=100) entonces
+Suma=suma+i
+I++
+Fin mientras
+Escribir “la suma de los numeros de 1 a 100 es “, suma
+I=1
+Suma=0
+hacer
+Suma=suma+i
+I++
+Mientras (i<101)
+Escribir “la suma de los numeros de 1 a 100 es “, suma
+I=1
+Suma=0
+Para(i=1;i<=100;i++)
+Suma=suma+i
+Fin para
+Escribir “la suma de los numeros de 1 a 100 es “, suma
+
+Ejercicio2------------------------------------------------
+
+
+algoritmo que suma los multiplos de 9 entre el 1 y el 100
+
+
+inicio
+
+integer contador =1
+integer suma =0
+
+mientras(contador<=100) hacer
+	si contador %9 == 0 hacer 
+		suma = (suma+contador)
+
+		contador=contador+1
+
+fin mientras 
+
+escribe("El resultado de su suma es " suma)
+
+fin
+
+Ejercicio3------------------------------------------------------
+
+algoritmo que calcula la suma de n numeros ingresados por un usuario
+
+inicio
+
+integer numero_tope=0
+integer suma_nums=0
+integer numero_ingresado=0
+
+escribe("ingrese cuantos numeros quiere sumar")
+leer numero_tope
+
+
+mientras (numero_tope>=0)hacer
+escribe ("Ingrese el numero a ser sumado")
+leer numero_ingresado
+
+suma_nums=numero_ingresado+suma
+
+numero_tope=numero_tope-1
+
+fin mientras 
+
+escribe("el resultado de su suma es: "suma)
+
+fin 
+
+
+
+
+
