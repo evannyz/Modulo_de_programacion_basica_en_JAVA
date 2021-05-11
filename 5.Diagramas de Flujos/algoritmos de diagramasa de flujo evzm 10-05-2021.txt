@@ -1,0 +1,109 @@
+Ejercicios diagramas de flujos
+
+Ejercicio1----------------------------------------------------------
+
+Evzm algoritmo que cambia los metros solicitados a pulgadas para una sastreria
+
+inicio 
+
+double metros
+double pulgada= 0.254
+double cambio
+
+escribir("Ingrese cuantos metros desea convertir en pulgadas)
+leer metros 
+
+cambio=metros/pulgada
+
+Escribir("La cantidad de pulgadas que debe solicitar es " cambio "pulgadas" )
+
+Fin
+
+Ejercicio 2-----------------------------------------------------------
+
+algoritmo que determina cuanto se paga por lapiz si es mayor a 1000 unidades se paga 85 pesos por lapiz sino se paga 90
+
+Inicio 
+
+integer lapices
+integer precio
+
+escribir(ingrese cuantos lapices desea comprar")
+leer lapices
+
+si lapices==0 
+escribir("Debe ingresar un numero mayor a 0)
+	sino 
+		si lapices>=1000 
+        	precio=lapices*85
+
+		sino precio=lapices*90
+		fin si
+fin si
+
+Escribir ("El costo total de sus lapices es: "precio)
+fin
+	 
+Ejercicio 3----------------------------------------------------
+
+
+algoritmo que genera un descuento por compra de traje sobre 25000 del 15% todos los demas trajes descuenta solo un 8%
+
+Inicio 
+
+integer vl_traje
+integer precio
+
+escribir("Ingrese el valor de traje")
+leer vl_traje
+
+si vl_traje<=0 
+escribir("Debe ingresar un numero mayor a 0")
+	sino 
+		si vl_traje>25000 
+        	precio=vl_traje*0.85
+
+		sino precio=vl_traje*0.92
+		fin si
+fin si
+
+Escribir ("El costo de su traje es: "precio)
+fin
+
+Ejercicio 4-----------------------------------------------------
+
+
+inicio 
+
+Evzm algoritmo que permite calcular el valor de un platillo segun la cantidad de personas
+
+Inicio 
+
+integer vl_persona
+integer precio
+
+escribir("Ingrese la cantidad de personas que van a comer")
+leer vl_persona
+
+si vl_persona<=0 
+escribir("Debe ingresar un numero mayor a 0")
+	sino 	si vl_persona>300
+		precio=vl_persona*7500
+
+		si vl_persona>200 && vl_persona<=300
+        	precio=vl_persona*8500
+
+		si vl_persona<=200 
+		precio=vl_persona*9500
+
+		
+		
+		fin si
+		fin si 
+		fin si
+fin si
+
+Escribir ("El costo de su platillo por " vl_persona "personas es: "precio)
+fin
+
+

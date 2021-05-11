@@ -1,0 +1,13 @@
+Hoy se aprende sobre diagramas de flujo y se profundiza en el conocimiento de algoritmos en pseudocodigo
+
+Se añade bibliografia de estudio: 
+
+Algoritmos y estructura de programacion: 
+http://departamento.us.es/edan/php/asig/LICFIS/LFIPC/Tema5FISPC0809.pdf
+
+Notación de Conjuntos por Extensión y Comprensión
+https://www.youtube.com/watch?v=LKhaRC9cFQ8&ab_channel=Matem%C3%A1ticasprofeAlex
+
+ESTRUCTURA DEL DIAGRAMA DE FLUJO
+https://www.visualchart.com/esxx/ayuda_F1/La_inversion/Disennoestrategias/EscenariosDisenno/PlatDisennoVisual/Diagramasdeflujo/diagramayconectores.htm#:~:text=Estructura%20del%20Diagrama%20de%20flujo&text=La%20estructura%20esencial%20de%20la,variables)%20y%20por%20otro%20Operadores.
+

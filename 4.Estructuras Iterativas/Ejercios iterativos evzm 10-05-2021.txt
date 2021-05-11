@@ -1,0 +1,96 @@
+
+Ejercicio1 -------------------------------------------
+
+
+Evzm Determinar el mayor numero ingresado de n numeros indicados por el usuario
+
+inicio 
+
+integer num_tope
+integer num
+
+integer mayor
+integer menor
+
+escribe("ingrese cuantos numeros desea ingresar")
+leer num_tope
+
+mientras numero_tope>=0 hacer
+
+Escribir ("Ingresa solo numeros positivos  para verificar cual es el mayor")
+leer num
+
+si num<0 
+Escribe("La opcion ingresada es menor a 0 por favor ingrese otra opcion")
+num_tope=num_tope+1
+
+	sino si num>0 && num>mayor || num==0
+	mayor=num
+
+	si num>0 && num<menor || num==0
+	menor=num
+
+fin si
+fin si
+
+
+num_tope=num_tope-1
+
+fin mientras 
+
+Escribe ("Su numero menor ingresado es: " menor " y su numero mayor es:" mayor)
+
+fin
+
+
+Ejercicio2-----------------------------------------------------------------
+
+
+Evzam Algoritmo que Calcula el promedio de n edades ingresadas e indica cual es la mayor y menor
+
+integer num_tope
+integer num
+integer aux
+
+integer mayor
+integer menor
+
+integer suma=0
+integer prom=0
+
+escribe("ingrese cuantas edades desea ingresar")
+leer num_tope
+aux=num_tope
+
+mientras numero_tope>=0 hacer
+
+Escribir ("Ingresa solo numeros positivos  para verificar cual es la mayor edad y calcular su promedio")
+leer num
+
+sum = sum + num
+
+si num<=0 
+escribir("La opcion ingresada es menor a 0 por favor ingrese otra opcion")
+num_tope=num_tope+1
+
+	sino 
+		si num>=1 && num>mayor 
+		mayor=num
+
+		si num>=1 && num<menor
+		menor=num
+
+		fin si
+		fin si
+	
+
+fin si
+
+num_tope=num_tope-1
+
+fin mientras 
+prom=suma/aux
+
+Escribe ("El promedio de edades ingresadas es: "prom", la mayor edad ingresada es: " mayor " y la menor ingresada es: "menor)
+
+fin
