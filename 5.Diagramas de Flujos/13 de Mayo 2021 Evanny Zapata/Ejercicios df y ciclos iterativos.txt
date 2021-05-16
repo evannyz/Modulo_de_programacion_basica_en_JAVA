@@ -1,0 +1,128 @@
+Ejercicio 1-----------------------------------------------------------------------------------
+
+Algoritmo que calcula el precio de venta de 6 productos segun criterios de materia prima, mano de obra y gasto de fabricacion
+
+Inicio
+
+integer prim //materia prima
+integer cost //costo de produccion
+integer obra     // mano de obra
+integer fab // gasto de fabricacion
+integer venta    //precio de venta
+integer clave    // clave de producto
+
+
+
+Escribir ("Ingrese costo de materia prima")
+leer prim
+
+Escribir ("Ingrese clave de producto 1,2,3,4,5 o 6")
+leer clave
+
+si clave>=7)||(prim<=0) 
+	escribir ("Campos ingresados incorrectos")
+	
+	sino segun clave 
+		   caso 1 obra=prim*1.8 
+			  fab =prim*0.28
+		   caso 2 obra=prim*1.85 
+			  fab =prim*0.3
+		   caso 3 obra=prim*1.75 
+			  fab =prim*0.35
+		   caso 4 obra=prim*1.75 
+			  fab =prim*0.28
+		   caso 5 obra=prim*1.80 
+			  fab =prim*0.3
+                   caso 6 obra=prim*1.85 
+			  fab =prim*0.35 
+		  
+
+	      fin segun
+fin si
+		
+cost = prim+obra+fab
+venta = cost*1.45
+
+Escribir("El precio de venta del producto "clave" es: "venta)
+
+fin 
+
+
+
+Ejercicio 2-------------------------------------------------------------------------------------
+
+Diagrama de flujo ciclo iterativo
+
+algoritmo que suma 10 cantidades
+inicio 
+
+integer suma=0
+integer numero
+integer i
+
+para (i=1, i<=10,i++ ) hacer
+escribir ("Ingrese diez numeros para ser sumados.")
+leer numero 
+suma=suma+numero 
+
+fin para 
+
+escribir ("La suma de sus 10 numeros es: " suma)
+
+fin
+
+Ejercicio 3------------------------------------------------------------------------
+
+algoritmo que suma n edades para obtener promedio
+
+integer suma=0 
+integer prom 
+integer num
+integer edad
+integer i
+
+Escribir ("Ingrese la cantidad de edades que desea promediar")
+leer num
+
+para (i=1,i<=num,i++) hacer
+escribir ("ingrese las edades para ser sumadas")
+leer edad
+suma=suma+edad
+
+fin para 
+
+prom=sum/num
+escribir("El promedio de edades es: "prom)
+
+fin
+
+Ejercicio 4--------------------------------------------------------------
+
+algoritmo que determina cuanto lleva ahorrado una persona durante un año 
+
+
+Inicio 
+
+integer ahorro
+integer contador=1
+integer suma=0
+
+mientras (contador<=12)hacer
+escribir("Ingrese el ahorro del mes")
+leer ahorro
+
+suma=suma+ahorro
+contador=contador+1
+
+escribir ("Su ahorro hasta el momento es: "suma)
+
+fin mientras
+
+Escribir("Su ahorro durante 12 meses es: "suma)
+
+fin 
+ 
+
+
+
+

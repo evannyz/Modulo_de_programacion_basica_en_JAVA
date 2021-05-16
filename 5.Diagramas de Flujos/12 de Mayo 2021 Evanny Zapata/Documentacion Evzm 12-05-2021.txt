@@ -1,0 +1,10 @@
+Documentacion acerca del diseño de diagrama de flujos, continuando con los ejercicios vistos en clase se revisa informacion relacionada al tema de estudio
+
+Se revisan plantillas tipicas de diseño, y el tipo de información que se ingresan en ellas
+https://es.venngage.com/blog/plantillas-diagramas-de-flujo/
+
+Se analiza como comprobar condiciones con la instruccion segun 
+https://www.aprendeaprogramar.com/cursos/verApartado.php?id=2005
+
+Se mejora el proceso de diseño de diagramas de flujo segun un pequeño manual de buenas practicas
+https://www.auditool.org/blog2/auditoria-externa/5567-buenas-practicas-en-el-diseno-de-diagramas-de-flujo-en-una-auditoria

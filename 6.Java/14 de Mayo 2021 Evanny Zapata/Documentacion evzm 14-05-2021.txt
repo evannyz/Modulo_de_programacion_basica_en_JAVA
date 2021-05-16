@@ -1,0 +1,66 @@
+Se realizan primeros ejercicios en el entorno Netbeans para Java, se instala el programa  y se profundiza en el conocimiento de la materia
+
+
+
+
+
+
+
+Se lee la guia basica de Netbeans 
+https://dcodingames.com/guia-basica-para-usar-netbeans/
+
+
+Se revisan algunas buenas practicas a la hora de programar
+https://programacion.net/articulo/top_9_buenas_practicas_para_desarrolladores_de_codigo_1349
+
+
+Se intenta realizar un ejercicio visto en clases para verificar si la logica aplicada funciona, el ejercicio desarrollado se compila sin problemas 
+
+Evzm Ejercicio prueba personal de diagrama de flujo-------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+package prueba;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Prueba {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int sum = 0;
+       
+        int edad=0;
+        int prom;
+        int num;
+        int i;
+       
+        Scanner teclado = new Scanner(System.in);
+        
+        
+        System.out.println("Ingrese la cantidad de edades que desea promediar");
+        num = teclado.nextInt();
+        
+        for (i=1;i<=num;i++){
+            System.out.println("Ingrese las edades");
+            edad= teclado.nextInt();
+            sum=sum+edad;  
+        }
+        prom =sum/edad;
+        
+        System.out.println("La edad promedio es: "+prom);
+        
+       
+    }
+    
+}
+
+
+

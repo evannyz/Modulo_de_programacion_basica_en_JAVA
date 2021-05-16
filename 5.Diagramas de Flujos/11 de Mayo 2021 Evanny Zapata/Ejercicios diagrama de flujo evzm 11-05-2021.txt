@@ -1,0 +1,167 @@
+Ejercicio 1-------------------------------------------------------
+
+Evzm Algoritmo que calcula el precio de la uva segun: precio inicial de venta, cantidad de kilos a vender,  clasificacion de tipo A y B ademas tipo de tamaño de uva 1 y 2 
+
+Inicio 
+
+
+char lee_cat
+integer lee_tam 
+integer can_kilos
+integer precio
+integer ganancia
+
+Escribir ("Ingrese el precio inicial de venta por kilo de uva")
+leer precio
+Escribir ("Ingrese categoria de uva (A o B)")
+leer lee_cat 
+EScribir ("Ingrese tamaño de uva (1 o 2)")
+leer lee_tam 
+Escribir ("Ingrese cantidad de kilos vendidos")
+leer can_kilos
+
+
+
+segun  <lee_cat>
+	caso<A> si lee_tamp==1
+		precio=precio+20
+
+		sino si lee_tamp==2
+		 precio=precio+30
+
+	             Sino escribir("Las opciones ingresadas no son correctas")  
+		     fin si
+
+	caso<B> si lee_tamp==1
+		precio=precio-30
+
+		sino si lee_tamp==2
+		precio=precio-50
+
+		 
+		     Sino escribir("Las opciones ingresadas no son correctas")  
+		     fin si
+
+fin segun
+
+ganancia=precio*cant_kilos
+
+Escribir("Su ganancia es: "ganancia)
+
+fin
+
+Ejercicio 2---------------------------------------------------------
+
+Evzm Algoritmo que permite calcular el costo de un viaje por cantidad de alumnos y permite indicar costo por alumno
+ 
+Inicio
+
+integer can_alumnos
+integer cost_alumno
+integer cost_pers
+integer cost_viaje
+
+Escribir ("Ingrese la cantidad de alumnos que viajarán")
+leer can_alumnos
+
+si can_alumnos<0 
+escribir("La cantidad de alumnos ingresada debe ser superior a 0")
+
+
+	sino si can_alumnos>=100 
+	cost_pers=6500
+	cost_alumno = can_alumnos*cost_pers
+	
+	sino si can_alumnos>=50 && can_alumnos<100
+	cost_pers=7000
+	cost_alumno = can_alumnos*cost_pers
+	
+	sino si can_alumnos>=30 && can_alumnos<50
+	cost_pers=9500
+	cost_alumno = can_alumnos*cost_pers
+	
+	sino si can_alumnos<30
+	cost_alumno=400000
+	cost_pers= (cost_alumnos/can_alumnos)
+	
+	sino cost_alumno=0
+	     cost_per=0
+
+	fin si
+	fin si
+	fin si 
+	fin si
+
+Fin si
+
+
+Escribir ("El costo por " can_alumnos " es: "cost_alumno " y el costo que debe asumir cada alumno es: " cost_pers)
+Fin
+
+Ejercicio 3-----------------------------------------------------------------------------------
+
+Algoritmo que calcula valor de una llamada dependiendo de si es en dia de semana (matutino 15% o vespertino 10%) o si es dia domingo 3%  
+
+Inicio 
+
+integer horario
+integer dia
+integer minutos
+integer valor_llam
+integer final
+integer bc1=100
+integer bc2=80
+integer bc3=70
+integer bc4=50
+
+Escribir ("Ingrese cantidad de minutos")
+leer minutos
+Escribir ("Ingrese si su llamada se realizo en dia habil(Lun-Sab(1)) o en dia (inhabil (Domingo(2)).")
+Escribir ("Ingrese 1 o 2.")
+leer dia
+Escribir ("Ingrese su horario de llamada, mañana (1)  noche(2)")
+Escribir ("Ingrese 1 o 2.")
+leer horario
+
+si minutos<=0 escribir("La cantidad de minutos ingresados debe ser superior a 0")
+
+	sino si minutos>0&&cita<6
+	     valor_llam=(bc1*minutos)
+
+	sino si minutos>5&&minutos<9
+	     valor_llam=((bc1*5)+(bc2*(minutos-5))
+
+	sino si minutos>8&&cita<11
+	     valor_llam=((bc1*5)+(bc2*3)+(bc3*(minutos-8))
+	
+	sino valor_llam=((bc1*5)+(bc2*3)+(bc3*2)+(bc4*(minutos-10))
+	      
+fin si
+
+segun dia 
+	caso 1  si horario==1
+		final=vaLor_llam*1.15
+
+		sino si horario==2 
+		final=valor_llam*1.10
+		
+		sino escribir("La opcion de horario es incorrecta")
+
+		fin si
+
+	caso 2  si horario==1 || horario==2
+		final=valor_llam*1.03
+
+		sino escribir("La opcion de horario es incorrecta")	
+		
+		fin si
+
+	caso Sino escribir("La opcion ingresada de tipo de día es incorrecta")
+
+fin segun
+		
+
+Escribir ("El valor de su llamada es: "final)
+
+fin
+	  

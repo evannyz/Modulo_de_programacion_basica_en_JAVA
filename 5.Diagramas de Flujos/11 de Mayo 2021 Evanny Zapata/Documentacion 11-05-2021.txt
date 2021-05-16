@@ -1,0 +1,16 @@
+Se profundiza en el conocimiento visto en clases respecto a los diagramas de flujo 
+y la toma de ciertas decisiones 
+
+
+Bibliografia: 
+
+video que nos enseña acerca de la toma de decisiones de manera grafica
+https://www.youtube.com/watch?v=_6-0vm7fu-k&ab_channel=JoseAntonioSanchezZarate
+
+
+A pesar de no usar la herramienta PSeint recomendada para aprender y planificar el uso de algorimos, se revisa informacion sobre el programa y la manera de asignar variables o compararlas(No todo el documento solo paginas del 1-8)   
+https://www.itson.mx/oferta/isw/Documents/guia_pseint_2016.pdf
+
+Se revisa tutorial sobre el programa de creacion de mapa conceptual Draw io
+https://www.youtube.com/watch?v=A5RZfMqVW54&ab_channel=programadornovato
+

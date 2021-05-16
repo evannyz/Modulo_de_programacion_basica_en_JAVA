@@ -1,0 +1,13 @@
+Al realizar elejercicio n2 de diagrama de flujo se comete un pequeño error en el ciclo para (pensé que el ciclo de instrucciones del ciclo para se ejecutaba hasta que se alcanzara la condicion del ciclo)
+se corrige en clases con aporte de compañeros y se repasa el funcionamiento del ciclo y sus aplicaciones 
+
+
+
+Refuerzo ciclo para 
+https://es.slideshare.net/magpafer49/ciclo-para-55946524
+
+Refuerzo del ciclo mientras 
+https://jesusfabianpinto.wordpress.com/ciclo-mientras/#:~:text=La%20estructura%20repetitiva%20mientras%20es,que%20se%20eval%C3%BAa%20la%20condici%C3%B3n.
+
+Refeurzo ciclo hacer-mientras (Se revisa a pesar de estar escrito en otro lenguaje)
+http://webdelprofesor.ula.ve/ingenieria/amoret/pd1/clase10.pdf

@@ -1,0 +1,246 @@
+Algoritmo cambio de variables 
+
+Evzm Ejercicio final cambio de variables-------------------------------------------
+---------------------------------------------------------------
+package cambiardosvariables;
+import java.util.Scanner;
+
+public class CambiarDosVariables {
+
+    public static void main(String[] args) {
+        
+        Scanner leer=new Scanner(System.in);
+        
+        int a,b;
+    
+        System.out.println("Ingrese dos variables para ser cambiadas");
+        a=leer.nextInt();
+        b=leer.nextInt();
+        
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        
+        System.out.println("Sus variables cambiadas son: "+a+", "+b);
+       
+    }
+    
+}
+
+Evzm Ejercicio Lectura de Variables------------------------------------------------
+-----------------------------------------------------------------------------------
+package leervariables;
+
+import java.util.Scanner;
+
+public class LeerVariables {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Algoritmo que pide datos y prueba de lectura de datos
+        Scanner leer= new Scanner(System.in);
+        
+        
+     
+        int numero,numero1,numero2,numero3,numero4, prom,suma;
+        float numero5,numero6,numero7,numero8,numero9;
+        
+        
+        System.out.println("Ingrese su numero por favor");
+        numero=leer.nextInt();
+        
+        System.out.println("El valor ingresado es: "+numero);
+        
+        System.out.println("Ingrese valores flotantes");
+        numero5=leer.nextFloat();
+        numero6=leer.nextFloat();
+        numero7=leer.nextFloat();
+        numero8=leer.nextFloat();
+        numero9=leer.nextFloat();
+        System.out.println("Sus valores ingresados son:"+numero5+", "+numero6+", "+numero7+", "+numero8+", "+numero9);
+        
+        
+        //Algoritmo que calcula el promedio de 4 notas con variables declaradas previamente
+        System.out.println("Ingrese sus 4 numeros para ser promediados");
+        numero1=leer.nextInt();
+        numero2=leer.nextInt();
+        numero3=leer.nextInt();
+        numero4=leer.nextInt();
+        
+        suma=numero1+numero2+numero3+numero4;
+        prom=suma/4;
+        
+        System.out.println("El promedio de sus 4 notas son: "+prom);
+               
+    }
+    
+}
+
+Evzm Ejercicio calcular promedio de 4notas con lectura de variables -------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+package promediodecuatronotas;
+
+import java.util.Scanner;
+
+public class PromedioDeCuatroNotas {
+
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner leer= new Scanner(System.in);
+        int numero,numero1,numero2,numero3,numero4, prom,suma;
+        
+           
+        //Algoritmo que calcula el promedio de 4 notas con lectura de variables 
+        System.out.println("Ingrese sus 4 numeros para ser promediados");
+        numero1=leer.nextInt();
+        numero2=leer.nextInt();
+        numero3=leer.nextInt();
+        numero4=leer.nextInt();
+        
+        suma=numero1+numero2+numero3+numero4;
+        prom=suma/4;
+    }
+    
+}
+
+Evzm Ejercicio prueba de variables------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+
+package pruebavariables;
+
+
+public class PruebaVariables {
+
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        int calculo,multiplicacion,division,suma,resta;
+        
+        calculo=3;
+        
+        int valor1=1;
+        int valor2=29;
+        int valor3=12;
+        
+        multiplicacion=valor1*valor3;
+        division=valor3*multiplicacion;
+        suma=division+multiplicacion;
+        resta=suma-valor1;
+        
+        System.out.println("imprime la suma la multiplicacion la division la resta;"+suma+", "+multiplicacion+", "+division+" y "+resta);
+        System.out.println("Es molesto tener que poner los simbolos de puntuacion para separar los dialogos XD");
+        
+        
+        //ESte es un comentario de una sola linea 
+        
+    }
+    
+}
+
+Evzm Ejercicio "Hola Mundo" ------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+
+
+package holamundo;
+
+
+public class HolaMundo {
+
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.println("Hola mundo");
+        System.out.println("Como estás?");
+        System.out.println("Yo bien y tu?");
+        System.out.println("Que bueno yo también");
+        System.out.println("Mmmmmm momento incomodo");
+        
+        //Comentario de una linea
+        // como se decalra una variable
+        //Tipo de dato+ name variable+ asignacion
+        
+        byte numero1=123;
+        short numero2=12345;
+        int numero3=123455;
+        long numero4=12345678;
+        float tipo=3.3f;
+        double tipo2=25.27;
+        int multiplicacion;
+        
+        boolean A=false; 
+        int variables,uno,dos,tres=3,cinco=5, suma;
+        suma=numero1+numero2;
+        
+        multiplicacion=tres*cinco;
+        System.out.println("Escribe las suma de dos numeros"+suma);
+        System.out.println("Imprime la multiplicacion de los numeros tres y cinco:"+multiplicacion);
+        
+        
+        
+        System.out.println("El valor de la variable numero1 es: "+numero1+"El valor de variable float es"+tipo);
+        System.out.println("el valor booleano es :"+A);
+       
+        
+    }
+    
+}
+
+
+Evzm Ejercicio prueba personal de diagrama de flujo, se añade a la documentacion-------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+package prueba;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Prueba {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int sum = 0;
+       
+        int edad=0;
+        int prom;
+        int num;
+        int i;
+       
+        Scanner teclado = new Scanner(System.in);
+        
+        
+        System.out.println("Ingrese la cantidad de edades que desea promediar");
+        num = teclado.nextInt();
+        
+        for (i=1;i<=num;i++){
+            System.out.println("Ingrese las edades");
+            edad= teclado.nextInt();
+            sum=sum+edad;  
+        }
+        prom =sum/edad;
+        
+        System.out.println("La edad promedio es: "+prom);
+        
+        
+        
+        
+    }
+    
+}
+
+
+

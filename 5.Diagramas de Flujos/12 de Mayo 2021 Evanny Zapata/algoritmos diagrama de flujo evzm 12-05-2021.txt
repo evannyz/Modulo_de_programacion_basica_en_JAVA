@@ -1,0 +1,176 @@
+Ejercio 1-------------------------------------------------------
+
+Algoritmo que calcula costo total de viaje y costo por persona
+
+Inicio 
+
+char tip_Bus
+integer pasajeros
+integer pasj_min =20
+integer km
+integer viaje_tot
+integer cost_persona
+
+escribir("Ingrese tipo de bus en el que desea viajar (A  B o C)")
+leer tip_bus
+escribir("Ingrese la cantidad de pasajeros")
+leer pasajeros
+escribir ("Ingrese la cantidad de kilometros del viaje")
+leer km 
+
+si pasajeros<=0 escribir("La cantidad de pasajeros debe ser mayor a 0")
+
+	segun tip_bus
+
+		caso A  si pasajeros>0 && pasajeros<20
+			cost_persona=km*200
+			viaje_tot=(pasj_min*cost_persona)/pasajeros
+			
+			sino si pasajeros>=20
+			cost_persona=km*200
+			viaje_tot=pasajeros*cost_persona
+			
+			fin si
+
+		caso B  si pasajeros>0 && pasajeros<20
+			cost_persona=km*250
+			viaje_tot=(pasj_min*cost_persona)/pasajeros
+			
+			sino si pasajeros>=20
+			cost_persona=km*250
+			viaje_tot=pasajeros*cost_persona
+			
+			fin si
+		caso C  si pasajeros>0 && pasajeros<20
+			cost_persona=km*300
+			viaje_tot=(pasj_min*cost_persona)/pasajeros
+
+			sino si pasajeros>=20
+			cost_persona=km*300
+			viaje_tot=pasajeros*cost_persona
+			
+			fin si
+
+		caso sino  escribir("La opcion ingresada no es correcta")
+
+	fin segun
+fin si
+
+escribir("El costo total de viaje es: " viaje_tot y el costo por persona es: "cost_persona)
+
+fin 
+
+
+
+Ejercicio 2--------------------------------------------------------------------------
+
+Algoritmo que calcula el precio de x hamburguesas segun tipo sencilla doble o triple y añade un cargo por credito
+
+
+char tip_hamburger
+integer can_hamb 
+char med_pago
+integer precio
+integer credit =1.05
+
+escribir("Ingrese tipo de Hamburguesa que desea comer (A  B o C)")
+leer tip_hamburger
+escribir("Ingrese la cantidad de hamburguesas que desea comer")
+leer can_hamb
+escribir ("Ingrese medio de pago efectivo o credito (D o E)")
+leer med_pago
+
+
+si can_hamb<=0 escribir ("La cantidad de hamburguesas debe ser mayor a 0")
+
+	
+
+	sino	segun tip_hambuger 
+
+		caso A  si med_pago==D 
+		        precio = (can_hamb*2000)*credit
+
+			sino si med_pago==E
+			     precio=can_hamb*2000
+			     
+			    sino ("Las opciones ingresadas no son correctas")
+			     fin si
+			fin si
+
+		caso B  si med_pago==D 
+		        precio = (can_hamb*2500)*credit
+
+			sino si med_pago==E
+			     precio=can_hamb*2500
+			     
+			    sino ("Las opciones ingresadas no son correctas")
+			     fin si
+			fin si
+
+		caso C  si med_pago==D 
+		        precio = (can_hamb*3000)*credit
+
+			sino si med_pago==E
+			     precio=can_hamb*3000
+			     
+			    sino ("Las opciones ingresadas no son correctas")
+			     fin si
+			fin si
+		fin segun
+		Escribir("El precio por: " can_hamb " es: " precio)
+
+fin
+
+Ejercicio 3 ------------------------------------------------------------
+
+Algoritmo que calcula valor de una cita medica mas valor de las citas anteriores asistidas las primeras 3 200k, las siguientes 2 150k , sgtes 3 a 100 k y las sgtes a 50k
+
+Inicio 
+
+integer precio
+integer cita
+integer valor_cita
+integer bc1=200k
+integer bc2=150k
+integer bc3=100k
+integer bc4=50k
+
+Escribir ("Ingrese nro de cita")
+leer cita 
+
+si cita<=0 escribir("La cantidad de citas ingresadas debe ser superior a 0")
+
+	sino si cita>0&&cita<4
+	     precio=bc1
+	     valor_cita=(bc1*cita)-bc1
+
+	sino si cita>3&&cita<6
+	     precio=bc2
+	     valor_cita=((bc1*3)+(bc2*(cita-3))-bc2
+
+	sino si cita>5&&cita<9
+	     precio=bc3
+	     valor_cita=((bc1*3)+(bc2*2)+(bc3*(cita-5))-bc3
+	
+	sino precio=bc4
+	     valor_cita=((bc1*3)+(bc2*2)+(bc3*3)+(bc4*(cita-8))-bc4
+
+	      
+fin si
+
+Escribir ("El valor de su cita actual es: "precio" y el valor de sus citas anteriores a la cita actual es: "valor_cita )
+
+fin
+	  
+
+
+
+
+
+			
+
+
+
+
+
+
