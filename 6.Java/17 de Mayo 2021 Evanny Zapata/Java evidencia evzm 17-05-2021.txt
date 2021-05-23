@@ -1,0 +1,260 @@
+Evzm 2da Clase de Algoritmos en JAVA
+
+Ejercicio 1 (Repaso de la primera clase)-----------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Repaso
+
+
+package repasoprimeraclase;
+
+import java.util.Scanner;               // utilidad de java para la lectura de variable
+
+
+public class RepasoPrimeraClase {
+
+   
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner leer = new Scanner(System.in); //lectura de variables
+    
+        int nota1,nota2,nota3,nota4,suma,promedio;// se ingresa valores con variables de nombre significativo y se pueden asignar varias variables del mismo tipo
+        
+        System.out.println("Ingrese las 4 notas que desea leer");// se leen las 4 notas
+        nota1 = leer.nextInt();
+        nota2 = leer.nextInt();
+        nota3 = leer.nextInt();
+        nota4 = leer.nextInt();
+        
+        suma = nota1+nota2+nota3+nota4;
+        promedio=suma/4;
+        System.out.println("El promedio de sus 4 notas es: "+promedio);
+       
+}
+}
+
+
+
+Evzm Ejercicio 2 ---------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo para pedir comida y acompañamiento en un restaurante
+
+package programaunoifelse;
+
+import java.util.Scanner;
+
+
+public class ProgramaUnoIfElse {
+
+ 
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        // algoritmo que permite seleccionar la comida que desea pedir en un restaurante
+        Scanner leer = new Scanner(System.in);
+        
+        int indice1,indice2,indice3; //indice 1 seleccion de comidas, indice 2 acompañamiento de comida, indice, indice 3 seleccion de acompañamiento
+        
+        System.out.println("Bienvenido a Wackawackadonalds ingrese alguna de las siguientes opciones para llevar"); // se elige opciones de comida
+        System.out.println("Ingrese 1 para hamburguesa, 2 para HotDog 3 para ensalada");
+        System.out.println("Ingrese 1,2,3 o 4");
+        indice1 = leer.nextInt();
+        System.out.println("Desea acompañamiento 1 Si, 2 No"); // se indica si desea acompañamiento
+        System.out.println("Ingrese 1 o 2");
+        indice2 = leer.nextInt();
+
+        
+        if (indice1<=0){
+            System.out.println("La opcion ingresada debe ser mayor a cero");
+        }else if (indice1==1){
+            System.out.println("Su opcion ingresada es Hamburguesa");
+        }else if (indice1==2){
+            System.out.println("Su opcion ingresada es HotDog ");
+        }else if (indice1==3){
+            System.out.println("Su opcion ingresada es Ensalada");
+        }else{
+            System.out.println("Su opción no es valida");
+        }
+        
+        
+        if (indice2<=0){
+            System.out.println("La opcion ingresada debe ser mayor a cero");
+        }else if(indice2==1){
+                    System.out.println("Ingrese solo un acompañamiento 1 Bebida, 2 Papasfritas, 3 Te 4 Cafe"); // se selecciona acompañamiento
+                    System.out.println("Ingrese 1,2,3o4");
+                    indice3 = leer.nextInt();
+                    
+                    if (indice3<=0){
+                        System.out.println("La opcion no es valida");
+                       
+                    }else if (indice3==1){                                                                    // se selecciona alguna opcion y se imprime el nombre del acompañamiento
+                        System.out.println("Su acompañamiento es Bebida ");
+                    }else if (indice3==2){
+                        System.out.println("Su acompañamiento es Papasfritas ");
+                    }else if (indice3==3){
+                        System.out.println("Su acompañamiento es  Té");
+                    }else if (indice3==4){
+                        System.out.println("Su acompañamiento es Café ");
+                    }else{
+                        System.out.println("La opcion digitada no es valida");
+                    }
+        
+        }else if (indice2==2){
+            System.out.println("Usted no llevara acompañamientos");
+        }else{
+            System.out.println("La opcion ingresada no es valida");
+        }
+      
+    }
+    
+}
+
+
+Evzm Ejercicio 2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo del final del mundo
+
+ package programadosifelse;
+
+import java.util.Scanner;
+
+
+public class ProgramaDosIfElse {
+
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        // Algoritmo que dependiendo de la suma de los caracteres de el nombre y el apellido 
+        
+        Scanner leer = new Scanner(System.in);
+        
+        String nombre, apellido, inversoFin,Final;
+        int cont_nombre,cont_apellido, suma;
+        
+        System.out.println("Bienvenido al juego del fin");
+        System.out.println("Ingrese solamente su primer nombre");      //se lee el nombre y luego se invierte
+        nombre = leer.nextLine();
+        StringBuilder nombreb = new StringBuilder(nombre);              //creo con la opcion builder el nombre en un constructor para luego invertirlo
+        String inverso1 = nombreb.reverse().toString();
+        //System.out.println("Su nombre inverso es: "+inverso1+", recuerdelo porfavor");           esta linea es para volver mas facil el juego
+        
+        System.out.println("Ingrese su primer apellido");             // se lee el apellido y se invierte
+        apellido = leer.nextLine();
+        StringBuilder apellidob = new StringBuilder(apellido);
+        String inverso2 = apellidob.reverse().toString();
+        //System.out.println("Su apellido inverso es: "+inverso2+", recuerdelo porfavor");          esta linea es para hacer mas facil el juego
+        
+        cont_nombre = nombre.length();
+        cont_apellido= apellido.length();
+        
+        suma = cont_nombre+cont_apellido;                           //suma los caracteres del nombre y el apellido si son entre 9 a 12 caracteres ganas el juego sin jugar :D, sino tienes que ingresar tu apellido invertido un espacio y tu nombre invertido respetando las minusculas y mayusculas :C
+        inversoFin = inverso2+" "+inverso1;
+        // System.out.println("clave es: "+inversoFin); agregando esta linea tienes la clave para salvar al mundo
+        
+        if (suma==0){                                               //Si no pones tu nombre el mundo explota
+            System.out.println("Has iniciado el fin del mundo por no ingresar tu nombre y tu planeta explotará");
+            System.out.println("En 3");
+            System.out.println("2");
+            System.out.println("1");
+            System.out.println("0");
+            System.out.println("Ka-boom");
+        
+        }else{
+            if(suma >=9 && suma <=12){                              //Si cumples la condicion el mundo se salva
+                
+                System.out.println("La cuenta final del mundo no se inicio, eres el elegido natural para sobrevivir, ¡¡¡¡Felicidades!!! ;D");
+            }else{
+                System.out.println("La cuenta final del mundo ha iniciado, fuiste elegido para salvar la tierra o destruirla :C");
+                System.out.println("Tiene solo una oportunidad de salvar el mundo :O");
+                System.out.println("Ingrese su nombre y apellidos intercambiados e invertidos ");
+                Final = leer.nextLine();
+               
+                if(Final.compareTo(inversoFin)== 0){
+                    System.out.println("Salvaste el mundo y eres libre de vivir en paz, ¡¡¡¡¡¡Felicidades !!!!!");
+                }else{                                              //Si no se cumple la condicion tienes que jugar
+                    System.out.println("No pudiste salvar al mundo :c, el mundo explotará en");
+                    System.out.println("3");
+                    System.out.println("2");
+                    System.out.println("1");
+                    System.out.println("0");
+                    System.out.println("Mega explosión KAAAAAAA-BOOOOOOM");
+                }
+                
+            }
+        }
+        
+        System.out.println("Su nombre es: "+nombre);
+        
+        
+        
+    }
+    
+}
+
+Evzm Ejercicio 3--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo de una calculadora que puede leer la operación o las letras de la operación (ej puede leer suma o + y da el resultado)
+
+
+package programatresifelse;
+
+import java.util.Scanner;
+
+
+public class ProgramaTresIfElse {
+
+  
+  
+  
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Algoritmo de una calculadora que puede leer la operación o las letras de la operación (ej puede leer suma o + y da el resultado)
+        
+        int a,b,suma,resta,multi,divi; //Variables para asignar numeros con sus respectivas operaciones
+        String d="suma",e="resta",f="multiplicacion",g="division";
+        
+        
+        Scanner leer = new Scanner(System.in); //Lectura de variables
+        
+        System.out.println("Bienvenido a la nueva calculadora de numeros positivos");
+        System.out.println("Ingrese la operación que desea realizar (+)suma ,(-) resta,(/)división o (*)multiplicación"); //Leo la operacion
+        System.out.println("Escriba la operación sin acento o  (+, -, * o /)");
+        String c = leer.nextLine();
+        
+        System.out.println("Ingrese  dos números positivos para realizar alguna operación"); //Leo los dos numeros de la operacion
+        System.out.println("Ingrese su primer número");
+        a = leer.nextInt();
+        System.out.println("Ingresese su segundo número");
+        b = leer.nextInt();
+       
+        
+        
+        System.out.println("Su cadena es: "+c);
+        suma=a+b;
+        resta=a-b;
+        multi=a*b;
+        divi=a/b;
+        
+
+        
+        if (a<=0 || b<=0){
+            System.out.println("Ingrese valores positivos superiores a 0");
+        }else if(c.compareTo("+")==0 || c.compareToIgnoreCase(d)==0){
+                System.out.println("El valor de su suma es: "+suma);
+        }else if(c.compareTo("-")==0 || c.compareToIgnoreCase(e)==0){
+                System.out.println("El valor de su resta es: "+resta);
+        }else if(c.compareTo("*")==0|| c.compareToIgnoreCase(f)==0){
+                System.out.println("El valor de su multiplicación es: "+multi);
+        }else if(c.compareTo("/")==0|| c.compareToIgnoreCase(g)==0){
+                System.out.println("El valor de su division es: "+divi);
+        }else{
+                System.out.println("La opcion ingresada no es correcta");
+            }
+ }
+      
+        
+        
+        
+}

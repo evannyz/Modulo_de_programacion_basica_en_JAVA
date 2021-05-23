@@ -1,0 +1,33 @@
+Hoy se repasa la declaracion de  variables en Java, se repasa la entrada de datos mediante Scanner, se verifica el funcionamiento de else if en el entorno y se procedera a realizar operaciones basicas de uso, (Se estudiará posteriormente acerca de funciones y utilización de java.util.random para otros proyectos)
+Como desafio personal al ver los algoritmos propuestos por los compañeros propuse un pequeño juego que utiliza el nombre del usuario
+Se adjunta en la bibliografía lo investigado para poder crear el desafio
+
+
+Documentación:
+
+lectura de Variables
+https://javadesde0.com/entrada-de-datos-con-scanner-de-java/
+
+
+Desafio ProgramaDosIfElse Documentacion 
+
+
+Como declarar una variable de tipo String
+https://javadesdecero.es/clases/string/
+
+Como leer una variable tipo string
+https://www.abrirllave.com/java/leer-una-variable-de-tipo-string-desde-el-teclado.php
+
+Como invertir una cadena de strings
+https://parzibyte.me/blog/2019/02/20/invertir-cadena-string-java/
+
+Como combinar dos cadenas de caracteres
+https://www.greelane.com/es/ciencia-tecnolog%C3%ADa-matem%C3%A1ticas/ciencias-de-la-computaci%C3%B3n/concatenation-2034055#:~:text=Usando%20el%20operador%20%2B,siempre%20est%C3%A1%20entre%20comillas%20dobles).
+
+
+Como comparar cadenas de caracteres
+http://chuwiki.chuidiang.org/index.php?title=Comparar_cadenas_de_texto#:~:text=Para%20comparar%20realmente%20las%20cadenas,cadena2))%20%7B%20...%20%7D&text=cosas%20como%20esta-,String%20cadena2%20%3D%20new%20String(%22Hola%22,)%3B%20if%20(%22Hola%22.
+
+Como contar los caracteres dentro de una cadena
+https://www.delftstack.com/es/howto/java/count-characters-in-a-string-java/#:~:text=los%20caracteres%20espec%C3%ADficos.-,Use%20String.,usar%20el%20m%C3%A9todo%20length()%20.
+

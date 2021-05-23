@@ -1,0 +1,227 @@
+5ta Clase de Algoritmos en JAVA
+
+
+Evzm Ejercicio1 tarea switch and case-----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que muestra los numero pares entre 1 y el valor que el usuario estime
+
+
+package ciclositerativosdos;
+
+import java.util.Scanner;
+
+public class CiclosIterativosDos {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        //Algoritmo que muestra los numero pares entre 1 y el valor que el usuario estime
+        
+        
+        Scanner leer = new Scanner(System.in);
+        
+        
+        int a=1,b,c;                                                              //numero inicial y numero dado por el usuario
+        
+        System.out.println("Ingrese un valor para verificar ");
+        b=leer.nextInt();
+        
+        
+        System.out.println("Seleccione su ciclo a utilizar 1-Ciclo For 2-Ciclo While 3-Ciclo Do-While");
+        c=leer.nextInt();
+        
+        
+        switch (c){
+            case 1: for(a=1;a<=b;a++){
+                        if (a%2==0){
+                        System.out.print("valor par "+a+" ");
+            
+                        }
+            }
+            break;
+            
+            case 2: while(a<=b){
+                if (a%2==0){
+                System.out.print("valor par "+a+" ");
+                }
+                a=a+1;
+            }
+            break;
+            
+            case 3: do{
+                if(a%2==0){
+                    System.out.print("valor par "+a+" ");
+
+                }
+                a=a+1;
+            }while(a<=b);
+            break;
+            
+            
+            default: System.out.println("Valor ingresado incorrecto");
+            break;
+       
+        }
+
+        System.out.println("\n\n\n");
+        System.out.println("Fin del ciclo");
+
+    }
+    
+}
+
+Evzm Ejercicio 1 clases ------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que comprueba con que numero es multiplo el numero ingresado por el usuario desde el 1 al 100 
+package cicloiterativotres;
+
+import java.util.Scanner;
+
+public class CicloIterativoTres {
+
+    public static void main(String[] args) {
+        
+        
+        //Algoritmo que comprueba con que numero multiplo el numero ingresado por el usuario desde el 1 al 100 
+        
+        int n;
+        
+        Scanner leer = new Scanner(System.in);
+        
+        System.out.println("Buenas tardes por favor ingresar el multiplo que desee comprobar para los números entre el 1 y el 100");
+        n=leer.nextInt();
+        
+        for(int i=1;i<=100;i++){
+            if (i%n==0){
+                System.out.print("Es multiplo el valor "+i+" - ");
+            }
+        }  
+    }
+}
+
+Evzm Ejercicio 2--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package cicloiterativocuatro;
+
+import java.util.Scanner;
+
+public class CicloIterativoCuatro {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner leer = new Scanner(System.in);
+        
+        int n,m,aux,sum=0,prom;
+        
+
+        System.out.println("Ingrese la cantidad de notas que desee promediar");
+        n=leer.nextInt();
+        aux=n;
+        
+        for(int i=1; i<=n;i++){
+            System.out.println("Ingrese el numero para generar el promedio");
+            m=leer.nextInt();
+            sum=sum+m;
+        }       
+        prom=sum/aux;
+        System.out.println("Su promedio de "+aux+" notas es: "+prom);
+    }
+    
+}
+
+Evzm Ejercicio 3--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que permite ingresar n numeros y calcula los numeros pares ingresados(los suma) y verifica cantidad de impares impares(los multiplica) e indica cual es la mayor cantidad ingresada(pares o impares)
+
+package cicloiterativocinco;
+
+import java.util.Scanner;
+
+public class CicloIterativoCinco {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        //algoritmo que permite ingresar n numeros y calcula los numeros pares ingresados(los suma) y verifica cantidad de impares impares(los multiplica) e indica cual es la mayor cantidad ingresada(pares o impares)
+        
+        Scanner leer = new Scanner(System.in);
+        
+        int a,b,sum_par=0,multi_impar=1,acu1=0,acu2=0;
+        
+        System.out.println("Buenas tardes por favor indique la cantidad de numeros con los que quiera operar \nPara verificar numeros pares y sumarlos y  para verificar la cantidad de impares y multiplicarlos");
+        a=leer.nextInt();
+        
+        for (int i=1; i<=a;i++){
+            System.out.println("Ingrese el numero");
+            b=leer.nextInt();
+            
+            if(i%2==0){
+                sum_par=sum_par+b;
+                acu1=acu1+1;
+            }else{ 
+                multi_impar=multi_impar*b;
+                acu2=acu2+1;
+            } 
+    
+        }
+        
+        System.out.println("La suma de sus pares es: "+sum_par);
+        System.out.println("La multiplicación de sus impares es: "+multi_impar);
+        if (acu1>acu2){
+            System.out.println("La cantidad de pares es mayor que los impares");
+        }else if(acu1<acu2){ 
+            System.out.println("La cantidad de impares es mayor que la de pares");
+        }else{
+            System.out.println("La cantidad de pares e impares es la misma");
+        }
+        
+        System.out.println("La cantidad de pares es: "+acu1+" y la cantidad de impares es: "+acu2);
+    }
+    
+}
+
+Evzm Ejercicio 4--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo para determinar si un numero es perofecto
+
+
+package cicloiterativoseis;
+
+import java.util.Scanner;
+
+
+public class CicloIterativoSeis {
+
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Algoritmo para determinar si un numero es perfecto
+        
+        Scanner leer = new Scanner(System.in);
+        
+        
+        
+        long a,comparador=1,aux=0,sum=0;
+        
+        System.out.println("Ingrese un número para determinar si es perfecto o no");
+        a=leer.nextLong();
+        
+        for (long i=1;i<=a;i++){
+            
+            if(a%i==0 && i!=a){
+            sum=sum+i;
+                //System.out.println("La suma1 es"+sum);
+            }
+        }
+        System.out.println("la suma es "+sum);
+        if (sum==a){
+            System.out.println("Su número es perfecto");
+        }else{
+            System.out.println("Su numero no es perfecto");
+        }
+    } 
+}

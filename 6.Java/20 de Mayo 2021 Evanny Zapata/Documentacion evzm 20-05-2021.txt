@@ -1,0 +1,149 @@
+// Se añadiran comentarios de lo estudiado proximamente
+
+Se revisan algoritmo de tarea realizado con Switch and case y a posterior 
+seguimos trabajando con ciclos iterativos e implementando las anteriores estructuras aprendidas como if else o switch
+en general los problemas se realizan sin problemas, de tarea se realizan 3 ejercicios interesantes
+1-determinar si un número tiene "amigos",2-determinar el mayor de n números ingresados 
+y 3- permitir al usuario ingresar numeros positivos y determinar cuantos de ellos terminan en 2, para finalizar el programa se ingresa un  número negativo 
+los 3 ejercicios se añaden como documentación, posteriormente
+se explicara lo que se estudio para desarrollarlos.
+
+Documentación 
+
+Evzm Ejercicio 1 Tarea-------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que permite determinar si un numero tiene amigos
+
+package programita;
+import java.util.Scanner;
+public class Programita {
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        //Program que permite verificar si un numero tiene amigo
+        Scanner leer = new Scanner(System.in);
+        
+        long a,sum=0,sum2=0;
+        
+        System.out.println("Ingrese su primer número para verificar si tiene un número amigo");
+        a=leer.nextLong();
+        
+        for (long i=1;i<=a;i++){  
+            if (a%i==0 && a!=i){
+                sum=sum+i;   
+            }
+            System.out.println("La primera suma es: "+sum+" ");
+        }
+        
+        
+        for (long h=1;h<=sum;h++){
+            
+            if (sum%h==0 && sum!=h){
+                sum2=sum2+h;
+            }
+            System.out.println("La segunda suma es: "+sum2+" ");
+        }
+        
+        
+        if (sum2==a){
+            System.out.println("\nEl número ingresado ("+a+") !!!Tiene un amiguito!!! y es: "+sum);
+        }else{
+            System.out.println("Tu número ingresado no tiene amigos :(, tal vez tu puedas serlo....)");
+        }
+        
+    }
+    
+}
+
+Evzm Ejercicio 2 Tarea--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que permite identificar el número mayor ingresado dentro de una cantidad limitada por el usuario
+
+package tareauno;
+
+import java.util.Scanner;
+
+public class TareaUno {
+
+    public static void main(String[] args) {
+        
+        
+        //Algoritmo que permite leer el numero mayor ingresado sobre una cierta cantidad 
+        
+        Scanner leer = new Scanner(System.in);
+        
+        int num,num2,comparador=0;
+        
+        System.out.println("Bienvenido, porfavor ingrese la cantidad de números a evaluar para determinar cual es el mayor");
+        num=leer.nextInt();
+        
+        if (num<0){     
+            System.out.println("Por favor ingrese un numero positivo o cero");
+        }else{
+            for(int i=1; i<=num;i++){
+                System.out.println("Ingrese el numero a evaluar");
+                num2= leer.nextInt();
+                
+                if(num2<0){
+                    System.out.println("Por favor ingrese un numero positivo o cero");
+                }else if(num2>comparador){
+                    comparador=num2;
+                }else{
+                    System.out.println("Ingrese un valor valido");
+               
+                }
+            }
+        }
+        
+        System.out.println("El mayor numero ingresado es: "+comparador);
+
+    }
+}
+
+Evzm Ejercicio 3--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que permite ingresar números positivos y determina cuanto de los números ingresados terminan en 2 (El programa finaliza cuando el usuario ingresa un número negativo)
+
+
+
+package tareados;
+
+import java.util.Scanner;
+
+
+public class TareaDos {
+
+
+    public static void main(String[] args) {
+        // Algoritmo que permite ingresar numeros positivo y se detiene cuando ingresas un numero negativo, al final del programa indica cuantos numeros terminados en 2 tenemos
+        
+        Scanner leer = new Scanner(System.in);
+        
+        int a,ulti_digi, contador=0,contador2=0, contador3=0;                   //variable a para leer el número que ingresa y los contadores para saber cuantos numeros ingresados terminan en 2
+        System.out.println("Ingrese números positivos para que el programa continue su ejecución, al terminar obtendrá la cantidad de números terminados en 2, si desea finalizar ingrese un número negativo");
+       
+        
+
+        
+        do{
+            System.out.println("Ingrese un número porfavor");
+            a=leer.nextInt();
+            ulti_digi=a%10;
+            contador2++;
+            
+            if(ulti_digi==2){
+            contador=contador+1;
+           
+            }
+        }while(a>=0);
+     
+        contador3=contador2-1;
+        System.out.println("De los "+contador3+" números ingresados (excluyendo el número negativo), solo "+contador+" números terminaron en 2");
+
+    }
+    
+}
+

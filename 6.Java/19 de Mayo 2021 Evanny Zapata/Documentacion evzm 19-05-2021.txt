@@ -1,0 +1,19 @@
+Se adjuntan dos ejercicios de tarea realizados con switch and case, 
+el primero es la reproduccion de un ejercicio anterior realizado en pseudocodigo, 
+se reestructura y se compila correctamente sin mayor problema, para el segundo ejercicio se simula una maquina de café, 
+que me genera problemas inicialmente ya que no logro estructurar el programa de manera que capture las opciones mal digitadas
+se restructura 3 veces el problema probando distintas combinaciones con switch e if else hasta que logro el objetivo,
+para las clases continuamos con ejercicios en Java se continua ejercitando con switch and case y 
+posteriormente se introducen los ciclos para-(mientras y hacer-mientras)
+se investiga sobre formato de impresion de Strings en Java y el formato de los nuevos ciclos
+
+Documentación
+
+Como realizar saltos de linea en Java
+https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_Java/Imprimir_en_Pantalla  
+
+Como imprimir los datos en la consola de Java hacia el costado
+https://www.programarya.com/Cursos/Java/Salida-de-datos
+
+formato de for, while y do-while
+https://javadesdecero.es/basico/bucles-for-while-do-while-ejemplos/ 

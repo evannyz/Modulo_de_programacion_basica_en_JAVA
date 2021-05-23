@@ -125,13 +125,13 @@ leer horario
 
 si minutos<=0 escribir("La cantidad de minutos ingresados debe ser superior a 0")
 
-	sino si minutos>0&&cita<6
+	sino si minutos>0&&minutos<6
 	     valor_llam=(bc1*minutos)
 
 	sino si minutos>5&&minutos<9
 	     valor_llam=((bc1*5)+(bc2*(minutos-5))
 
-	sino si minutos>8&&cita<11
+	sino si minutos>8&&minutos<11
 	     valor_llam=((bc1*5)+(bc2*3)+(bc3*(minutos-8))
 	
 	sino valor_llam=((bc1*5)+(bc2*3)+(bc3*2)+(bc4*(minutos-10))
@@ -140,7 +140,7 @@ fin si
 
 segun dia 
 	caso 1  si horario==1
-		final=vaLor_llam*1.15
+		final=valor_llam*1.15
 
 		sino si horario==2 
 		final=valor_llam*1.10
@@ -152,7 +152,7 @@ segun dia
 	caso 2  si horario==1 || horario==2
 		final=valor_llam*1.03
 
-		sino escribir("La opcion de horario es incorrecta")	
+		sino escribir("La opción de horario es incorrecta")	
 		
 		fin si
 

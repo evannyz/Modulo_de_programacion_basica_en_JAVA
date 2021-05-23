@@ -1,0 +1,21 @@
+Hoy revisamos la instruccion segun caso que en Java es switch y case, 
+dependiendo de un valor de entrada ejercitamos varios algoritmos, 
+el mayor de tres numeros y el ejercicio anterior de Chismefon la compañia telefonica, 
+se realizan con la misma logica que la aplicada en el ejercicio original 
+pero en el caso de anidamiento de switch-if java no me lo permite asi que procedo a cambiar 
+el tipo de anidamiento por un switch switch ya que no variaba en nada y el ejercicio compila
+correctamente. 
+
+Documentacion
+
+Limitar el numero de decimales que se imprime en un Double
+https://programandoointentandolo.com/2017/11/limitar-numero-decimales-double-float-java.html
+
+Como utilizar un switch and case 
+https://javadesdecero.es/basico/sentencia-switch-java-ejemplo/
+
+Se investiga sobre casos anidados de switch-if y switch-switch con varias referencias en otros
+lenguajes pero ninguno en JAVA
+
+
+  

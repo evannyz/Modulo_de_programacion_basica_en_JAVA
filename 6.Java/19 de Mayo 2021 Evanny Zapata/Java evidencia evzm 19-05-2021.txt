@@ -1,0 +1,372 @@
+Evzm 4ta Clase de Algoritmos en JAVA
+
+Evzm Ejercicios 1 tarea switch------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+        //Algoritmo re-hecho con switch and case ejercicio 4  10 de Mayo 
+        //Algoritmo que calcula el valor de platillo por persona sobre cierta cantidad de comensales
+
+package dosejerciciosconswitch;
+
+import java.util.Scanner;
+
+public class DosEjerciciosConSwitch {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Algoritmo re-hecho con switch and case ejercicio 4  10 de Mayo 
+        //Algoritmo que calcula el valor de platillo por persona sobre cierta cantidad de comensales
+        
+        
+        Scanner leer = new Scanner(System.in);
+        int cantidad_personas, precio=0,aux=0;                                          //Cantidad de personas que van a comer y precio que será asignado por cantidad de personas
+        int b1=7500,b2=8500,b3=9500;                                                    //Base de platillo por cantidad de personas                
+        
+        
+        System.out.println("Bienvenido a nuestro restaurante Dolce Vita");
+        System.out.println("Por favor ingrese la cantidad de personas que van a comer");
+        cantidad_personas=leer.nextInt();
+        
+        
+        
+        if (cantidad_personas<=0){
+            System.out.println("La cantidad de personas ingresadas debes ser mayor a 0");
+        }else if (cantidad_personas>300){                                               //Condiciones para activar el ciclo switch usando una variable auxiliar sobre 300 personas caso1 menos de 300 pero mas de 200 caso2 y menos o igual a 200 caso 3
+            aux=1;
+        }else if(cantidad_personas>200 && cantidad_personas<=300){
+            aux=2;
+        }else if(cantidad_personas<=200){
+            aux=3;    
+        }else{ System.out.println("Ingrese una condicion valida");
+        
+        }
+                                                                                        //dependiendo de la variable aux se activan los casos donde se calcula el precio total y se imprime el precio personal del platillo
+        switch (aux){
+            
+            case 1 : 
+                precio=cantidad_personas*b1;                                        
+                System.out.println("El costo por persona es: "+b1);
+                break;
+            
+            case 2 :
+                precio=cantidad_personas*b2;
+                System.out.println("El costo por persona es: "+b2);
+                break;
+            
+            case 3 :
+                precio=cantidad_personas*b3;
+                System.out.println("El costo por persona es: "+b3);
+                break;
+             
+            default : 
+                System.out.println("ingrese una opción valida");
+                break;
+        }
+        
+        System.out.println("El costo total de sus platillos por "+cantidad_personas+" personas es: "+precio+" pesos");       //Se imprime el costo total por la cantidad de peronas que van a comer
+  
+    }
+    
+} 
+
+
+
+Evzm Ejercicio 2 tarea switch-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo de practica con switch and case 2, pequeña maquina de café
+
+
+package maquinadecafeswitch;
+
+import static java.lang.System.exit;
+import java.util.Scanner;
+
+public class MaquinaDECafeSwitch {
+
+    public static void main(String[] args) {
+        
+        // TODO code application logic here
+        
+        
+        
+        Scanner leer = new Scanner(System.in);
+        
+        int op1,op2,op3,op4;
+        
+        System.out.println("Bienvenido a su maquina de café favorita");
+        System.out.println("Introduzca el tamaño de su vaso: 1-Grande 2-Pequeño");
+        System.out.println("Intoduzca 1 o 2");
+        op1=leer.nextInt();
+
+        
+      
+       
+        
+        System.out.println("Escoja su producto 1-Capuccino 2-Mocaccino 3-Capuccino Vainilla 4-Expreso ");
+        System.out.println("Introduzca 1, 2, 3, 4 ");
+        op2=leer.nextInt();
+        
+        
+        switch (op2){
+            case 1: switch (op1) {
+            case 1:
+                System.out.println("Eligió un Capuccino y se le servira en un vaso Grande");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            case 2:
+                System.out.println("Eligió un Capuccino y se le servira en un vaso Pequeño");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            default:
+                System.out.println("Opcion ingresada de tamaño invalida");
+                break;
+        }
+            break;
+            
+            case 2: switch (op1) {
+            case 1:
+                System.out.println("Eligió un Mocaccino y se le servira en un vaso Grande");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            case 2:
+                System.out.println("Eligió un Mocaccino y se le servira en un vaso Pequeño");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            
+            default:
+                System.out.println("Opcion ingresada de tamaño invalida");
+                break;
+        }break;
+        
+        
+            case 3: switch (op1) {
+            case 1:
+                System.out.println("Eligió un Capuccino de Vainilla y se le servira en un vaso Grande");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            case 2:
+                System.out.println("Eligió un Capuccino de Vainilla y se le servira en un vaso Pequeño");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            
+            default:
+                System.out.println("Opcion ingresada de tamaño invalida");
+                break;
+        }break;        
+  
+            case 4: switch (op1) {
+            case 1:
+                System.out.println("Eligió un Expreso y se le servira en un vaso Grande");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            case 2:
+                System.out.println("Eligió un Expreso y se le servira en un vaso Pequeño");
+                System.out.println("Añadiendo ingredientes y liquido en vaso....");
+                System.out.println("Su vaso esta lleno");
+                break;
+            
+            default:
+                System.out.println("Opcion ingresada de tamaño invalida");
+                break;
+        }break;        
+        
+        
+            default:
+                System.out.println("Opcion ingresada de café invalida");
+            break;
+        }
+        
+        if ((op1==1 || op1==2)&&(op2==1 ||op2==2 || op2==3 ||op2==4)){
+            System.out.println("\nDesea endulzar su opcion 1-Si 2-No");
+            System.out.println("Ingrese 1 o 2");
+            op3=leer.nextInt();
+            
+            if (op3==1){
+                System.out.println("Desea endulzar con 1-Stevia 2-Azucar 3-Endulzante (Sucralosa)");
+                System.out.println("Ingrese 1, 2 o 3");
+                op3=leer.nextInt();
+                
+                switch(op3){
+                    case 1: 
+                        System.out.println("!!!Aqui tiene su café endulzado con azúcar que disfrute!!! :) ");
+                        System.out.println("    SS    ");
+                        System.out.println("__________");
+                        System.out.println("|        /");
+                        System.out.println("|       /D ");
+                        System.out.println("|      /  ");
+                        System.out.println("|_____/   ");
+                        break;
+                        
+                    case 2: 
+                        System.out.println("!!!Aqui tiene su café endulzado con Stevia añadidos que disfrute!!! :)");
+                        System.out.println("    SS    ");
+                        System.out.println("__________");
+                        System.out.println("|        /");
+                        System.out.println("|       /D ");
+                        System.out.println("|      /  ");
+                        System.out.println("|_____/   ");
+                        break;
+                        
+                    case 3: 
+                        System.out.println("!!!Aqui tiene su café endulzado con endulzante Sucraloza añadidos que disfrute!!! :)");
+                        System.out.println("    SS    ");
+                        System.out.println("__________");
+                        System.out.println("|        /");
+                        System.out.println("|       /D ");
+                        System.out.println("|      /  ");
+                        System.out.println("|_____/   ");
+                        break; 
+                        
+                    default: 
+                        System.out.println("Opción de endulzante invalida");
+
+                }
+            
+            
+            }else if(op3==2){
+                System.out.println("!!!Aqui tiene su cafe sin endulzantes añadidos que disfrute!!! :)");
+                System.out.println("    SS    ");
+                System.out.println("__________");
+                System.out.println("|        /");
+                System.out.println("|       /D ");
+                System.out.println("|      /  ");
+                System.out.println("|_____/   ");
+                
+ 
+            }else{
+                System.out.println("Opción de endulzante incorrecta por favor ingrese una opcion valida");
+                   
+            }
+
+        }
+
+    }
+    
+}
+
+Evzm Ejercicio 1 clases-------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package compañiadeenvios;
+
+import java.util.Scanner;
+
+public class CompañiaDeEnvios {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner leer = new Scanner(System.in);
+        
+        int op1, op2,valor_envio;
+        
+        System.out.println("Ingrese cantidad de gramos a enviar");
+        System.out.println("El paquete a enviar no debe superar los 5kg");
+        op1=leer.nextInt();
+        System.out.println("Ingrese lugar de destino 1-America del Norte 2- America Centro 3- America del Sur 4- Europa 5- Asia");
+        System.out.println("Ingrese opción del 1 al 5");
+        op2=leer.nextInt();
+        
+        if(op1<=0 ||op1>5000){
+            System.out.println("La opcion ingresada no es valida debe ser mayor a 0 y menor a 5kg");
+        }else switch(op2){
+            case 1: valor_envio = op1*110;
+                System.out.println("El valor de su envio para America del Norte es: "+valor_envio+" pesos");
+            break;
+            
+            case 2: valor_envio = op1*100;
+                System.out.println("El valor de su envio para America Central es: "+valor_envio+" pesos");
+            break;
+            
+            case 3: valor_envio = op1*120;
+                System.out.println("El valor de su envio para America del Sur es: "+valor_envio+" pesos");
+            break;
+            
+            case 4: valor_envio = op1*240;
+                System.out.println("El valor de su envio para Europa es: "+valor_envio+" pesos");
+            break;
+
+            case 5: valor_envio = op1*270;
+                System.out.println("El valor de su envio para Asia es: "+valor_envio+" pesos");
+            break;
+            
+            default: System.out.println("El valor ingresado de envío es incorrecto");
+            break;
+        
+        
+        }
+        
+        
+    }
+    
+}
+
+
+Evzm Ejercicio 2--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo que cuenta del 1 al 100 y del 100 al 1
+
+package ciclositerativos;
+
+public class CiclosIterativos {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        int a=1,b=1;
+        
+        
+        System.out.println("Algoritmo que cuenta de 1 al 100 y luego del 100 al 1");
+        
+        for(int i=1;i<=100;i++){
+            
+            System.out.println("Imprimiendo \n valor"+i);
+        }
+       
+        for(int i=100;i>=1;i--){
+            System.out.print("Imprimiendo valor"+i+", ");
+        }
+        
+        System.out.println("\n\n\n\n");
+
+        do{
+            a=a+1;
+            System.out.println("imprime el valor"+a);     
+        }
+        while(a<=99);
+        
+        if (a==100){
+            do{
+                a=a-1;
+                System.out.println("imprime el valor"+a);
+            }
+            while(a>=2);
+        }
+        
+        System.out.println("\n\n\n\n");
+        
+        
+        
+        while (b<=100){
+            System.out.println("Imprimiendo valor"+b);
+            b=b+1;
+        }
+        
+       
+        while(b>=1){
+            System.out.println("Imprimiendo valor"+b);
+            b=b-1;
+            
+        }
+ 
+    }
+    
+}
