@@ -1,0 +1,21 @@
+1ra clase de POO Se revisa los primeros conceptos de programación orientada a objetos, personalmente es un desafío dejar la programación secuencial a la que estoy acostumbrado, 
+y el concepto de abstraccion inicialmente me toma un tiempo entenderlo, ya que son bastantes nuevos conceptos que aprender como los metodos, atributos, parametros, argumentos y en general muchas cosas que recordar
+para implementar este nuevo metodo de programación, recurro a fuentes bibliograficas de tipo video para ver ejemplos ejecutados. De los ejercicios propuesto en clase muestro el primer avance de creacion de un objeto
+que se adjunta en la evidencia, al leer un par de articulos me doy cuenta que estamos viendo la punta del iceberg ya que existen otros conceptos como herencia, polimorfismo, encapsulamiento y muchos conceptos más
+
+se adjunta parte de la documentación:
+
+Documentacion 
+
+Iniciamos por entender que es una clase y que es lo que la componen atributos y metodos
+https://javadesdecero.es/poo/que-es-una-clase-ejemplos/
+
+
+Del canal de youtube programacion ats se revisan los videos del 61 al 68 sobre POO
+Se adjunta parte de la lista del curso general de Java del canal
+https://www.youtube.com/watch?v=-6BYa_x_QA0&list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K&index=61&ab_channel=Programaci%C3%B3nATSProgramaci%C3%B3nATSVerificada 
+
+En el canal de youtube pildorasinformaticas, se revisan conceptos que no son tan claros de entender sobre otros videos, todo en base a POO en java videos del 27 al 29
+https://www.youtube.com/watch?v=coK4jM5wvko&list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk&ab_channel=pildorasinformaticaspildorasinformaticasVerificada
+
+Se leen otros articulos menores para esclarecer conceptos 

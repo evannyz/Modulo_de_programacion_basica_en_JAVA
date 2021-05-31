@@ -1,0 +1,199 @@
+Para esta 7ma clase se introduce el uso de arreglos, verificamos la manera de acceder al arreglo y como extraer datos del mismo, el primer ejercicio se simula un cajero bancario, ejercicio interesante que nos enseña un poco más sobre el uso de ciclos iterativos y uso de estructuras basicas.
+Se añade a la documentación la resolución de problemas con ejercicios realizados por los compañeros
+
+
+
+
+
+Documentación 
+
+Que es un arreglo en Java
+https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=168:repaso-arrays-o-arreglos-unidimensionales-en-java-tipos-de-inicializacion-ejemplos-de-codigo-cu00903c&catid=58&Itemid=180
+
+Como recorrer un arreglo
+https://es.stackoverflow.com/questions/62695/recorrer-arreglo-java-eficientemente
+
+Algoritmos de busqueda y ordenamiento en java
+https://www.inf.utfsm.cl/~noell/IWI-131-p1/Tema8b.pdf
+
+
+Ejercicios de Estudio de los compañeros
+
+Carlos Zamora ejercicio 1
+
+package com.charles;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+float cuenta = 100;
+
+static Scanner scanner = new Scanner(System.in);
+
+public static void main(String[] args) {
+
+MainClass mainClass = new MainClass();
+
+boolean seguir = true;
+
+while(seguir){
+
+System.out.println("Ingrese la operacion que desea realizar \n 1.-Consultar Saldo \n 2.-Realizar Abono \n 3.-Girar");
+
+int opcion = scanner.nextInt();
+
+switch(opcion){
+
+case 1:
+mainClass.consultarSaldo();
+break;
+
+case 2:
+mainClass.abonar();
+break;
+
+case 3:
+mainClass.girar();
+break;
+
+default:
+System.out.println("opcion incorrecta");
+break;
+}
+
+boolean seguir2 = true;
+while(seguir2){
+System.out.println("Desea realizar alguna otra operacion? (1)Si (2)No");
+int lectura = scanner.nextInt();
+
+if (lectura ==1){
+seguir2 = false;
+}
+
+else if(lectura==2){
+seguir = false;
+seguir2 = false;
+}
+else if (lectura !=1){
+System.out.println("Opcion incorrecta");
+seguir2 = true;
+}
+}
+}
+
+System.out.println("Gracias por usar nuestros servicios");
+}
+
+public void consultarSaldo(){
+
+System.out.println("Su cuenta tiene: $" + cuenta);
+}
+
+public void abonar(){
+
+System.out.println("Ingrese la cantidad a abonar");
+float abono = scanner.nextFloat();
+
+cuenta+=abono;
+
+System.out.println("Su cuenta ahora tiene $" + cuenta);
+
+}
+
+public void girar(){
+
+float giro = 0;
+
+if(cuenta<=0){
+System.out.println("Usted no puede girar");
+}
+else{
+System.out.println("Ingrese la cantidad a girar");
+giro = scanner.nextFloat();
+}
+
+if(giro>cuenta){
+System.out.println("Esta girando mas alla de sus ahorros, usted posee $" + cuenta + " en su cuenta");
+}
+
+else{
+cuenta-=giro;
+System.out.println("Su cuenta ahora tiene $" + cuenta);
+}
+
+
+}
+
+
+
+Crisian orr ejercicio 1
+
+/*
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+package cajerobanco;
+import java.util.Scanner;
+/**
+*
+* @author orregol
+*/
+public class Cajerobanco {
+
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+Scanner leer = new Scanner(System.in);
+int saldo, mov, op, dinero;
+saldo=840000;
+op=1;
+do{
+System.out.println("Bienvenido al Cajero");
+System.out.println("Que desea hacer");
+System.out.println("1.- Consultar Saldo");
+System.out.println("2.- Realizar abono o deposito");
+System.out.println("3.- Realizar un giro");
+System.out.println("4.- Salir del Programa");
+System.out.print("Elija una Opccion: ");
+mov = leer.nextInt();
+switch(mov){
+case 1: System.out.println("Su saldo es: "+saldo);
+System.out.println("Desea hacr otra operacion 1.- si, 2.- no");
+System.out.print("Elija una Opccion: ");
+op = leer.nextInt();
+break;
+case 2: System.out.print("Cuanto quiere Depositar: ");
+dinero = leer.nextInt();
+if(saldo<dinero){
+System.out.println("no puede realizar el giro");
+System.out.println("no tiene saldo suficiente");
+}
+else{
+saldo=dinero+saldo;
+System.out.println("Su saldo ahora es; "+saldo);
+}
+System.out.println("Desea hacr otra operacion 1.- si, 2.- no");
+System.out.print("Elija una Opccion: ");
+op = leer.nextInt();
+break;
+case 3: System.out.print("Cuanto Quiere Girar: ");
+dinero = leer.nextInt();
+saldo=saldo-dinero;
+System.out.println("Su saldo ahora es; "+saldo);
+System.out.println("Desea hacr otra operacion 1.- si, 2.- no");
+System.out.print("Elija una Opccion: ");
+op = leer.nextInt();
+break;
+case 4: op=2;
+break;
+}
+System.out.println("_________________________________________________");
+System.out.println(" ");
+}while(op==1);
+// TODO code application logic here
+}
+
+}

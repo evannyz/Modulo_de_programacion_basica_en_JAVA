@@ -1,0 +1,209 @@
+
+
+Evzm 1ra clase Java Poo 26-052021
+
+Ejercicio de muestra----------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package poo;
+
+public class POO {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        int resultado;
+        
+        
+        
+        Persona p1=new Persona();			//Creación de un nuevo objeto llamado persona, un objeto es basicamente el molde de algo que quiero representar
+        p1.nombre="Evanny";				//Se le asigna al nuevo objeto tipo persona p1 el nombre de la persona y se realiza mediante la asignacion del atributo
+        System.out.println("El nombre de la persona es: "+p1.nombre);		//Se imprime el nombre de la persona a traves del atributo asignado previamente
+        Persona p2=new Persona();
+        p1.sumar(5, 6);								//Se le asignan valores al metodo(se entregan "argumentos"), esto se puede hacer mediante una pequeña declaracion de parametros dentro del objeto
+        Persona p3= new Persona();							//Se pueden crear multiples objetos mediante el molde objeto persona
+        
+        
+
+        resultado=p1.multiplicar();           //Almacena en una variable el resultado de la instancia de multiplicar en el nuevo objeto tipo persona p1 
+        System.out.println("El resuldado de su multiplicación es: "+resultado); //Muestra el resultado almacenado
+        
+    }
+    
+    
+}
+
+Clase de ejercicio de muestra-------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package poo;
+
+import java.util.Scanner;
+
+
+public class Persona {
+    //Atributos de la clase			//Los atributos de clase son propiedades o caracteristicas que posee un objeto
+    String nombre;
+    String apellido;				
+    int edad;
+    float estatura;
+    float peso;
+    
+    //Metodo 
+    public Persona(){
+    
+    }
+
+    
+    
+    
+    }
+
+    //Metodos 
+    
+    public String mostrarNombre(String nombre1){
+        this.nombre=nombre1; 
+        return nombre;
+
+    }
+    
+
+    public static void saludar(){				//Los metodos son basicamente acciones que poseen una logica
+        System.out.println("Hola");
+    
+    }
+    
+    public void sumar(int a, int b){
+    
+        int suma=a+b;
+        System.out.println("La suma es :"+suma);
+    }
+    
+    public int multiplicar(){
+        Scanner leer=new Scanner(System.in);
+        int multiplicacion,a,b;
+        System.out.print("\n\nIngrese primer valor: ");
+        a=leer.nextInt();
+        System.out.print("\nIngrese segundo valor: ");
+        b=leer.nextInt();
+        
+        multiplicacion=a*b;
+
+        return multiplicacion;
+    
+    
+    }
+    
+
+
+
+primer Avance de proyecto de 3 clases ----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algoritmo de tipo operacion, dependiendo de valores asignados puede entregar distinto tipo de respuestas de tipo numerico
+
+package clases;
+
+import java.util.Scanner;
+
+public class Clases {
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+    
+        Scanner leer=new Scanner(System.in);
+        
+        
+        /*Operacion op1= new Operacion();  //Operacion con metodos normales
+      
+        
+        /*op1.leerNumeros();
+        op1.sumar();
+        op1.respuestas();
+        op1.restar();
+        op1.respuestas();
+        op1.multiplicacion();
+        op1.respuestas();
+        op1.division();
+        op1.respuestas(); 
+        
+         */
+        
+       
+
+
+//Clase del avance de proyecto 3 clases---------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package clases;
+
+import java.util.Scanner;
+
+public class Operacion {
+   
+    //Atributos
+    int numero1, numero2, suma, resta, multiplicacion,division, aux;
+    
+    //Metodo constructor
+    public Operacion(){
+    
+    }
+    
+    
+    }
+
+    //Metodos
+    
+    public void leerNumeros(){
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese primer valor");
+        numero1=leer.nextInt();
+        System.out.println("Ingrese segundo valor");
+        numero2=leer.nextInt();
+ 
+    }
+    
+    public void sumar(){
+    suma=numero1+numero2;				//Se realizan operacion y se guarda un valor auxiliar para luego introducirlo en un switch para luego poder entregar una respuesta de operacion y no todas a la vez
+    aux=1;
+    }
+    
+    public void restar(){
+    resta=numero1-numero2;
+    aux=2;
+    }
+    
+    public void multiplicacion(){
+    multiplicacion=numero1*numero2;
+    aux=3;
+    }
+    
+    
+    public void division(){
+    division=numero1/numero2;
+    aux=4;
+    }
+    
+    
+    public void respuestas(){
+    switch (aux){
+        case 1: System.out.println("El resultado de su suma es: "+suma);
+        break;
+        
+        case 2: System.out.println("El resultado de su resta es: "+resta);
+        break;
+        
+        case 3: System.out.println("El resultado de su multiplicacion es: "+multiplicacion);
+        break;
+        
+        case 4: System.out.println("El resultado de su Division es: "+division);
+        break;
+        
+        default: System.out.println("Caso invalido");
+    
+    }
+    
+    
+    }
+}

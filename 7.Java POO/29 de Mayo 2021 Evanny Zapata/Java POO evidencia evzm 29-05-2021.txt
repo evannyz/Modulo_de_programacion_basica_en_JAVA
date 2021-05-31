@@ -1,0 +1,462 @@
+4Ta Clase de Java POO (Se Reestructura juego con clase Animal y se reestructura algoritmo original con mayor entendimiento de POO) 29-05-2021
+La tercera clase se adjuntará en la documentación
+
+Cuarto Avance de proyecto de 3 clases (MODIFICADO Y REESTRUCTURADO DE CLASE NUMERO 2)-----------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//Algotimo que te convierte en un animal y dependiendo del valor de lanzamiento del dado verifica  si puede superar los obstaculos (Mejorado)
+
+
+package orden;
+
+import java.util.Scanner;
+
+
+public class Orden {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        int opcion=0;
+        int fuerza=0,fuerza2;
+        int []opcion2=new int[3];
+        Scanner leer=new Scanner(System.in);                                    //Creamos una variable para lectura de diferentes variables
+    
+    
+        Animal A1 = new Animal();                                               //Se crea el primer objeto de tipo animal 
+       
+       
+      
+       
+        
+        A1.introAnimal();                                                       //Se instancia el primer dialogo que nos pide escoger leer el animal que deseamos ser 
+        String animal= leer.next();                                             //Leemos el animal que seremos
+        
+        A1.historiaAnimal();                                                    // Intanciamos la historia del juego animal y la entrgamos con delays para que el usuario tenga tiempo de leer
+       
+        
+        if (animal.equalsIgnoreCase("Gato")){                                   //dependiendo del animal leido enviamos una opcion a leer animal, ocupamos una variable auxiliar llamada opcion para que solo continuemos el programa con las opciones del 1 al 4
+            opcion=1;   
+        
+        }else if(animal.equalsIgnoreCase("Perro")){
+            opcion=2;
+        
+        }else if(animal.equalsIgnoreCase("Conejo")){
+            opcion=3;
+        
+        }else if(animal.equalsIgnoreCase("Caballo")){
+            opcion=4;
+        
+        }else{
+            System.out.println("\nOpción  de animal invalida");
+            opcion=5;
+        
+        }
+                                                                                //While 1 para cumplir condiciones 
+        while (opcion!=5){                                                      //Mientras la opcion sea diferente de 5 inicia el juego
+        A1.leerAnimal(opcion);                                                  //Dependiendo de la eleccion del animal envia una opcion numerica  a leer animal
+        fuerza=A1.asignarFuerza(opcion);                                        //Dependiendo de la eleccion tambien asigna la fuerza natural del animal, esta diseñado para poder superar con ciertos animales hasta la segunda muralla
+        A1.Comunicar();                                                         //Entrego el dialogo con delays para que sea legible
+        
+        int[] respuesta= new int[3];                                            //Arreglo creado para almacenar la respuestas de los dados que se lanzaran
+        int validador=1;                                                        //Sistema de validacion para avanzar por niveles de respuetas
+          while(validador==1){                                                  // WHILE 2 PAARA CUMPLIR CONDICIONES
+              A1.miniDialogoAnimal();                                           //primer dialogo de condiciones del obstaculo 1 muralla pequeña
+              opcion2[0]=leer.nextInt();                                        //En el arreglo opcion 2 se van almacenando las respuestas del usuario si decide o no lanzar dado
+            
+              respuesta[0]=A1.lanzaDados(opcion2[0]);
+            
+              int respuesta1=A1.obstaculoAnimal(validador, respuesta[0],fuerza);//La respuesta se almacena junto al valor de fuerza del animal y se envian a obstaculo animal para que nos entregue una respuesta
+              validador=respuesta1;                                             //la respuesta obtenida de la instancia obstaculo animal se almacena como validador para que avance al siguiente ciclo while
+              System.out.println(" mostrar respuesta1"+respuesta1);             //Linea personal para ver la respuesta
+              
+              while(validador==2){                                              //WHILE 3 IGUAL QUE WHILE 2 PERO CAMBIAN LOS VALIDADORES PARA AVANZAR AL 3
+                  A1.miniDialogoAnima2();
+                  opcion2[1]=leer.nextInt();
+                  
+                  respuesta[1]=A1.lanzaDados(opcion2[1]);
+                  
+                  int respuesta2=A1.obstaculoAnimal2(validador, respuesta[1],fuerza);
+                  
+                  validador=respuesta2;
+                  
+                  while(validador==3){                                          //WHILE 4 PARECIDOS A LOS ANTERIORES PERO CAMBIA LA CONDICION PARA SUPERAR EL JUEGO
+                      
+                      A1.miniDialogoAnima3(fuerza);
+                      opcion2[2]=leer.nextInt();
+                      respuesta[2]=A1.lanzaDados(opcion2[2]);
+                      fuerza2=respuesta[2]+fuerza;
+                      System.out.println("------------------------------------------------------------------------------");
+                      System.out.println("El salto del dado más tu fuerza natural te permitieron saltar "+fuerza2+" metros");
+                      System.out.println("------------------------------------------------------------------------------");
+                      int respuesta3=A1.obstaculoAnimal3(validador, fuerza2);
+                      validador=respuesta3;
+                  
+                  
+                  
+                  }
+              
+              
+              }
+          }
+        
+            System.out.println("---------------------------------------------------------------------");    
+            System.out.println("Te reencontraste con tu amado dueño, mereces tener una vida feliz ;D ");            //MENSAJE TRAS SUPERAR EL JUEGO
+            System.out.println("----------------------------------------------------------------------");
+            
+            
+            try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Fin del juego");                                                                       //CREDITOS
+         try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Creditos :Evanny Zapata");
+         try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Musica mental : Querido jugador");
+         try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Gente que aporto en el proyecto: Querida Esposa");
+         try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Fin, gracias por jugar");
+            
+        opcion=5;
+        }
+
+    }
+    
+}
+
+Cuarto Avance de proyecto de 3 clases (CLASE ANIMAL MODIFICADO TOTALMENTE)------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package orden;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Animal {
+    
+    Scanner leer =new Scanner(System.in);  
+    
+       
+    //Atributos
+    int clase;
+    int edad;
+    int color;
+    int velocidad;
+    int fuerza;
+    int opcion_de;
+    int opcion;
+    int[]obstaculo=new int[4];
+    int[]respuestas= new int[4];
+      
+
+    //Metodos constructores 
+     public Animal(){
+     
+     }
+     
+     //Metodo constructor (Usado solo en pruebas personales)
+    public Animal(int clase, int edad, int color, int velocidad, int fuerza, int opcion_de, int opcion) {
+        this.clase = clase;
+        this.edad = edad;
+        this.color = color;
+        this.velocidad = velocidad;
+        this.fuerza = fuerza;
+        this.opcion_de = opcion_de;
+        this.opcion = opcion;
+    }
+     
+     
+    
+    
+    //Metodos
+    
+    public void introAnimal(){
+    System.out.println("___________________________________________________________________");
+    System.out.println("En esta nueva vida eres un animal");
+    System.out.println("Por favor escoja a su animal (Gato, Perro, Conejo, Caballo )");
+    System.out.println("___________________________________________________________________");
+
+    }
+    
+    
+    public void leerAnimal(int clase){                                          // leer animal lee un valor numerico y lo asigna al atributo clase
+     this.clase=clase;
+     
+    }
+    
+    public int asignarFuerza(int clase){                                        //asignar fuerza recibe de argumento la misma opcion que leer animal
+        this.clase=clase;
+        int Fuerza_a=0;
+        switch (clase){
+            case 1: Fuerza_a=1;
+            break;
+            case 2: Fuerza_a=2;
+            break;
+            case 3: Fuerza_a=3;
+            break;
+            case 4: Fuerza_a=4;
+            break;
+            default:
+                System.out.println("Opcion invalida");
+                break;
+        }
+       
+    return Fuerza_a;
+    }
+    
+    public void historiaAnimal(){
+        System.out.println("___________________________________________________________________________");
+        System.out.println("\nTu dueñ@ te quiere mucho mucho muchisimo y harías cualquier cosa por él ");
+        try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("¡¡Oh no!! Una mariposa se burlo de tu dueñ@ y enojad@ la saliste persiguiendo >:c");
+        try {
+        Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Te haz perdido :c");
+        System.out.println("___________________________________________________________________________");
+        try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("___________________________________________________________________________");
+        System.out.println("\nBienvenido al Salto de la muralla");
+        System.out.println("Para regresar con tu dueño debes saltar todos los obstaculos ");
+        System.out.println("___________________________________________________________________________");
+    
+    }
+    
+    public void Comunicar(){
+        
+        try {
+        Thread.sleep(4000);
+        } catch (InterruptedException ex) {
+        }
+   
+    switch (clase){
+        case 1: System.out.println("\nEres un gato, ha aparecido el primer obstaculo ");
+            System.out.println("Cada animal tiene una fuerza natural, pero podemos lanzar el dado para ayudarle ");
+            System.out.println("___________________________________________________________________________");
+            try {
+            Thread.sleep(4000);
+            } catch (InterruptedException ex) {
+            }
+        break;
+        
+        case 2: System.out.println("\nEres un perro, ha aparecido el primer obstaculo");
+        System.out.println("___________________________________________________________________________");
+            try {
+            Thread.sleep(4000);
+            } catch (InterruptedException ex) {
+            }
+        break;
+        
+        case 3: System.out.println("\nEres un conejo, ha aparecido el primer obstaculo");
+        System.out.println("___________________________________________________________________________");
+            try {
+            Thread.sleep(4000);
+            } catch (InterruptedException ex) {
+            }
+        break;
+        
+        case 4: System.out.println("\nEres un caballo, ha aparecido el primer obstaculo");
+        System.out.println("___________________________________________________________________________");
+            try {
+            Thread.sleep(4000);
+            } catch (InterruptedException ex) {
+            }
+        break;
+        
+        default: 
+            System.out.println("\nAnimal desconocido");
+    
+    }
+     
+    }
+    
+    public int lanzaDados(int clase){
+        this.clase=clase;
+        int valorDado;
+        
+        
+        if (clase ==1 ){
+         valorDado = (int)Math.floor(Math.random()*6+1);
+            System.out.println("________________________________________________");
+            System.out.println("Has decidido saltar con el poder del dado");
+            System.out.println("La fuerza de tu salto es de "+valorDado+" metros");
+            System.out.println("------------------------------------------------");
+            
+        }else{
+            System.out.println("Has decidido no lanzar el dado");
+            valorDado=0;
+        }
+    
+        return valorDado;
+    }
+    
+    public void miniDialogoAnimal(){
+       
+        System.out.println("________________________________________________________________________________________________________");
+        System.out.println("\nLa primera muralla tiene un metro de alto");
+        System.out.println("Lanza el dado para ver tu salto en metros o depende de tu fuerza innata paara saltar ");
+        System.out.println("\nDesea lanzar dados? 1-Si 2-No");
+        System.out.println("________________________________________________________________________________________________________");
+    }
+    
+    
+    public void miniDialogoAnima2(){
+         try {
+        Thread.sleep(4000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("________________________________________________________________________________________________________");
+        System.out.println("\nLa segunda muralla tiene 3 metros de alto, un gran obstaculo");
+        System.out.println("Lanza el dado para ver tu salto en metros o depende de tu fuerza innata paara saltar ");
+        System.out.println("\nDesea lanzar dados? 1-Si 2-No");
+        System.out.println("________________________________________________________________________________________________________");
+    }
+    
+    public void miniDialogoAnima3(int Fuerza){
+         try {
+        Thread.sleep(4000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("________________________________________________________________________________________________________");
+        System.out.println("\nLa tercera y ultima muralla tiene 5 metros de alto, un obstaculo muy dificil");
+        System.out.println("En esta ronda sumaremos tu fuerza natural con el tiro de tu dado");
+        System.out.println("Tu fuerza natural tiene un valor de: "+Fuerza);
+        System.out.println("Lanza el dado para ver tu salto en metros o depende de tu fuerza innata paara saltar ");
+        System.out.println("\nDesea lanzar dados? 1-Si 2-No");
+        System.out.println("________________________________________________________________________________________________________");
+      
+    }
+    
+  
+    
+    public int obstaculoAnimal(int validador,int respuesta, int fuerza){
+ 
+            if (respuesta>1 || fuerza>1){
+                try {
+                Thread.sleep(4000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("________________________________________________________________________________________________________");
+                System.out.println("Haz superado con exito el primer obstaculo, lo hiciste con tu fuerza natural o tu suerte felicidades:D");
+                System.out.println("Aunque en realidada era un muro bastante pequeño.....");
+                System.out.println("________________________________________________________________________________________________________");
+                validador=2;
+        
+            }else{
+                try {
+                Thread.sleep(4000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("________________________________________________________________________________________________________");
+                 System.out.println("Ni tu fuerza natural ni tu suerte fueron suficiente para lograr atravesar el primer obstaculo :C ");
+                 System.out.println("No podrás volver con tu dueño hoy Y_Y");
+                 System.out.println("Veulve a intentarlo por favor");
+                 System.out.println("________________________________________________________________________________________________________");
+                validador=1;
+        
+            }
+    
+            return validador;
+    }
+    
+   public int obstaculoAnimal2(int validador,int respuesta,int fuerza){
+       
+       System.out.println("valor respuesta "+respuesta+" valor fuerza "+fuerza);
+ 
+            if (respuesta>=3 || fuerza>3){
+                try {
+                Thread.sleep(4000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("________________________________________________________________________________________________________");
+                System.out.println("Haz superado con exito el segundo obstaculo, lo hiciste con tu fuerza natural o tu suerte felicidades:D");
+                System.out.println("Es toda una hazaña animal poder saltar 3 metros O___O me dejas sorprendido");
+                System.out.println("________________________________________________________________________________________________________");
+                validador=3;
+        
+            }else{
+                try {
+                Thread.sleep(4000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("________________________________________________________________________________________________________");
+                 System.out.println("Ni tu fuerza natural ni tu suerte fueron suficiente para lograr atravesar el primer obstaculo :C ");
+                 System.out.println("No podrás volver con tu dueño hoy Y_Y");
+                 System.out.println("Veulve a intentarlo por favor");
+                 System.out.println("________________________________________________________________________________________________________");
+                validador=2;
+        
+            }
+    
+            return validador;
+    }
+    
+
+   
+public int obstaculoAnimal3(int validador,int respuesta){
+ 
+            if (respuesta>=5){
+                try {
+                Thread.sleep(4000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("________________________________________________________________________________________________________");
+                System.out.println("¡¡¡¡¡Haz superado con exito el tercer obstaculo, lo hiciste muy bien felicidades:D!!!!!!");
+                System.out.println("¡¡¡¡¡Eres un ser extraordinario, pudiste superar 5 metros eso debe ser un record mundial O_O!!!!!");
+                System.out.println("________________________________________________________________________________________________________");
+                validador=4;
+        
+                 }else{
+                try {
+                Thread.sleep(4000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("________________________________________________________________________________________________________");
+                 System.out.println("Ni tu fuerza natural ni tu suerte fueron suficiente para lograr atravesar el primer obstaculo :C ");
+                 System.out.println("No podrás volver con tu dueño hoy Y_Y");
+                 System.out.println("Veulve a intentarlo por favor");
+                 System.out.println("________________________________________________________________________________________________________");
+                validador=3;
+        
+            }
+    
+            return validador;
+    }
+    
+    
+    
+}

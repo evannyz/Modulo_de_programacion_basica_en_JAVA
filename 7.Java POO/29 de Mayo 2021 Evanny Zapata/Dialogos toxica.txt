@@ -1,0 +1,24 @@
+        
+
+
+//Rama ignora habla hasta el final
+
+System.out.println(name_vato": Estaba ocupado con mi hablando con mi viejita");
+System.out.println("stás en la casa de tu mamá?, Mándame la ubicación o pásame a tu mamá");
+System.out.println("1-No mandar ubicación 2-Mandar ubicación");
+System.out.println("Te equivocaste y apretaste no enviar :D");
+System.out.println("Ah no me vas mandar la ubicación?...., estás quebrando nuestro circulo de confianza "+name_vato+", no importa se que estas en el estadio, te Vi en el GPS que te instale....cuando? Cuando te estabas vacunado contra el covid-19, esa enfermera que te comias con la mirada, era yo!!!");
+System.out.println("BAD ENDING: Tu toxica te ha ido a buscar y ahora vives dentro de una celda :c");
+
+//Rama ignora hasta el final
+
+System.out.println("Hablando de amiguitas...Oye por qué le diste un like a la foto de esa tal Paola? Ya sabía yo que andabas con alguna arrastrada, te apuesto que la estay cuenteando igual que a mí, aaaah pero no te preocupes que ya me conseguí su dirección y teléfono....a ver si le quedan ganas de meterse con el esposo de alguien más");
+System.out.println("Pero amor de que hablas? Si somos solo pololos ..... Cuando nos casamos?");
+System.out.println("Que cuando nos casamos? No te acuerdas cuando firmaste los papeles? En realidad no fue necesario amor, tengo unas amigas en el registro...... y me sabía de memoria tu firma y todos tus datos, así que nos ahorramos el tiempo, ahora que lo sabes nos queda ir directo a la luna de miel (｡･ω･｡)ﾉ♡");
+
+
+System.out.println("Esto no puede ser!!!! Entonces nos vamos a divorciar, lo sabes???");
+System.out.println("Te quieres divorciar? Pues demasiado tarde me voy a divorciar primero y me voy con tu mejor amigo "+amigo+", el si me trata como la reina que soy. Te puedes ir con una de tus amiguitas.... ya te llamé un taxi para que te lleve todas las cosas que me diste");
+System.out.println("");
+System.out.println("");
+System.out.println("");

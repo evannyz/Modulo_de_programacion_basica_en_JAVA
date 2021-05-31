@@ -1,0 +1,399 @@
+3ra Clase de Java POO se adjuntan los ejercicios de ayer con modificaciones(Nueva clase Animal y Nuevas operaciones con la clase creada)28-05-2021
+
+
+Tercer Avance de proyecto de 3 clases (MODIFICADO CON NUEVA CLASE)------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//PRIMER CODIGO ANEXADO DEL DIA ANTERIOR MÁS ALGORITMO CON SU NUEVA CLASE CORRESPONDIENTE
+
+package clases;
+
+import java.util.Scanner;
+
+public class Clases {
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int opcion=0;
+        int opcion2=0;
+        Scanner leer=new Scanner(System.in);
+        
+        
+        /*Operacion op1= new Operacion();  //Operacion con metodos normales
+        Operacion op2=new Operacion(5,4); //Operaciones con constructor
+        
+        /*op1.leerNumeros();
+        op1.sumar();
+        op1.respuestas();
+        op1.restar();
+        op1.respuestas();
+        op1.multiplicacion();
+        op1.respuestas();
+        op1.division();
+        op1.respuestas(); 
+        
+        op2.sumar();
+        op2.respuestas();
+        op2.restar();
+        op2.respuestas();
+        op2.multiplicacion();
+        op2.respuestas();
+        op2.division();
+        op2.respuestas(); */
+        
+        
+        
+        
+        
+        
+//--------------------------------------------------------------------------------------------------------------------------------//
+//Algotimo que te convierte en un animal y dependiendo del valor de lanzamiento del dado verifica  si puede superar los obstaculos
+        
+       Animal A1 = new Animal();
+       
+       
+       int[]obstaculo=new int[4];
+       obstaculo[0]=1;
+       obstaculo[1]=3;
+       obstaculo[2]=5;
+       
+        
+        System.out.println("___________________________________________________________________");
+        System.out.println("En esta nueva vida eres un animal");
+        System.out.println("Por favor escoja a su animal (Gato, Perro, Conejo, Caballo )");
+        System.out.println("___________________________________________________________________");
+        String animal= leer.next();
+        
+        A1.historiaAnimal();
+       
+        
+        if (animal.equalsIgnoreCase("Gato")){
+            opcion=1;   
+        
+        }else if(animal.equalsIgnoreCase("Perro")){
+            opcion=2;
+        
+        }else if(animal.equalsIgnoreCase("Conejo")){
+            opcion=3;
+        
+        }else if(animal.equalsIgnoreCase("Caballo")){
+            opcion=4;
+        
+        }else{
+            System.out.println("\nOpción  de animal invalida");
+            opcion=5;
+        
+        }
+        
+        while (opcion!=5){
+        A1.leerAnimal(opcion);
+        A1.asignarFuerza(opcion);
+        A1.Comunicar();
+        
+        System.out.println("\nLa primera muralla tiene un metro de alto");
+        System.out.println("Lanza el dado para ver tu salto en metros o depende de tu fuerza innata paara saltar ");
+      
+        
+        int[]respuestas= new int[4];
+        
+        int validador=1;
+        
+        while(validador==1){
+            
+            System.out.println("\nDesea lanzar dados? 1-Si 2-No");
+            opcion2=leer.nextInt();
+            respuestas[0]=A1.lanzaDados(opcion2);
+            
+            if (respuestas[0]>obstaculo[0]||A1.asignarFuerza(opcion)>obstaculo[0]){
+                
+                System.out.println("Haz superado con exito el primer obstaculo, lo hiciste con tu fuerza natural o tu suerte felicidades:D");
+                System.out.println("Aunque en realidada era un muro bastante pequeño.....");
+                validador=2;
+        
+            }else{
+            System.out.println("Ni tu fuerza natural ni tu suerte fueron suficiente para lograr atravesar el primer obstaculo :C ");
+            System.out.println("No podrás volver con tu dueño hoy Y_Y");
+            validador=1;
+        
+           }
+        }
+        
+            while (validador==2){
+                
+                System.out.println("\nLa segunda muralla tiene tres metro de alto");
+                System.out.println("Lanza el dado para ver tu salto en metros o depende de tu fuerza innata para saltar ");
+                
+                System.out.println("\nDesea lanzar dados? 1-Si 2-No");
+                opcion2=leer.nextInt();
+                respuestas[1]=A1.lanzaDados(opcion2);
+                
+                if (respuestas[1]>obstaculo[1]||A1.asignarFuerza(opcion)>obstaculo[1]){
+                    System.out.println("Has superado con exito el segundo obstaculo felicidades, solo queda un obstaculo :O");
+                    validador=3;
+                }else{
+                    System.out.println("Ni tu fuerza natural ni tu suerte fueron suficiente para lograr atravesar el segundo obstaculo :C ");
+                    System.out.println("No podrás volver con tu dueño hoy Y_Y");
+                    validador=2;
+                
+                }
+                while (validador==3){
+                
+                System.out.println("\nLa tercera muralla tiene cinco metro de alto");
+                System.out.println("Lanza el dado para ver tu salto en metros o depende de tu fuerza innata para saltar ");
+                
+                System.out.println("\nDesea lanzar dados? 1-Si 2-No");
+                opcion2=leer.nextInt();
+                respuestas[2]=A1.lanzaDados(opcion2);
+                
+                if (respuestas[2]>obstaculo[2]||A1.asignarFuerza(opcion)>obstaculo[2]){
+                    System.out.println("\nHas superado con exito el tercer obstaculo felicidades, podrás volver con tu familia :D");
+                    validador=3;
+                }else{
+                    System.out.println("Ni tu fuerza natural ni tu suerte fueron suficiente para lograr atravesar el segundo obstaculo :C ");
+                    System.out.println("No podrás volver con tu dueño hoy Y_Y");
+                    validador=2;
+                    
+                }
+                
+            }
+            
+            
+        opcion=5;
+        }
+        
+        
+        }
+    }
+    
+}
+
+
+
+Tercer Avance de proyecto de 3 clases (CLASE ANIMAL DEL ANTERIOR CODIGO)------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package clases;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Animal {
+    
+    //Atributos
+    int clase;
+    int edad;
+    int color;
+    int velocidad;
+    int fuerza;
+    int opcion_de;
+    Scanner leer =new Scanner(System.in);
+    
+    
+    //Metodos
+    
+    public void leerAnimal(int clase){
+     this.clase=clase;
+     
+    }
+    
+    public int asignarFuerza(int clase){
+        this.clase=clase;
+        int fuerza=0;
+        switch (clase){
+            case 1: fuerza=1;
+            break;
+            case 2: fuerza=2;
+            break;
+            case 3: fuerza=3;
+            break;
+            case 4: fuerza=4;
+            break;
+            default:
+                System.out.println("Opcion invalida");
+                break;
+        }
+       
+    return fuerza;
+    }
+    
+    public void historiaAnimal(){
+        System.out.println("___________________________________________________________________________");
+        System.out.println("\nTu dueñ@ te quiere mucho mucho muchisimo y harías cualquier cosa por él ");
+        try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("¡¡Oh no!! Una mariposa se burlo de tu dueñ@ y enojad@ la saliste persiguiendo >:c");
+        try {
+        Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Te haz perdido :c");
+        System.out.println("___________________________________________________________________________");
+        try {
+        Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("___________________________________________________________________________");
+        System.out.println("\nBienvenido al Salto de la muralla");
+        System.out.println("Para regresar con tu dueño debes saltar todos los obstaculos ");
+        System.out.println("___________________________________________________________________________");
+    
+    }
+    
+    public void Comunicar(){
+        
+        try {
+        Thread.sleep(4000);
+        } catch (InterruptedException ex) {
+        }
+   
+    switch (clase){
+        case 1: System.out.println("\nEres un gato, ha aparecido el primer obstaculo ");
+            System.out.println("Cada animal tiene una fuerza natural, pero podemos lanzar el dado para ayudarle ");
+        break;
+        
+        case 2: System.out.println("\nEres un perro, ha aparecido el primer obstaculo");
+        break;
+        
+        case 3: System.out.println("\nEres un conejo, ha aparecido el primer obstaculo");
+        break;
+        
+        case 4: System.out.println("\nEres un caballo, ha aparecido el primer obstaculo");
+        break;
+        
+        default: 
+            System.out.println("\nAnimal desconocido");
+    
+    }
+     
+    }
+    
+    public int lanzaDados(int clase){
+        this.clase=clase;
+        int valorDado;
+        
+        
+        if (clase ==1 ){
+         valorDado = (int)Math.floor(Math.random()*6+1);
+            System.out.println("La fuerza de tu salto es de "+valorDado+" metros");
+        }else{
+            System.out.println("Has decidido no lanzar el dado");
+            valorDado=0;
+        }
+    
+        return valorDado;
+    }
+    
+    public void obstaculoAnimal(){
+    
+    }
+    
+    public void obstaculoAnimal2(){
+    
+    }
+    
+    public void obstaculoAnimal3(){
+    
+    }
+    
+    
+    
+}
+
+Tercer Avance de proyecto de 3 clases (CLASE OPERACION DEL CODIGO ANTERIOR ESCRITO EN MULTILINEA)-----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package clases;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Operacion {
+   
+    //Atributos
+    int numero1, numero2, suma, resta, multiplicacion,division, aux;
+    
+    //Metodo constructor
+    public Operacion(){
+    
+    }
+    
+    public Operacion(int numero1, int numero2){
+        this.numero1=numero1;
+        this.numero2=numero2;
+        
+    
+    
+    }
+
+    //Metodos
+    
+    public void leerNumeros(){
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese primer valor");
+        numero1=leer.nextInt();
+        System.out.println("Ingrese segundo valor");
+        numero2=leer.nextInt();
+ 
+    }
+    
+    public void sumar(){
+    suma=numero1+numero2;
+    aux=1;
+    }
+    
+    public void restar(){
+    resta=numero1-numero2;
+    aux=2;
+    }
+    
+    public void multiplicacion(){
+    multiplicacion=numero1*numero2;
+    aux=3;
+    }
+    
+    
+    public void division(){
+    division=numero1/numero2;
+    aux=4;
+    }
+    
+    
+    public void respuestas(){
+    switch (aux){
+        case 1: System.out.println("El resultado de su suma es: "+suma);
+        break;
+        
+        case 2: System.out.println("El resultado de su resta es: "+resta);
+        break;
+        
+        case 3: System.out.println("El resultado de su multiplicacion es: "+multiplicacion);
+        break;
+        
+        case 4: System.out.println("El resultado de su Division es: "+division);
+        break;
+        
+        default: System.out.println("Caso invalido");
+    
+    }
+    
+    
+    }
+}

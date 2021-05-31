@@ -1,0 +1,261 @@
+2da Clase de Java POO se adjuntan los ejercicios de ayer con modificaciones (Nuevo Metodo Constructor) 27-05-2021
+
+
+Ejercicio de muestra----------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+package poo;
+
+public class POO {
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        int resultado;
+        
+        
+        
+        Persona p1=new Persona();
+        p1.nombre="Evanny";
+        System.out.println("El nombre de la persona es: "+p1.nombre);
+        Persona p2=new Persona();
+        p1.sumar(5, 6);
+        Persona p3= new Persona();
+        
+        
+        
+        
+        
+        resultado=p1.multiplicar();
+        System.out.println("El resuldado de su multiplicación es: "+resultado);
+        
+    }
+    
+    
+}
+
+
+
+Clase de ejercicio de muestra(MODIFICADA CON METODO CONSTRUCTOR)--------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package poo;
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package poo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Persona {
+    //Atributos de la clase
+    String nombre;
+    String apellido;
+    int edad;
+    float estatura;
+    float peso;
+    
+    //Metodo constructores
+    public Persona(){
+    
+    }
+    
+   
+    public Persona(String _nombre,String apellido, int edad,float estatura, float peso){
+    this.nombre=_nombre;
+    this.apellido=apellido;
+    this.edad=edad;
+    this.estatura=estatura;
+    this.peso=peso;
+  
+    
+    }
+
+   
+    
+    //Metodos 
+    
+    public String mostrarNombre(String nombre1){
+        this.nombre=nombre1; 
+        return nombre;
+
+    }
+    
+
+    public static void saludar(){
+        System.out.println("Hola");
+    
+    }
+    
+    public void sumar(int a, int b){
+    
+        int suma=a+b;
+        System.out.println("La suma es :"+suma);
+    }
+    
+    public int multiplicar(){
+        Scanner leer=new Scanner(System.in);
+        int multiplicacion,a,b;
+        System.out.print("\n\nIngrese primer valor: ");
+        a=leer.nextInt();
+        System.out.print("\nIngrese segundo valor: ");
+        b=leer.nextInt();
+        
+        multiplicacion=a*b;
+
+        return multiplicacion;
+    
+    
+    }
+    
+    
+    
+}
+
+
+
+
+Segundo Avance de proyecto de 3 clases (MODIFICADO CON METODO CONSTRUCTOR)----------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package clases;
+
+import java.util.Scanner;
+
+public class Clases {
+    
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int opcion=0;
+        int opcion2=0;
+        Scanner leer=new Scanner(System.in);
+        
+        
+        /*Operacion op1= new Operacion();  //Operacion con metodos normales
+        Operacion op2=new Operacion(5,4); //Operaciones con constructor
+        
+        /*op1.leerNumeros();
+        op1.sumar();
+        op1.respuestas();
+        op1.restar();
+        op1.respuestas();
+        op1.multiplicacion();
+        op1.respuestas();
+        op1.division();
+        op1.respuestas(); 
+        
+        op2.sumar();
+        op2.respuestas();
+        op2.restar();
+        op2.respuestas();
+        op2.multiplicacion();
+        op2.respuestas();
+        op2.division();
+        op2.respuestas(); */
+        
+        
+        }
+        
+Clase del avance de proyecto 3 clases(MODIFICADO CON METODO CONSTRUCTOR)------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package clases;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Operacion {
+   
+    //Atributos
+    int numero1, numero2, suma, resta, multiplicacion,division, aux;
+    
+    //Metodo constructor
+    public Operacion(){
+    
+    }
+    
+    public Operacion(int numero1, int numero2){
+        this.numero1=numero1;
+        this.numero2=numero2;
+        
+    
+    
+    }
+
+    //Metodos
+    
+    public void leerNumeros(){
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese primer valor");
+        numero1=leer.nextInt();
+        System.out.println("Ingrese segundo valor");
+        numero2=leer.nextInt();
+ 
+    }
+    
+    public void sumar(){
+    suma=numero1+numero2;
+    aux=1;
+    }
+    
+    public void restar(){
+    resta=numero1-numero2;
+    aux=2;
+    }
+    
+    public void multiplicacion(){
+    multiplicacion=numero1*numero2;
+    aux=3;
+    }
+    
+    
+    public void division(){
+    division=numero1/numero2;
+    aux=4;
+    }
+    
+    
+    public void respuestas(){
+    switch (aux){
+        case 1: System.out.println("El resultado de su suma es: "+suma);
+        break;
+        
+        case 2: System.out.println("El resultado de su resta es: "+resta);
+        break;
+        
+        case 3: System.out.println("El resultado de su multiplicacion es: "+multiplicacion);
+        break;
+        
+        case 4: System.out.println("El resultado de su Division es: "+division);
+        break;
+        
+        default: System.out.println("Caso invalido");
+    
+    }
+    
+    
+    }
+}
+

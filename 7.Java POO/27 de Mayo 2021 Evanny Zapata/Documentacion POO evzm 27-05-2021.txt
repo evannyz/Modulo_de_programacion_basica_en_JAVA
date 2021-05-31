@@ -1,0 +1,16 @@
+2Da clase de POO en Java, se introduce un nuevo concepto dentro de la creacion de un objeto, llamado metodo constructor, 
+al igual que cualquier otro metodo es una accion dentro del objeto pero que sirve para inicializar variables pero a diferencia de los metodos normales este no retorna
+valores y además se declara publico con el mismo nombre que la clase, dentro de los usos de los ejercicios diarios, hoy se prueba un algoritmo ya definido 
+y se introduce el nuevo metodo constructor, todo funciona correctamente, se investiga mas sobre el tema y se adjunta en la documentacion
+
+
+Documentacion 
+
+Se revisan conceptos del metodo constructor y se aprende un poco más de la palabra reservada this
+http://puntocomnoesunlenguaje.blogspot.com/2012/07/normal-0-21-false-false-false_103.html
+
+Como declarar un metodo constructor en java
+https://www.mundojava.net/definicion-de-constructores-de-una-clase.html?Pg=java_inicial_4_4_5.html
+
+Relacion del metodo constructor con la creacion de objetos
+https://www.arkaitzgarro.com/java/capitulo-13.html

@@ -1,0 +1,15 @@
+3Ra clase de POO en Java, hoy repasamos los conceptos de la creación de objetos, realizamos incapié en los metodos constructores para inicializar variables
+repasamos varios ejemplos de metodos constructores, y seguimos ejercitando crear objetos, por hoy repaso nuevamente la misma bibliografia que ayer para asentar 
+los conceptos de abstracción, de apoco voy entendiendo los nuevos conceptos de objetos y espero perfeccionarme para trasnformar mi programacion secuencial a POO
+
+
+Documentacion 
+
+Se revisan nuevamenteconceptos del metodo constructor y se aprende un poco más de la palabra reservada this
+http://puntocomnoesunlenguaje.blogspot.com/2012/07/normal-0-21-false-false-false_103.html
+
+(nuevamente)Como declarar un metodo constructor en java
+https://www.mundojava.net/definicion-de-constructores-de-una-clase.html?Pg=java_inicial_4_4_5.html
+
+(nuevamente)Relacion del metodo constructor con la creacion de objetos
+https://www.arkaitzgarro.com/java/capitulo-13.html
