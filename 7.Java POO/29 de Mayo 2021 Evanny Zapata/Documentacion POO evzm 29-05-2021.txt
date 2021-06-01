@@ -1,0 +1,226 @@
+4TA clase de POO en Java, hoy seguimos con la construccion de las 3 clases requeridas, 
+en la evidencia principal ya se encuentran disponibles las primeras dos clases, como documentación se adjunta la última clase 
+aun le falta agregar: formato de entrega de los dialogos, retardo en dialogos, dialogos complementarios de formato final,
+pero la logica ya se encuentra operativa y se pueden seguir todas las rutas del algoritmo simulador de novia toxica
+Dentro de la 4ta clase, en los momentos finales aprendemos un nuevo concepto sobre encapsulamiento de variables y en este caso 
+el poder establecer metodos SET y GET para poder acceder a los atributos de la clase de manera privada para que no se pueda cambiar el contenido
+desde el metodo main 
+
+Documentación
+
+Cuarto avance de proyecto de 3 Clases (NUEVO MAIN Y CLASE)--------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ //Algoritmo que simula la converesacion entre el usuario y una novia toxica
+
+package novia;
+
+import java.util.Scanner;
+
+
+public class Novia {
+
+    
+    public static void main(String[] args) {
+        
+        //Algoritmo que simula la converesacion entre el usuario y una novia toxica
+        
+        Scanner leer=new Scanner(System.in);                                    //Variable leer para definir variables
+        
+        String n_player,a_player, amigo, novia;                                 //Nombre de jugador, apellido jugador, amigo y novia
+        int op,op2,op3,op4;                                                     //Opciones de ruta por rama de historia y decisiones 
+        
+        System.out.println("Bienvenido a tu simulador de novia tóxica");
+        System.out.println("Por favor ingrese su nombre y apellido");
+        System.out.println("Ingrese su nombre: ");
+        n_player=leer.next();                                                   // En esta primera parte se leen el nombre y apellido del jugador mas el nombre del amigo para utilizarlo en los dialogos de la historia 
+         System.out.println("Ingrese su apellido: ");
+        a_player=leer.next();
+        System.out.println("Ingrese el nombre de su mejor amigo");
+        amigo=leer.next();
+        
+        System.out.println("En esta oportunidad le asociaremos una novia default, que disfrute (lo dudamos....)");
+        
+        Toxica a=new Toxica();                                                  //Asignacion de novia default, se crea el objeto toxica y se le asignan variables como el nombre y la edad 
+        
+        a.edad=22;                                                              //El parametro edad era para ser usado en un dialogo que finalmente al editar se decidio no usar pero queda por posibles futuras modificaciones
+        a.nombre="Cami";
+        novia=a.nombre;
+        
+        
+        System.out.println("\nPrepárese •́  ‿ ,•̀");
+        System.out.println("Ves a "+a.nombre+" conectada en whatsapp");         //Inicio de la historia
+        System.out.println("opcion 1-Ignorar 2-hablarle");
+        op=leer.nextInt();                                                      //decision de hablar o no 
+        
+        
+        
+        int ret=a.dialogoToxico(op, n_player,a_player,novia);                   //retorno de la variable para saber si ignora a la novia o no
+        
+        switch(ret){
+            case 1:                                                             //(1- rama) Si la ignora puede continuar ignorandola o no y dependiendo de la respuesta es el final que alcanza
+                System.out.println("El señorito desea responder 1-Si 2-Ni ganas tengo ");
+                op2=leer.nextInt();
+                switch(op2){
+                    case 1:
+                        a.dialogoTresToxica(n_player, novia);
+                        op3=leer.nextInt();
+                        switch (op3) {                                          //(2 rama responder al dialogo) ciclo condicional donde en los dos casos no envias la ubicacion y alcanzas el BAD ENDING durmiendo en una celda
+                            case 1:
+                                System.out.println("No mandas ubicación");
+                                break;
+                            case 2:
+                                System.out.println("Te equivocaste y apretaste no enviar :D");
+                                break;
+                            default:
+                                System.out.println("Opcion invalida");
+                                break;
+                        }
+                        a.dialogoCuatroToxica(a_player, novia);
+                        
+                        break;
+                        
+                    case 2:                                                     //(2 rama seguir ignorando hasta el final a la novia) alcanzas el NORMAL ENDING  donde tu novia se queda con tu amigo
+                        a.dialogoDosToxica(amigo, novia,n_player);
+                        break;
+                        
+                    default: System.out.println("Mal digitado");
+                    break;
+                }
+            break;
+            
+            case 2:                                                             //(1 rama )- si decide hablarle tiene la opcion de decirle la verdad de lo que esta haciendo o mentirle, pero en los dos casos igualmente terminara mintiendo entonces alcanza el HAPPY ENDING - BAD ENDING++
+                System.out.println("Decir la verdad ('Estoy jugando play recordando los viejos tiempos:') 1 La verdad 2: Mentir");
+                op4=leer.nextInt();
+                switch (op4) {
+                    case 1:
+                        System.out.println("No te atreves a decir la verdad y creeme que no quieres saber el final de esto,"
+                                + "\nasi que mientes igual (;ŏ﹏ŏ)");
+                        break;
+                    case 2:
+                        System.out.println("Mientes con todos tus dientes");
+                        break;
+                    default:
+                        System.out.println("Opción invalida");
+                        break;
+                }
+                a.dialogoCincoToxica(novia);
+                break;
+  
+        }
+        
+        
+        System.out.println("\n\n\nFin del Juego");                              //Creditos
+        System.out.println("Creditos");
+        System.out.println("Creador del algoritmo: Evanny Zapata");
+        System.out.println("Dialogos toxicos: Esposa");
+        System.out.println("Opinante : Hermana chica confundida");
+        System.out.println("Gracias por jugar");
+        
+        
+    }
+    
+}
+
+
+
+Cuarto Avance de proyecto de 3 clases (NUEVA CLASE TOXICA)--------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+package novia;
+
+/**
+ *
+ * @author evann
+ */
+public class Toxica {
+    //Atributos
+    String nombre;
+    int edad;
+    
+    //Metodos 
+    
+    public int dialogoToxico(int respuesta, String name_vato,String sub_vato, String name_toxica){
+        
+        
+        int def=0;
+        
+        switch (respuesta) {
+            case 1:
+                System.out.println(name_toxica+": Hola amor, por qué no me hablas?, vi que estás conectado hace tres minutos y no me mientas"
+                        + "\nví que compartiste  un meme hace 2 minutos..., a puesto que estay viendo las fotos de tus amiguitas como le dices tú");
+                def=1;
+                break;
+            case 2:
+                System.out.println(name_vato+": Hola "+name_toxica+" como estas?");
+                System.out.println(name_toxica+": Porque tan seco y no me llamas hermosa o preciosa o por ultimo amor?!!!");
+                System.out.println(name_toxica+": Seguro que a tus amiguitas las tratas mejor");
+                System.out.println(name_vato+": Ya amor perdóna si se me paso");
+                System.out.println(name_toxica+": Nada de que se me paso señorito "+name_vato+" "+sub_vato+", a mi me tratas como la Reina que soy...Y que estas haciendo? Algo paso que ya no me tratas igual");
+                def=2;
+                break;
+            default:
+                System.out.println("Ingrese opción valida");
+                break;
+        }
+    return def;
+    }
+    
+    public void dialogoDosToxica(String amigo,String name_toxica, String name_vato){
+        System.out.println(name_toxica+": Hablando de amiguitas...Oye por qué le diste un like a la foto de esa tal Paola? "
+                + "\nYa sabía yo que andabas con alguna arrastrada, te apuesto que la estay cuenteando igual que a mí, aaaah pero no te preocupes "
+                + "\nque ya me conseguí su dirección y teléfono....a ver si le quedan ganas de meterse con el esposo de alguien más");
+        System.out.println(name_vato+": Pero amor de que hablas? Si somos solo pololos ..... Cuando nos casamos?");
+        System.out.println(name_toxica+": Que cuando nos casamos? No te acuerdas cuando firmaste los papeles? En realidad no fue necesario amor,"
+                + "\ntengo unas amigas en el registro...... y me sabía de memoria tu firma y todos tus datos, así que nos ahorramos el tiempo, "
+                + "\nahora que lo sabes nos queda ir directo a la luna de miel (｡･ω･｡)ﾉ♡");
+        System.out.println(name_vato+": Esto no puede ser!!!! Entonces nos vamos a divorciar, lo sabes???");
+        System.out.println(name_toxica+": Te quieres divorciar? Pues demasiado tarde me voy a divorciar primero y me voy con tu mejor amigo "+amigo+","
+                + "\n el si me trata como la reina que soy. Te puedes ir con una de tus amiguitas.... "
+                + "nya te llamé un taxi para que te devuelvatodas las cosas que me diste");
+        System.out.println("Aunque no entendiste nada de lo que ocurrió "+name_toxica+" te dejo por tu mejor amigo "+amigo);
+        System.out.println("NORMAL ENDING");
+        System.out.println("Esto suele suceder el 80% del tiempo(◍•ᴗ•◍)");
+    
+    }
+            
+    public void dialogoTresToxica(String name_vato, String name_toxica){
+        System.out.println(name_vato+": Estaba ocupado con mi hablando con mi viejita");
+        System.out.println(name_toxica+": Estás en la casa de tu mamá?, Mándame la ubicación o pásame a tu mamá");
+        System.out.println("1-No mandar ubicación 2-Mandar ubicación");
+    
+    }
+    
+    
+    public void dialogoCuatroToxica(String name_vato, String name_toxica){
+        
+        System.out.println(name_toxica+": Ah no me vas mandar la ubicación?...., estás quebrando nuestro circulo de confianza "+name_vato+","
+                + "\nno importa se que estas en el estadio, te Vi en el GPS que te instale....cuando? "
+                + "\nCuando te estabas vacunado contra el covid-19, esa enfermera que te comias con la mirada, era yo!!!");
+        System.out.println("BAD ENDING");
+        System.out.println("Tu toxica te ha ido a buscar y ahora vives dentro de una celda (╥﹏╥)");
+    
+    
+    
+    }
+    
+    public void dialogoCincoToxica(String name_toxica){
+        
+        
+        System.out.println(name_toxica+": Que fuiste a comprarme un regalo sorpresa por nuestro aniversario de un mes?......");
+        System.out.println(name_toxica+": Áaaaaah, tú sabes que te amo mucho y que confío en ti, me avisas cuando estés llegando (｡･ω･｡)ﾉ♡");
+        System.out.println("HAPPY ENDING....");
+        System.out.println("...");
+        System.out.println(name_toxica+":Hoy no es nuestro aniversario");
+        System.out.println("─=≡Σ(╯°□°)╯︵┻┻");
+        System.out.println("BAD ENDING++");
+        System.out.println("FIN");
+    
+    
+    
+    }
+    
+    
+}
