@@ -1,0 +1,9 @@
+5Ta clase de POO en Java, como ejercicio hoy se nos asigna crear 2 clases más el cuerpo principal de un programa, 
+a modo de  prueba se intenta crear 2 clases que interactuen entre ellas desde el metodo main, esto con el fin de que
+compartan informacion pero no sean interdependientes entre ellas, ya que si un metodo de una de ellas llegará a fallar, la otra clase o una de
+sus funcionalidades se podría ver comprometidas 
+
+Documentacion:
+
+acoplamiento informatica
+https://es.wikipedia.org/wiki/Acoplamiento_(inform%C3%A1tica)

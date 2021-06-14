@@ -1,0 +1,252 @@
+Evidencia "DÍA 5 SEMANA 6" del 02/06:
+Crear una Clase Fecha en Java. La clase tendrá 3 atributos privados: día, mes y año, de tipo int. La clase contendrá los siguientes métodos: 
+-	Constructor por defecto.
+-	Constructor con 3 parámetros para crear objetos con valores iniciales.
+-	Métodos set y get para asignar y obtener los valores de los atributos de la clase.
+-	Método fechaCorrecta(), que comprueba que la fecha es correcta. Devuelve un valor de tipo boolean indicando si la fecha es correcta o no.
+-	Método diaSiguiente(), que cambia la fecha actual por la del día siguiente. El objeto de la clase Fecha al que se le aplique este método deberá quedar siempre en un estado consistente, es decir, la nueva fecha deberá ser correcta.
+Escribe un programa para probar la clase Fecha. El método díaSiguiente() pruébalo dentro de un bucle que imprima la fecha durante cada iteración del bucle.
+
+Opcional: considerar los años bisiestos.
+
+7Ma clase POO en Java: Se realizan ejercicios de encapsulamiento
+
+
+Ejercicio tipo calendario (Metodo Main)---------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package tipocalendario;
+
+import java.util.Scanner;
+
+public class TipoCalendario {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        Scanner leer=new Scanner(System.in);
+        
+        int dia,mes,año,valor;
+        boolean comprobar;
+        
+        System.out.println("Bienvenido a comprueba tu fecha ingresada");
+        
+        System.out.println("Ingrese número de día");
+        dia=leer.nextInt();
+        System.out.println("Ingrese número de mes");
+        mes=leer.nextInt();
+        System.out.println("Ingrese número de año");
+        año=leer.nextInt();
+        
+        Fecha fecha=new Fecha(dia,mes,año);
+        
+        
+        boolean bisiesto=fecha.añoBisiesto(año);
+        
+        if (bisiesto==true){
+            System.out.println("El año ingresado: "+año+" es bisiesto");
+            
+        }else{
+            System.out.println("El año ingresado: "+año+" no es bisiesto");
+        
+        }
+        
+        boolean compara=fecha.fechaCorrecta(bisiesto, dia, mes, año);
+        
+        System.out.println("Compara es "+compara);
+        
+                
+        if (compara==true){
+            System.out.println("La fecha ingresada es correcta");
+            fecha.siguienteDia(dia, mes, año);
+        
+        }else{
+            System.out.println("La fecha ingresada no es correcta");
+            System.out.println("Por lo tanto no se puede aumentar los días ");
+        }
+        
+        
+        
+        //aumentar al dia siguiente, como el metodo que cree no devuelve los valores se exporta externamente para realizar pruebas de bucles exitosas en este caso como no esta dento del ciclo de la fechas  correctas se debe ingresar una fecha valida
+        
+        int[] n_fecha = new int[3];
+                                                                                    //guardo la fecha en otro arreglo
+        n_fecha[0]=dia;
+        n_fecha[1]=mes;
+        n_fecha[2]=año;
+        
+        Fecha fechaDos= new Fecha(n_fecha[0],n_fecha[1],n_fecha[2]);               //Creo otro objeto para no afectar el primero
+        
+        
+        int cantidad=n_fecha.length;                                                //guardo el largo de la fecha en una variable numerica
+        System.out.println("el largo de tu array es "+cantidad);                    //imprimo el largo a modo de prueba
+        boolean bisestoDos;                                                         //Creo dos booleanos
+        boolean comparaDos;
+        
+        
+        
+        for(int i=1;i<11;i++){                                                      //ciclo iterado de 10 dias , si quieres cambia la cantidad de dias hay que aumentarlos aca
+        
+       
+        do{                                                                            //Relaizo la iteracion hasta que me de un valor 
+            n_fecha[0]++;                                                              //Aumento valor en un dia 
+            
+            bisestoDos = fechaDos.añoBisiesto(n_fecha[2]);                              //Cargo la fecha para ver si el año es bisiesto para poder realizar la comparacion con la cantidad de variables correctas
+            comparaDos = fechaDos.fechaCorrecta(bisestoDos, n_fecha[0], n_fecha[1], n_fecha[2]);   //comparo si es una fecha que se pueda usar sino 
+            System.out.println("Compara dos es"+comparaDos);                                        // los dias empiezan en 1 y el mes avanza 
+            if (comparaDos==false){                                                                 //si sigue sin ser valido los meses empiezan en 1 y el año aumenta en 1
+                n_fecha[0]=1;                                                                       //imprime el valor final de los  valores de verdad y al final imprime la fecha       
+                n_fecha[1]++;
+                System.out.println("La nueva fecha es :"+n_fecha[0]+"/"+n_fecha[1]+"/"+n_fecha[2]);
+                bisestoDos = fechaDos.añoBisiesto(n_fecha[2]);      
+                comparaDos = fechaDos.fechaCorrecta(bisestoDos, n_fecha[0], n_fecha[1], n_fecha[2]);
+                System.out.println("Compara dos es "+comparaDos);
+                if(comparaDos==false ){
+                    n_fecha[1]=1;
+                    n_fecha[2]++;
+                    bisestoDos = fechaDos.añoBisiesto(n_fecha[2]);      
+                    comparaDos = fechaDos.fechaCorrecta(bisestoDos, n_fecha[0], n_fecha[1], n_fecha[2]);
+                    System.out.println("Compara dos es "+comparaDos);
+                }
+                
+            }
+        
+        }while(comparaDos==false);
+        
+        System.out.println("Al añadir un dia a su fecha su fecha cambio a "+n_fecha[0]+"/"+n_fecha[1]+"/"+n_fecha[2]);
+        
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+Ejercicio tipo calendario (Clase Fecha)---------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package tipocalendario;
+
+/**
+ *
+ * @author evann
+ */
+public class Fecha {
+    //Atributos
+    private int dia;
+    private int mes;
+    private int año;
+    
+   
+    
+    //Metodo constructor
+
+    public Fecha() {
+    }
+
+    public Fecha(int dia, int mes, int año) {
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
+    }
+    
+    //Metodos set y get
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public void setAño(int año) {
+        this.año = año;
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public int getAño() {
+        return año;
+    }
+    
+    //Metodos 
+    
+    public boolean añoBisiesto(int año){
+        this.año=año;
+        
+        boolean bisiesto=false;
+        if ((año % 4 == 0) && ((año % 100 != 0) || (año % 400 == 0))){
+        
+            bisiesto=true;
+        
+        }
+        
+    return bisiesto;
+    
+    
+    }
+    
+    public boolean fechaCorrecta(boolean bisiesto,int dia, int mes, int año){
+        
+        boolean comprobar;
+        this.año=año;
+        this.dia=dia;
+        this.mes=mes;
+    
+    
+        comprobar = ((dia>=1 && dia<=31)&&(mes==1||mes==3||mes==5||mes==7||mes==8||mes==10||mes==12)&&(año>=1))||((dia>=1 && dia<=29)&&(mes==2)&&(año>=1&&bisiesto==true))||((dia>=1 && dia<=28)&&(mes==2)&&(año>=1&&bisiesto==false))||((dia>=1 && dia<=30)&&(mes==4||mes==6||mes==9||mes==11)&&(año>=1));
+    
+    
+    
+    return comprobar;
+    
+    }
+    
+    
+    
+    public void siguienteDia(int dia, int mes, int año){
+        boolean bisiestoDos;
+        boolean comparaDos;
+        
+        
+        do{
+            dia++;
+            bisiestoDos=añoBisiesto(año);
+            comparaDos=fechaCorrecta(bisiestoDos,dia,mes,año);
+            
+            if(comparaDos==false){
+                dia=1;
+                mes++;
+                bisiestoDos=añoBisiesto(año);
+                comparaDos=fechaCorrecta(bisiestoDos,dia,mes,año);
+                if(comparaDos==false){
+                    
+                   mes=1;
+                   año++;
+                    bisiestoDos=añoBisiesto(año);
+                    comparaDos=fechaCorrecta(bisiestoDos,dia,mes,año);
+                   
+                }
+                
+            }
+            
+        }while(comparaDos==false);
+        
+        System.out.println("Al añadir un día a su fecha, cambio a :"+dia+"/"+mes+"/"+año);
+        
+        }
+        
+}

@@ -1,0 +1,815 @@
+Evidencia "DÍA 4 SEMANA 6" del 01/06:
+1 - Avance del ejercicio anterior del 31/05 si no lo habían terminado.
+2 - Crea una clase llamada Contador que contenga un único atributo entero llamado cont. La clase tendrá los siguientes constructores: Constructor por defecto, Constructor con parámetros para inicializar el contador con un valor no negativo. Si el valor inicial que se recibe es negativo el contador tomará el valor cero como valor inicial. Además de los métodos getter y setter, la clase contendrá los métodos: 
+- incrementar: incrementa el contador en una unidad;
+- decrementar: decrementa el contador en una unidad.
+El contador nunca podrá tener un valor negativo. Si al decrementar se alcanza un valor negativo el contador toma el valor cero. Una vez creada la clase escribe un método main para probar la clase.
+
+
+
+6Ta clase de POO en Java: Se repasa el concepto de encapsulamiento con set y get
+Se termina las dos clases y se entrega el ejercicio contador terminado
+
+package dosclases;
+
+Segundo y último avance de ejercicio 31/05 (Se modifica el metodo main y sus 2 clases Personaje y Calabozo)-------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class DosClases {
+
+    public static void main(String[] args) {
+        
+        //Algoritmo pequeño sobre un juego de calabozos 
+        // TODO code application logic here
+        
+        Scanner leer= new Scanner(System.in);
+        
+        Personaje p1 = new Personaje();
+        Calabozo c1=new Calabozo();
+        
+        
+        c1.dialogoCalabozo();
+        String n_player= leer.nextLine();
+        p1.setNombre(n_player);
+        String nombre = p1.getNombre();
+        
+        
+        System.out.println("\nBienvenido jugador "+nombre);
+        System.out.println("Ingrese su edad");
+        int age= leer.nextInt();
+        p1.setEdad(age);
+        int edad=p1.getEdad();
+        leer.nextLine();                                                        //Linea de lectura vacia por problema en Java cuando se lee una variable numerica y luego una variable string con nextLine : solucion https://tazasdejava.blogspot.com/2017/02/problema-con-nextline-se-salta-una-linea.html
+        
+        
+        System.out.println("\nEste juego puede ser nombrado por ti");
+        System.out.println("Pon un nombre a tu aventura");
+        String adventure=leer.nextLine();
+        c1.setName_dungeon(adventure);
+        String aventura=c1.getName_dungeon();
+        
+        
+        
+        
+       
+        
+        System.out.println("\nFelicidades "+nombre+" ahora comienza tu aventura "+aventura);
+        System.out.println("\n(1)- Equiparse para la batalla (2)- Salir en ropa interior");
+        
+        //leer 
+        int opcion=leer.nextInt();
+        
+        c1.desicionCalabozo(opcion);
+        p1.dialogoPersonaje(nombre,edad);
+        c1.dialogoDosCalabozo();
+        int opcion2=leer.nextInt();
+        int ret=c1.trampa1(opcion2);                                                    //primera trampa
+        
+        while(ret==0||ret==1||ret==2){
+            
+            if (ret==0){
+                p1.dialogoPersonajeContinua(nombre);
+                ret=3;
+                
+                while(ret==3){
+                    c1.dialogoCalabozoTres();
+                    p1.dialogoPersonajeContinuaDos(nombre);
+                    c1.dialogoCalabozoCuatro();
+                    System.out.println("1-Abrir cofre 2- mantenerlo cerrado");
+                    int opcion3=leer.nextInt();
+                    
+                    switch(opcion3){
+                        
+                        case 1: 
+                            boolean opc=c1.aperturaCofre();
+                            
+                            if(opc==true){
+                            System.out.println("Al abrirse el cofre descubres una espada y armadura legendarias ");
+                            System.out.println("Abres los ojos de par en par  y contienes la respiración");
+                            p1.dialogoPersonajeFinal();
+                            c1.historiaFinalCalabozo();                                                                                                     //Final Bueno
+                            p1.finUno();
+                            } else {
+                                System.out.println("No acertaste a la respuesta por lo que el cofre no se abre para ti");
+                                c1.historiaFinalCalabozoDos();
+                                p1.finDos();
+                            
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Decidiste dejar cerrado el cofre ");
+                            p1.dialogoPersonajeFinalDos();
+                            c1.historiaFinalCalabozoDos();
+                            p1.finDos();
+                            break;
+                            
+                        default: 
+                            System.out.println("Has digitado mal la opción asi que una maldición cayo sobre ti y te convertiste en calaca :v ");
+                            break;
+                    
+                    }
+                
+                
+                    ret=4;
+                }
+            
+            }else if(ret==1){
+                p1.dialogoPersonajeFinUno(nombre);
+            
+            }else if(ret==2){
+                p1.dialogoPersonajeFinDos(nombre);
+            
+            }
+            
+            //Fin del juego y creditos
+        ret=3;
+        }
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("\nFin del juego");
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+
+        System.out.println("\n\n\nFin del Juego");  
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Creditos");
+        System.out.println("Creador del algoritmo: Evanny Zapata");
+        System.out.println("Idea principal: Esposa");
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Mascota Don michis");
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Gracias por jugar");
+       
+    }
+    
+    
+}
+
+Segundo avance (Clase Calabozo)------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package dosclases;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Calabozo {
+    //Algoritmo de prueba de calabozo
+    //Atributos 
+    
+    Scanner leer= new Scanner(System.in);
+    private String nombre_p;
+    private String name_dungeon;
+    
+    //Metodos constructor
+
+    public Calabozo() {
+    }
+
+    public Calabozo(String nombre_p, String name_dungeon) {
+        this.nombre_p = nombre_p;
+        this.name_dungeon = name_dungeon;
+    }
+    
+    
+    
+    
+    //Metodo set and get
+
+    public void setName_dungeon(String name_dungeon) {
+        this.name_dungeon = name_dungeon;
+    }
+
+    public String getName_dungeon(){
+        return name_dungeon;
+    }
+    
+    
+    
+    
+    
+    public void setNombre(String nombre){
+        this.nombre_p=nombre;
+    
+    }
+    
+    public String getNombre(){
+        return nombre_p;
+    
+    }
+    
+    
+    
+    //Acciones calabozo
+    
+    
+    
+    public void dialogoCalabozo(){
+        System.out.println("Te acabas de despertar y tienes ganas de hacer algo nuevo.... vivamos una aventura en la vida real");
+        System.out.println("Has decidido ingresar al calabozo y enfrentar tus miedos");
+        System.out.println("Ingrese nombre de jugador");
+    }
+    
+    
+    
+    
+    public void desicionCalabozo(int opcion){
+        
+                switch (opcion) {
+            case 1:
+                try {
+                Thread.sleep(3000);				//REtardo
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("\nDramaticamente te pones: una toalla a modo de capa, cacerola en la cabeza, guantes de nieve y botas de lluvia...el siempre confiable equipamiento basico");
+                break;
+            case 2:
+                try {
+                Thread.sleep(3000);				//REtardo
+                } catch (InterruptedException ex) {
+                }
+                System.out.println("\nHaz elegido ropa interior , perfecto para alguien que disfruta de la ventilación natural");
+                break;
+            default:
+                System.out.println("opcion invalida");
+                break;
+        }
+    }
+                
+    public void dialogoDosCalabozo(){
+        System.out.println("\nDe repente ves que una piedra se acerca rodando a todas velocidad");
+        System.out.println("1- Esquivar 2- Devolverse 3- dejar que te atropelle");
+    
+    
+    }            
+                
+                
+    public int trampa1(int opcion2){
+        
+        int valor=0;
+        
+        
+        switch(opcion2){
+            
+            case 1: 
+                System.out.println("Si quieres esquivar debes resolvere lo siguiente: "
+                    + "¿ Plata no es, oro no es que es?");
+                String resp1=leer.nextLine();
+                
+                if (resp1.equalsIgnoreCase("platano")){
+                    try {
+                    Thread.sleep(3000);				//REtardo
+                    } catch (InterruptedException ex) {
+                    }
+                    System.out.println("\nLa banana es alta en triptofano un aminoacido escencial");
+                    System.out.println("Te haz agachado y estirado en la esquina del muro, entonces viste como la roca siguio su camino, la esquivaste ");
+                    
+                valor=0;
+                
+                }else{ System.out.println("La roca te ha aplastado como a una banana");
+                
+                valor=2;
+                
+                }
+                break;
+                
+            case 2:  
+                System.out.println("\nDas media vuelta y sales disparado de la mazmorra ");
+                System.out.println("Tras salir de ella te dices a ti mismo");
+                valor=1;
+                break;
+                
+            case 3 : 
+                System.out.println("\nMiras a la roca de rodando a toda velocidad y cierras tus ojos ");
+                System.out.println("Te aplastan como a una banana");
+                valor=2;
+                break;
+                
+            default: 
+                System.out.println("Opcion invalida");
+                break;
+                
+                
+        }
+        return valor;
+        
+        
+    
+    }
+    
+    public void dialogoCalabozoTres(){
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("\nDecides avenurarte en la mazmorra y en el camino esquivas muchas trampas");
+        System.out.println("Haz desbloqueado el logro: El trampas lover");
+        
+    
+    }
+    
+     public void dialogoCalabozoCuatro(){
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("\nA penas terminas de hablar llegas a una sala vacia y justo en medio encuentras un cofre");
+        System.out.println("Lo miras con desconfianza pero igualmente te acercas ");
+        System.out.println("\nQuien abra el cofre será capaz de superar todo en la vida");
+         System.out.println("Lo sigues mirando con desconnfianza pero decides: "); 
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+    
+    }
+     
+     public boolean aperturaCofre(){
+         int opcion;
+         boolean ret = false;
+         System.out.println("Para poder abrir el cofre, debes resolver el siguiente problema:");
+         System.out.println("(((5+5)*7/5)+(8*8)/4)");                           //REspuesta 51
+         opcion=leer.nextInt();
+         
+         if (opcion==51){ 
+             System.out.println("Acertaste a la respuesta y cofre se abre para ti");
+             
+             ret=true;
+         
+         }else if(opcion!=51){
+             ret=false;
+          
+         }
+         return ret;
+     }
+     
+     
+     public void historiaFinalCalabozo(){
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         
+         System.out.println("\nTras encontrarte con varios problemas que logras sortear, te enfrentas valientemente al jefe");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("El Dragon Zombie ha aparecido");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("Piensas que será una batalla epica pero al blandir tu espada legendaria");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("El Draogon se evapora... Tu ataque fue super efectivo ");
+         try {
+        Thread.sleep(4000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        
+     
+     
+     
+     }
+     
+     public void historiaFinalCalabozoDos(){
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("\nTras poder encontrarte con varios problemas que lograste sortear, te enfrentas valientemente al jefe");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("El Dragon Zombie ha aparecido");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("Pensaste que tu habilidad tras esquivar tantas trampas sería efectiva contra la bestia");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }System.out.println("Lamentablemente el Dragon es demasiado para ti");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("Te lanzan una llamarada negra y...");
+         try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+         System.out.println("Quedaste tan rostizado como chiken wing (alita de pollo kfc)");
+         
+     
+     }
+     
+     
+}
+
+Segundo avance (Clase Personaje)-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package dosclases;
+
+/**
+ *
+ * @author evann
+ */
+public class Personaje {
+    
+    //Atributos
+    private String nombre;
+    private String clase;
+    private int edad;
+    
+    
+    
+    
+    //Metodo contsructor
+
+    public Personaje() {
+    }
+
+    public Personaje(String nombre, String clase, int edad) {
+        this.nombre = nombre;
+        this.clase = clase;
+        this.edad = edad;
+    }
+    
+    
+    
+    
+    
+    //Metodos set and get
+    
+    
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    
+    }
+    
+    public String getNombre(){
+        return nombre;
+    
+    }
+    
+    
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+    
+  
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    
+
+    public int getEdad() {
+        return edad;
+    }
+    
+    
+    
+    //Metodos dialogos de personaje
+    
+    
+    public void dialogoPersonaje(String nombre, int edad){
+        this.nombre=nombre;
+        this.edad=edad;
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        
+        System.out.println("\n"+nombre+": Mira que venir a metereme a un calabozo sol@..., he cometido errores pero nunca tan peligrosos a mis "+edad+" años");
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println(nombre+": ¿¿¿Que rayos es eso????");
+        
+}
+    
+    public void dialogoPersonajeContinua(String nombre){ 
+        this.nombre=nombre;
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("\n"+nombre+": Suerte que vi peliculas como Indiana Jones, pude reaccionar tan rapido como un lince");
+        System.out.println("Me siento capaz de atravesar cualquier prueba que exista :D ");
+    
+    
+    }
+    
+    
+    
+    public void dialogoPersonajeFinUno(String nombre){
+        this.nombre=nombre;
+        System.out.println(nombre+": Menos mal que logré escapar, no estoy diseñado para superar mazmorras y Juan Seguro vivió muchos años");
+        System.out.println("Decides volver a casa y vivir otro día");
+    
+    }
+    
+    
+    public void dialogoPersonajeFinDos(String nombre){
+        this.nombre=nombre;
+        System.out.println("Fantasma "+nombre+": Asi que esto se siente no tener cuerpo?, me siento liviano, transparente y etéreo :0");
+        System.out.println("Decides quedarte en el calabozo y reirte ocasionalmente asustando aventureros");
+    
+    
+    
+    }
+    
+    public void dialogoPersonajeContinuaDos(String nombre){ 
+        this.nombre=nombre;
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("\n"+nombre+": Si me hubiesen dado una moneda por cuantas trampas esquive me hubiese vuelto millonari@ ufff");
+        System.out.println(nombre+": Espero que todo esto valga la pena");
+    
+    
+    }
+    
+    
+    
+    public void dialogoPersonajeFinal(){
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("\n"+nombre+": Jajajajaja esto es de lo que hablaba, por fin podré enfrentarme al calabozo sin sufrir ");
+        System.out.println(nombre+": Siempre es bueno confiar en mi instinto");
+    
+    
+    }
+    
+    public void dialogoPersonajeFinalDos(){
+        try {
+        Thread.sleep(2000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println(nombre+": LLegar tan lejos para morir en una trampa tan obvia, no no no, Juan Seguro vivió muchos años");
+        System.out.println(nombre+": Siempre es bueno confiar en mi instinto");
+
+
+    }
+    
+    public void finUno(){
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println(nombre+": Mmmmm esta no es la aventura que me esperaba");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println(nombre+": Todo fue tan raro de principio a fin");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println(nombre+": Es como que todo fue planeado para que sea una historia corta");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Entonces "+nombre+" decide intentar vender su espada y su armadura");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Pero son tesoros nacionales asi que el museo se lo quita sin pagar un misero peso");
+        
+        
+    }
+    
+    public void finDos(){
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("El fantasma de quien fue, mira su cuerpo aun en llamas en el piso y piensa");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Fantasma de "+nombre+": Aunque me frieron debo admitir que me sigo viendo s@bros@");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("Fantasma de "+nombre+": Si hubiera sabido que iba terminar así , le hubiera hecho caso a mi Mamá y termino la Uni");
+        try {
+        Thread.sleep(3000);				//REtardo
+        } catch (InterruptedException ex) {
+        }
+        System.out.println("El fantasma de nuetr@ heroe se hace amigo del Dragon Zombie y bailan juntos el cha cha cha");
+    
+    
+    
+    }
+    
+
+    
+}
+
+
+Ejercicio de Contadores (Metodo Main)-----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package ejercicioclase1;
+
+/**
+ *
+ * @author evann
+ */
+public class EjercicioClase1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+        Contador cont= new Contador();
+        
+        cont.incrementarContador();
+        cont.decrementarContador();
+        
+        
+        
+        //Contador cont2= new Contador();
+        
+    }
+    
+    
+}
+
+Ejercicio de Contadores (Clase Contador)-----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejercicioclase1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Contador {
+    
+    //Atributos
+    Scanner leer=new Scanner(System.in);
+    
+    private int cont;
+    private int ad;
+
+    
+    
+    //Set and get
+    public void setCont(int cont) {
+        this.cont = cont;
+    }
+
+    public int getCont() {
+        return cont;
+    }
+    
+    
+    //Metodos constructores
+
+    public Contador() {
+    }
+
+    public Contador(int cont) {
+        this.cont = cont;
+    }
+    
+    //Metodos 
+    
+    
+    public void incrementarContador(){
+        System.out.println("Ingrese valor inicial de su contador");
+        cont= leer.nextInt();
+        System.out.println("Ingrese cantidad de incrementos");
+        int cuenta=leer.nextInt();
+        
+        
+        for(int i=1;i<=cuenta;i++){
+        
+        if (cont<=0){
+            
+            
+            System.out.println("Su numero no puede ser negativo por lo tanto su cuenta se iniciara en 0");
+            cont=0;
+            System.out.println("Su contador inicia en "+cont);
+            cont++;
+            System.out.println("El valor de su contador incrementtado es"+cont);
+            
+        
+        }else if(cuenta<=0){
+            System.out.println("La cantidad de incrementos debe ser mayor a cero");
+            
+        }else{
+            
+            System.out.println("\nSu valor inicial de cuenta es :"+cont);
+            cont++;
+            System.out.println("Su valor incrementado es "+cont);
+        }
+        
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+    public void decrementarContador(){
+        System.out.println("\n\nIngrese valor inicial de su contador");
+        cont= leer.nextInt();
+        System.out.println("Ingrese cantidad de decrementos ");
+        int cuentaDos=leer.nextInt();
+        
+        
+        
+        if(cont<=0 || cuentaDos<=0){
+            System.out.println("El numero de la variable inicial de cuenta y el numero de decrementos debe ser mayor a 0");
+        
+        }else if (cuentaDos>cont){
+            System.out.println("El valor de decrementos es mayor al valor inicial");
+            System.out.println("El resultado del decrmento solo puede llegar a cero");
+            int resta=cont-cuentaDos;
+            resta=resta*-1;
+            cont=0;
+            System.out.println("El resultado de su decrementos quedo establecido en "+cont);
+            System.out.println("La cantidad de decrementos que sobraron son: "+resta);
+            
+        }else if(cont>cuentaDos){
+            while(cuentaDos!=0){
+                System.out.println("\nSu variable inicial es "+cont);
+                cont--;
+                System.out.println("Su variable decrementada es: "+cont);
+                cuentaDos--;
+            }
+    
+        }else{
+            cont=0;
+            System.out.println("La variable inicial es igual a la cantidad de decrementos por lo tanto el resultado de su operacion es: "+cont);
+        
+        
+        
+        }
+        
+            
+    }
+    
+}

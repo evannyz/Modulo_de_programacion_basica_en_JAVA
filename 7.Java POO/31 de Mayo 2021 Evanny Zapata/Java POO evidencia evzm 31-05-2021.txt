@@ -1,0 +1,561 @@
+Actividad "DÍA 3 SEMANA 6" del 31/05:
+
+Crear 2 o 3 clases con sus respectivos atributos, 
+métodos, métodos constructores por defecto y con todos los atributos,
+métodos accesores y método que muestre todos los atributos de la clases, 
+y crear distintas instancias en el main para probar las clases.
+
+
+5ta clase de POO en Java: Se repasa el concepto de creacion de clases y encapsulamiento de variables
+
+Se adjunta prueba de creacion de constructores y avance en la creacion de 2 clases 
+
+Prueba creación de constructores (Main)---------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+package setget;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class SetGet {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        //Algoritmo de eejemplo set y get
+        
+        Scanner leer= new Scanner(System.in);
+        String nombre, apellido;
+        int numero1, numero2;
+        
+          //Sin metodo constructor
+        
+        /*Persona p1= new Persona();
+        nombre="Evanny";
+        apellido="Zapata";
+        
+        
+        p1.setNombre(nombre);
+        p1.setApellido(apellido);
+        
+        System.out.println("su nombre es "+p1.getNombre()+" "+p1.getApellido());*/
+        
+        
+        //Con metodo constructor
+        
+        /*Persona p2 = new Persona("Evanny","Zapata",30,1.78f,85.8f);
+        
+        System.out.println("Los datos del usuario ingresado son: Nombre:- "+p2.getNombre()+" "+p2.getApellido()+" "
+                + "Edad:- "+p2.getEdad()+" años Estatura:- "+p2.getEstatura()+" mts Peso:- "+p2.getPeso()+" kgs");*/
+        
+        
+        /* System.out.println("");
+        
+        
+        
+        Operacion o1= new Operacion();
+        
+        System.out.println("Bienvenido al modulo de operaciones porfavor ingrese dos numeros para empezar");
+        System.out.println("Ingrese primer número");
+        numero1=leer.nextInt();
+        System.out.println("Ingrese segundo número");
+        numero2=leer.nextInt();
+        
+        
+        o1.setNumero1(numero1);
+        o1.setNumero2(numero2);
+        
+        int suma=o1.sumarNumeros(numero1, numero2);
+        int resta=o1.restarNumeros(numero1, numero2);
+        int multi=o1.multiplicarNumeros(numero1, numero2);
+        int divide=o1.dividirNumeros(numero1, numero2);
+                
+        
+        System.out.println("EL resultado de sus operaciones son las siguientes");
+        System.out.println("Suma: "+suma);
+        System.out.println("Resta: "+resta);
+        System.out.println("Multiplicación: "+multi);
+        System.out.println("División: "+divide);*/
+        
+        
+        
+        
+        Operacion op2= new Operacion("Evanny",5,3);
+        
+        
+        
+        System.out.println("El resultado de sus operaciones es suma: ");
+        op2.sumarNumeros();
+        
+        
+        
+    }
+    
+}
+
+Prueba creación de constructores (CLASE 1 OPERACION)--------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package setget;
+
+/**
+ *
+ * @author evann
+ */
+public class Operacion {
+    
+    
+    
+    
+    //Atributos del tipo set y get
+    
+    private String autor;
+    private int numero1;
+    private int numero2;
+    
+    
+    
+    
+    //Metodos set y get 
+    
+    
+    public void setAutor(String autor){
+        this.autor=autor;
+    
+    }
+    
+    public String getAutor(){
+        return autor;
+   
+    }
+    
+    
+    public void setNumero1(int numero1){
+        
+        this.numero1=numero1;
+    
+    }
+    
+    public void setNumero2(int numero2){
+        this.numero2=numero2;
+    
+    
+    
+    }
+    
+    public int getNumero1(){
+
+        return numero1;
+
+    }
+    
+    public int getNumero2(){
+        return numero2;
+   
+    }
+    
+    //Metodos constructores
+
+    public Operacion() {
+    }
+
+    public Operacion(String autor, int numero1, int numero2) {
+        this.autor = autor;
+        this.numero1 = numero1;
+        this.numero2 = numero2;
+    }
+    
+    
+    
+    //Metodos de operaciones
+    
+    public int sumarNumeros(int numero1, int numero2){
+        this.numero1=numero1;
+        this.numero2=numero2;
+        int sumar=numero1+numero2;
+        return sumar;
+    }
+    
+    public void sumarNumeros(){
+        
+        int sumar=numero1+numero2;
+        System.out.println("su suma es"+sumar);
+        
+    
+    
+    
+    }
+            
+    
+    public int restarNumeros(int numero1, int numero2){
+        this.numero1=numero1;
+        this.numero2=numero2;
+        int restar=numero1-numero2;
+        return restar;
+    }
+    
+    public int dividirNumeros(int numero1, int numero2){
+        this.numero1=numero1;
+        this.numero2=numero2;
+        int dividir=1;
+        
+        if (numero2==0){
+            System.out.println("No se puede dividir por cero");
+        
+        }else{
+             dividir=numero1/numero2;
+        }
+        
+      
+        
+        return dividir;
+    }
+    
+    public int multiplicarNumeros(int numero1, int numero2){
+        this.numero1=numero1;
+        this.numero2=numero2;
+        int multiplicar=numero1*numero2;
+        return multiplicar;
+    }
+    
+}
+
+
+Prueba creación de constructores (CLASE 2 PERSONA)--------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package setget;
+
+/**
+ *
+ * @author evann
+ */
+public class Persona {
+    
+    //Atributos
+    private String nombre;
+    private String apellido;
+    private int edad; 
+    private float estatura;
+    private float peso; 
+    
+    //Metodos constructores 
+
+    public Persona() {
+    }
+
+    public Persona(String nombre, String apellido, int edad, float estatura, float peso) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.estatura = estatura;
+        this.peso = peso;
+    }
+    
+    
+    
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+            
+     public String getNombre(){
+         return nombre;
+     
+     }       
+     
+     public void setApellido(String apellido){
+         this.apellido=apellido;
+     
+     }
+
+    public String getApellido() {
+        return apellido;
+    }
+     
+     
+     
+     
+     public void setEdad(int edad){
+         this.edad=edad;
+            
+     }
+     
+     public int getEdad(){
+         return edad;
+     }
+     
+     
+     
+     
+     public void setEstatura(float estatura){
+         this.estatura=estatura;
+    
+     }
+     
+     public float getEstatura(){
+         return estatura;
+     
+     }
+     
+     
+     public void setPeso(float peso){
+         this.peso=peso;
+     
+   
+     }
+            
+     public float getPeso(){
+         return peso;
+     
+     }       
+                
+}
+
+
+
+
+Primer avance (Creacion de metodo main y se adjuntan 2 clases Personaje y Calabozo)-------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Algoritmo pequeño sobre un juego de calabozos 
+package dosclases;
+
+import java.util.Scanner;
+
+public class DosClases {
+
+    public static void main(String[] args) {
+        
+        
+        // TODO code application logic here
+        
+        Scanner leer= new Scanner(System.in);
+        
+        Personaje p1 = new Personaje();
+        Calabozo c1=new Calabozo();
+        
+        
+        c1.dialogoCalabozo();
+        String n_player= leer.nextLine();
+        p1.setNombre(n_player);
+        String nombre = p1.getNombre();
+        
+        
+        System.out.println("Bienvenido jugador "+nombre);
+        System.out.println("Ingrese su edad");
+        int age= leer.nextInt();
+        p1.setEdad(age);
+        int edad=p1.getEdad();
+        leer.nextLine();                                                        //Linea de lectura vacia por problema en Java cuando se lee una variable numerica y luego una variable string con nextLine : solucion https://tazasdejava.blogspot.com/2017/02/problema-con-nextline-se-salta-una-linea.html
+        
+        
+        System.out.println("\nEste juego puede ser nombrado por ti");
+        System.out.println("Pon un nombre a tu aventura");
+        String adventure=leer.nextLine();
+        c1.setName_dungeon(adventure);
+        String aventura=c1.getName_dungeon();
+        
+        
+        
+        
+       
+        
+        System.out.println("\nFelicidades "+nombre+" ahora comienza tu aventura "+aventura);
+        System.out.println("\n(1)- Equiparse para la batalla (2)- Salir en ropa interior");
+        
+        //leer 
+        int opcion=leer.nextInt();
+        
+        c1.desicionCalabozo(opcion);
+        p1.dialogoPersonaje(nombre,edad); 
+
+
+
+
+
+Primer avance (Clase Calabozo)------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+package dosclases;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Calabozo {
+    //Algoritmo de prueba de calabozo
+    //Atributos 
+    
+    Scanner leer= new Scanner(System.in);
+    private String nombre_p;
+    private String name_dungeon;
+    
+    //Metodos constructor
+
+    public Calabozo() {
+    }
+
+    public Calabozo(String nombre_p, String name_dungeon) {
+        this.nombre_p = nombre_p;
+        this.name_dungeon = name_dungeon;
+    }
+    
+    
+    
+    
+    //Metodo set and get
+
+    public void setName_dungeon(String name_dungeon) {
+        this.name_dungeon = name_dungeon;
+    }
+
+    public String getName_dungeon(){
+        return name_dungeon;
+    }
+    
+    
+    
+    
+    
+    public void setNombre(String nombre){
+        this.nombre_p=nombre;
+    
+    }
+    
+    public String getNombre(){
+        return nombre_p;
+    
+    }
+    
+    
+    
+    //Acciones calabozo
+    
+    
+    
+    public void dialogoCalabozo(){
+        System.out.println("Te acabas de despertar y tienes ganas de hacer algo nuevo.... vivamos una aventura en la vida real");
+        System.out.println("Has decidido ingresar al calabozo y enfrentar tus miedos");
+        System.out.println("Ingrese nombre de jugador");
+    }
+    
+    
+    
+    
+    public void desicionCalabozo(int opcion){
+        
+                switch (opcion) {
+            case 1:
+                System.out.println("\nDramaticamente te pones: una toalla a modo de capa, cacerola en la cabeza, guantes de nieve y botas de lluvia...el siempre confiable equipamiento basico");
+                break;
+            case 2:
+                System.out.println("\nHaz elegido ropa interior , perfecto para alguien que disfruta de la ventilación natural");
+                break;
+            default:
+                System.out.println("opcion invalida");
+                break;
+        }
+    }
+
+
+
+
+
+Primer avance (Clase Personaje)-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dosclases;
+
+/**
+ *
+ * @author evann
+ */
+public class Personaje {
+    //Atributos
+    private String nombre;
+    private String clase;
+    private int edad;
+    
+    
+    
+    
+    
+    
+    //Metodo contsructor
+
+    public Personaje() {
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //Metodos set and get
+    
+    
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    
+    }
+    
+    public String getNombre(){
+        return nombre;
+    
+    }
+    
+    
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+    
+  
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    
+
+    public int getEdad() {
+        return edad;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    public void dialogoPersonaje(String nombre, int edad){
+        this.nombre=nombre;
+        this.edad=edad;
+        
+        System.out.println("\n"+nombre+": Mira que venir a metereme a un calabozo sol@..., he cometido errores pero nunca tan tontos a mis "+edad+" años");
+        System.out.println(nombre+"¿¿¿Que rayos es eso????");
+        
+}

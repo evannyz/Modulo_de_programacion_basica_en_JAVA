@@ -1,0 +1,11 @@
+11Ra clase de POO en Java, Hoy introducimos un nuevo concepeto llamado herencia, como ejercicio
+se nos pide crear una superclase que herede metodos y atributos a distintas subclases, como documentación hoy vemos 
+lo que pasa con los modificadores y como declarar una superclase
+
+Documentación:
+
+Creacion de una super clase y modificadores de clase
+https://www.youtube.com/watch?v=LZPafq9Ve_Q&list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K&index=75&ab_channel=Programaci%C3%B3nATSProgramaci%C3%B3nATSVerificada
+
+Herencia en Java
+http://profesores.fi-b.unam.mx/carlos/java/java_basico3_4.html

@@ -1,0 +1,9 @@
+6xta clase de POO en Java, hoy realizamos el segundo avance del ejercicio planteado ayer en clases 
+se puede apreciar el claro beneficio de instanciar las clases, lo que agiliza bastante la lectura 
+del programa, le da una forma más ordenada y reflexionando sobre el tema nos deja crear varios objetos
+de la misma clase sin tener que reescribir todo el codigo con su logica.
+
+Documentación
+
+Los beneficios de la POO 
+https://profile.es/blog/que-es-la-programacion-orientada-a-objetos/ 

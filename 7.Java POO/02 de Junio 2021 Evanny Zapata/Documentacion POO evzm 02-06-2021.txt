@@ -1,0 +1,13 @@
+7Ma clase de POO en Java, Hoy realizamos un ejercicio tipo calendario sobre ingresar una fecha especifica 
+y comprobar que estuviera correcta, el ejercicio en si fue interesante y lo pude desarrollar en clase
+al realizar el metodo diaSiguiente  me di cuenta de el limite que ofece un metodo que no retorna valores 
+en este caso hubiese sido conveniente retornar los valores del cambio de fecha por si el valor final 
+del cambio de fecha resultante me lo hubiesen pedido para algun otro procedimiento  
+
+Documentacion
+
+como retornar más de un valor en Java
+https://es.stackoverflow.com/questions/96157/como-retornar-2-valores-en-una-funci%C3%B3n-en-java/96162
+
+diferencia entre metodo void y un metodo con retorno
+https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=430:metodos-en-java-tipo-procedimiento-void-y-tipo-funcion-return-definicion-invocacion-cu00624b&catid=68&Itemid=188

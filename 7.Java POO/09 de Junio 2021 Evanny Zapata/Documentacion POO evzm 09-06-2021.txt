@@ -1,0 +1,17 @@
+13Ra clase de POO en Java, Se repasa el concepto de herencia y se introduce un nuevo concepto de clase abstracta
+Realizamos un ejercicio sobre clase abstracta y basicamente es una clase que donde se declara lo mismo que en otras clases
+con la diferencia que los metodos solo se declaran, las clases hijas heredan estos metodos y tienen que entregar una sobre-escritura 
+para poder usarlos, una clase abstracta puede ser clase padre de otras clases abstractas por ejemplo la clase abstracta persona puede ser 
+padre de la clase abstracta hombre o la clase abstracta mujer
+
+
+Documentación:
+
+Clases abstractas en Java
+https://www.discoduroderoer.es/clases-abstractas-en-java/
+
+Clases abstractas en Java
+https://www.youtube.com/watch?v=J2aXYUA1h20&ab_channel=Programaci%C3%B3nATS
+
+Herencia y Clases abstractas en Java
+https://www.youtube.com/watch?v=ztpYmmecfQs&ab_channel=pildorasinformaticas

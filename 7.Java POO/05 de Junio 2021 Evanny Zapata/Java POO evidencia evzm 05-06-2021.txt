@@ -1,0 +1,309 @@
+Evidencia "DÍA 2 SEMANA 7" del 05/06:
+Avance del ejercicio anterior del 04/06.
+
+10Ma clase POO en Java: Se realizan ejercicios de encapsulamiento
+
+Segundo y último avance ejercicio tipo inventario Biblioteca (Metodo Main)----------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package operacionlibros;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class OperacionLibros {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner leer= new Scanner(System.in);
+        
+        String autor,titulo;
+        int cantidad, prestamo,devolucion, opcion,prestamo_real=0,array_num, continuar=1,valor=1;
+        
+        
+        
+        
+        ArrayList<Libro> libro;
+        libro = new ArrayList<>();
+        
+        System.out.println("Bienvenido a sistema de Biblioteca Nacional");
+        System.out.println("Primero debemos ingresar libros al inventario");
+        
+        
+        
+        
+        do{
+            
+            System.out.println("\nBienvenido a inventario de la Biblioteca Nacional");
+            System.out.println("Indiquenos que libro desea almacenar");
+
+            System.out.println("Ingrese Titulo de libro ");
+            titulo=leer.nextLine();
+            System.out.println("Ingrese autor de libro");
+            autor=leer.nextLine();
+            
+            valor=1;
+            while(valor==1){
+            System.out.println("Ingrese cantidad de libros ");
+            cantidad=leer.nextInt();
+            
+            if (cantidad<=0){
+                System.out.println("La cantidad ingresada debe ser superior a 0");
+                valor=1;
+            
+            }else{
+                
+                libro.add(new Libro(titulo, autor, cantidad, 0));
+                valor=2;
+            
+            }
+            
+            
+            }
+        
+            System.out.println("Desea ingresar nuevo libro? 1_Si 2_No");
+            opcion=leer.nextInt();
+            leer.nextLine();
+        }while(opcion==1);
+        
+        
+        
+        
+        
+        while(continuar==1||continuar!=2){
+        
+        
+        System.out.println("\nSeleccione operacion que desea realizar");
+        System.out.println("1-Prestamo libro 2-Devolver libro");
+        int opc= leer.nextInt();
+        
+        
+        
+        switch(opc){
+           
+            case 1:
+                
+                System.out.println("____________________________");
+                System.out.println("Sus libros disponibles son:");
+                System.out.println("____________________________");
+
+
+                for(int i=0;i<libro.size();i++){
+
+                        System.out.println((i+1)+" -.Autor:"+libro.get(i).getAutor()+"- Titulo:"+libro.get(i).getN_libro()+" - Disponibles: "+libro.get(i).getNum_copia()+"- Cantidad de copias prestadas: "+libro.get(i).getNum_copia_prestada());
+
+                }
+                System.out.println("=============================");
+
+
+                System.out.println("Seleccione número de libro que desee retirar");
+                array_num=leer.nextInt()-1;
+
+                System.out.println("Ha seleccionado el siguiente libro:"
+                        + " "+(array_num+1)+"-.Autor:"+libro.get(array_num).getAutor()+"- Titulo:"+libro.get(array_num).getN_libro()+" - Disponibles: "+libro.get(array_num).getNum_copia()+"- Cantidad de copias prestadas: "+libro.get(array_num).getNum_copia_prestada());
+
+                System.out.println("\nIngrese la cantidad de libros que desea solicitar prestados");
+                prestamo=leer.nextInt();
+
+                boolean respuesta1=libro.get(array_num).prestamo(prestamo);
+
+                System.out.println("La cantidad de libros prestados es: "+libro.get(array_num).getNum_copia_prestada());
+
+                if(respuesta1==true){
+                    System.out.println("Operación realizada con exito");
+                }else {
+                    System.out.println("Operación invalida");
+
+                }
+                
+                break;
+                
+                
+            case 2:
+                
+                
+                System.out.println("____________________________");
+                System.out.println("Sus libros disponibles son:");
+                System.out.println("____________________________");
+
+
+                for(int i=0;i<libro.size();i++){
+
+                        System.out.println((i+1)+" -.Autor:"+libro.get(i).getAutor()+"- Titulo:"+libro.get(i).getN_libro()+" - Disponibles: "+libro.get(i).getNum_copia()+"- Cantidad de copias prestadas: "+libro.get(i).getNum_copia_prestada());
+
+                }
+                System.out.println("=============================");
+
+
+                System.out.println("Seleccione número de libro que desee devolver");
+                array_num=leer.nextInt()-1;
+
+                System.out.println("Ha seleccionado el siguiente libro: "+(array_num+1)+"-.Autor:"+libro.get(array_num).getAutor()+"- Titulo:"+libro.get(array_num).getN_libro()+" - Disponibles: "+libro.get(array_num).getNum_copia()+"- Cantidad de copias prestadas: "+libro.get(array_num).getNum_copia_prestada());
+
+                System.out.println("\nIngrese la cantidad de libros que desea devolver");
+                devolucion=leer.nextInt();
+
+                boolean respuesta2=libro.get(array_num).devolucion(devolucion);
+
+                 if(respuesta2==true){
+                    System.out.println("Operación realizada con exito");
+                }else {
+                    System.out.println("Operación invalida");
+
+                }
+                 
+                 break;
+                 
+            default: 
+                System.out.println("Operación invalida");
+                
+        }
+        
+            System.out.println("Desea realizar otra operación?");
+            System.out.println("1-Si 2-No");
+            continuar=leer.nextInt();
+        
+        
+        }
+        
+         
+        
+        
+    }
+    
+}
+
+Segundo y último avance ejercicio tipo inventario Biblioteca (Clase Libro)----------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package operacionlibros;
+
+/**
+ *
+ * @author evann
+ */
+public class Libro {
+    //Atributos
+    
+    private String n_libro;
+    private String autor;
+    private int num_copia;
+    private int num_copia_prestada;
+    
+    //Setters y Getters
+
+    public void setN_libro(String n_libro) {
+        this.n_libro = n_libro;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setNum_copia(int num_copia) {
+        this.num_copia = num_copia;
+    }
+
+    public void setNum_copia_prestada(int num_copia_prestada) {
+        this.num_copia_prestada = num_copia_prestada;
+    }
+
+    public String getN_libro() {
+        return n_libro;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public int getNum_copia() {
+        return num_copia;
+    }
+
+    public int getNum_copia_prestada() {
+        return num_copia_prestada;
+    }
+    
+    
+    //Métodos constructores
+
+    public Libro() {
+        this.autor="Sin Autor";
+        this.n_libro="Sin libro";
+        this.num_copia=0;
+        this.num_copia_prestada=0;
+                
+    }
+    
+    public Libro(String n_libro, String autor, int num_copia, int num_copia_prestada) {
+        this.n_libro = n_libro;
+        this.autor = autor;
+        this.num_copia = num_copia;
+        this.num_copia_prestada = num_copia_prestada;
+    }
+    
+    //Metodos
+    public boolean prestamo(int prestamo ){
+        
+        boolean respuesta=false;
+        
+        if (prestamo>num_copia){
+            System.out.println("\nEl número de copias solicitados no puede ser mayor a la cantidad de libros existentes");
+            respuesta=false;
+            
+        }else if((num_copia>=prestamo)){
+            num_copia=num_copia-prestamo;
+            num_copia_prestada=num_copia_prestada+prestamo;
+            respuesta=true;
+        
+        
+        }else if(num_copia==0){
+            System.out.println("\nEl número de copias es cero por lo que no se puede realizar operación ");
+            respuesta=false;
+        }
+    
+        return respuesta;
+    }
+    
+    
+    
+    public boolean devolucion(int devolucion){
+        
+        boolean respuesta2 = false;
+        
+        if (devolucion>num_copia_prestada){
+        
+            System.out.println("\nLa operacion no se pudo realizar ya que la devolucion era mayor a la cantidad de números prestados");
+            respuesta2=false;
+        
+        }else if(num_copia_prestada==0){
+            
+            System.out.println("\nLa cantiad de libros solicitados es cero por lo que no hay copias que devolver");
+            respuesta2=false;
+        
+        
+        }else if (devolucion<=num_copia_prestada){
+            
+            num_copia_prestada=num_copia_prestada-devolucion;
+            num_copia=num_copia+devolucion;
+            respuesta2=true;
+        
+        
+        }
+        
+        
+        return respuesta2;
+    
+    
+    }
+    
+}
+
+
+
+

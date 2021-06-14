@@ -1,0 +1,324 @@
+Evidencia “DÍA 3 SEMANA 7” del 09/06:
+1 - Avance del ejercicio anterior del 08/06.
+2 - Crear una superclase Persona de tipo abstracto con sus respectivos atributos y métodos propios de la clase y métodos abstractos, luego a partir de esta clase crear como mínimo tres subclases.
+
+
+13Ra clase POO en Java: Se crea una super clase abstracta y sus subclases
+
+
+Ejercicio Superclase Abstracta (Metodo Main)----------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package claseabstracta;
+
+/**
+ *
+ * @author evann
+ */
+public class ClaseAbstracta {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Deportista d1 = new Deportista(10,"Natación","Rafael","Cepeda",1234,20,180,75);
+        d1.mostrarDatos();
+        d1.presentarHijo();
+        
+        Estudiante e1 = new Estudiante(55,"Arte","Camilo","Castro",12345,12,150,50);
+        e1.mostrarDatos();
+        e1.presentarHijo();
+        
+        Trabajador t1 = new Trabajador("Carpintero",20,"Raúl","Rodriguez",123,40,200,90); 
+        
+        t1.mostrarDatos();
+        t1.presentarHijo();
+        
+        
+    }
+    
+}
+
+Clase Abstracta (Persona)-----------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+package claseabstracta;
+
+/**
+ *
+ * @author evann
+ */
+public abstract class Persona {
+    
+    //Atributos
+    protected String nombre;
+    protected String apellido;
+    protected int run;
+    protected int edad;
+    protected int altura;
+    protected int peso;
+    
+
+    //Setters y Getters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setRun(int run) {
+        this.run = run;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public int getRun() {
+        return run;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public Persona() {
+    }
+    
+    //Constructor
+
+    public Persona(String nombre, String apellido, int run, int edad, int altura, int peso) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.run = run;
+        this.edad = edad;
+        this.altura = altura;
+        this.peso = peso;
+    }
+    
+    //Metodos abstractos
+    
+    public abstract void mostrarDatos();
+    
+    public abstract void presentarHijo();
+    
+    
+    
+}
+
+
+Subclase (Deportista)---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+package claseabstracta;
+
+/**
+ *
+ * @author evann
+ */
+public class Deportista extends Persona {
+    int medallas;
+    String deporte;
+
+    public int getMedallas() {
+        return medallas;
+    }
+
+    public String getDeporte() {
+        return deporte;
+    }
+
+    public void setMedallas(int medallas) {
+        this.medallas = medallas;
+    }
+
+    public void setDeporte(String deporte) {
+        this.deporte = deporte;
+    }
+
+    public Deportista(int medallas, String deporte, String nombre, String apellido, int run, int edad, int altura, int peso) {
+        super(nombre, apellido, run, edad, altura, peso);
+        this.medallas = medallas;
+        this.deporte = deporte;
+    }
+    
+    @Override
+    public void mostrarDatos(){
+    System.out.println("\nEn este segmento podremos ver los datos generales de nuestro deportista");
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Edad trabajador: "+edad);
+        System.out.println("Deporte: "+deporte);
+        System.out.println("Medallas ganadas: "+medallas);
+        System.out.println("Peso: "+peso+" kgs");
+    }
+    
+    
+    @Override
+    public void presentarHijo(){
+        System.out.println("\nMi nombre es "+nombre+" y el deporte que practico es "+deporte+ " mi cantidad de medallas en la disciplicna es "+medallas);
+        System.out.println("Gracias por verme crecer como deportista");
+    
+    
+    }
+
+
+    
+}
+
+
+Subclase (Trabajador)---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package claseabstracta;
+
+/**
+ *
+ * @author evann
+ */
+public class Trabajador extends Persona {
+    private String cargo;
+    private int años_de_servicio;
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public void setAños_de_servicio(int años_de_servicio) {
+        this.años_de_servicio = años_de_servicio;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public int getAños_de_servicio() {
+        return años_de_servicio;
+    }
+
+    public Trabajador() {
+    }
+
+    public Trabajador(String cargo, int años_de_servicio, String nombre, String apellido, int run, int edad, int altura, int peso) {
+        super(nombre, apellido, run, edad, altura, peso);
+        this.cargo = cargo;
+        this.años_de_servicio = años_de_servicio;
+    }
+
+    
+    
+    @Override
+    public void presentarHijo(){
+    
+        System.out.println("\nMi nombre es "+nombre+" y mi cargo es "+cargo+" llevo trabajando en la empresa "+años_de_servicio+" años");
+        System.out.println("Seré un aporte para mi empresa");
+    
+    }
+    
+    
+    
+    @Override
+    public void mostrarDatos(){
+        System.out.println("\nEn este segmento podremos ver los datos generales de nuestro trabajador");
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Edad trabajador: "+edad);
+        System.out.println("Cargo: "+cargo);
+        System.out.println("Años en cargo: "+años_de_servicio);
+        System.out.println("¨Peso: "+peso+" kgs");
+
+    }
+    
+    
+    
+}
+
+
+Subclase (Estudiante)---------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package claseabstracta;
+
+/**
+ *
+ * @author evann
+ */
+public class Estudiante extends Persona {
+    int prom_general;
+    String taller;
+
+    public void setProm_general(int prom_general) {
+        this.prom_general = prom_general;
+    }
+
+    public void setTaller(String taller) {
+        this.taller = taller;
+    }
+
+    public int getProm_general() {
+        return prom_general;
+    }
+
+    public String getTaller() {
+        return taller;
+    }
+
+    public Estudiante(int prom_general, String taller, String nombre, String apellido, int run, int edad, int altura, int peso) {
+        super(nombre, apellido, run, edad, altura, peso);
+        this.prom_general = prom_general;
+        this.taller = taller;
+    }
+    
+    
+    @Override
+    public void mostrarDatos(){
+        System.out.println("\nEn este segmento podremos ver los datos generales de nuestro estudiante");
+        System.out.println("Nombre: "+nombre);
+        System.out.println("Edad trabajador: "+edad);
+        System.out.println("Promedio general: "+prom_general);
+        System.out.println("Taller extracurricular: "+taller);
+        System.out.println("¨Peso estudiante: "+peso+" kgs");
+        
+    }
+    
+    @Override
+    public void presentarHijo(){
+        System.out.println("\nMi nombre es "+nombre+" y participo en el taller de "+taller+ " mi promedio general es "+prom_general);
+        System.out.println("No me rendiré y me superaré");
+    
+    }
+    
+    
+    
+    
+    
+    
+}
+

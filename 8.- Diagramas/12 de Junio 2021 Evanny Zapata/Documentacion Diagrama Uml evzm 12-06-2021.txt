@@ -1,0 +1,7 @@
+3Ra clase de Diagrama UML en Java, Además de acotar los ejercicios anteriores 
+se agrega documentación a los ejercicios anteriores de la biblioteca y el video club
+
+Documentación:
+
+como documentar casos de uso
+https://es.slideshare.net/msch/como-documentar-casos-de-uso 

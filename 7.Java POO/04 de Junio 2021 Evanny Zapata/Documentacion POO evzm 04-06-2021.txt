@@ -1,0 +1,11 @@
+9na clase de POO en Java, primer avance de ejercicio tipo biblioteca, se crea la clase libro y 
+la logica inicial de los menús, como comentario general pensaba que la limpieza del buffer se 
+realizaba con leer.next(); pero investigando un poco me di cuenta que al poner next obligatoriamente
+solicita al usuario poner algo más para avanzar a la siguiente linea de codigo así que vuelvo a poner 
+el codigo que se usa habitualmente para limpiar el buffer con nextLine();
+
+Documentación: 
+
+Limpieza del buffer con NextLine
+https://julioecheverri.wordpress.com/2014/06/08/limpiar-el-buffer-de-entrada-en-java/
+

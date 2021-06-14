@@ -1,0 +1,12 @@
+1Ra clase de Diagrama UML en Java, Se introduce el concepto de diagrama uml de caso de uso, 
+en este nuevo diagrama tenemos una manera de plantear los sistemas en torno  a su funcionalidad
+se realiza un ejercicio sobre un video club 
+
+
+Documentación:
+
+diagrama de caso de uso
+https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/diagrama-de-casos-de-uso/
+
+ejemplos de caso de uso
+https://repositorio.grial.eu/bitstream/grial/1155/1/UML%20-%20Casos%20de%20uso.pdf

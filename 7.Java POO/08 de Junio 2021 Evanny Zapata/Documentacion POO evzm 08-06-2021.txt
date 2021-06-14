@@ -1,0 +1,13 @@
+12Da clase de POO en Java,Se repasa el concepto de herencia y se termina el ejercicio del día anterior.
+
+Para este ejercicio ocurrio un evento peculiar al tratar de leer la letra ñ, el sistema no la reconoce 
+porque se crea un segunda lectura de Scanner con otro formato de lectura
+
+Documentación:
+
+Herencia en Java
+http://profesores.fi-b.unam.mx/carlos/java/java_basico3_4.html
+
+Scan para la letra ñ
+http://zaguandelainformatica.blogspot.com/2017/12/las-tildes-y-la-n-en-la-entrada-y.html
+

@@ -1,0 +1,9 @@
+10Ma clase de POO en Java, último avance ejercicio tipo Biblioteca, se plantea la logica para el prestamo y
+la devolución del libro, como documentación hoy añadimos un pdf que nos habla de los tipos de clases existentes y en general
+como poder tratar los metodos, la sobre carga de metodos y algunas cosas sobre los modificadores 
+
+
+Documentación:
+
+pdf que habla de las clases y la manera de plantear algunos aspectos basicos pag1-pag10
+http://fcqi.tij.uabc.mx/usuarios/palacios/java4.pdf

@@ -1,0 +1,460 @@
+Evidencia “DÍA 3 SEMANA 7” (el primero, hay dos “DÍA 3 SEMANA 7”) del 07/06:
+Crear una superclase Electrodoméstico con sus respectivos atributos y métodos propios de la clase, luego a partir de esta clase crear como mínimo tres subclases.
+
+
+11Ra clase POO en Java: Se realizan ejercicio de herencia de clases
+
+
+
+
+Primer avance ejercicio creación clase electrodomestico y sub clases (Metodo Main)--------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nuevoproyecto;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class NuevoProyecto {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        String marca,modelo,funcion, origen,tipo;
+        int cantidad, nivel=1,quemadores = 1;
+        
+        
+        
+        int op=1,op2=0, op3=0,op4=0,op5=0;
+        
+        
+        Scanner leer=new Scanner(System.in);
+       
+        
+        Cafetera c1=new Cafetera();
+        
+        
+        Horno h1= new Horno();//Se declara un nuevo objeto de tipo horno desde la clase horno
+        
+        
+        //-------------------------------------------------------------------------------------------------------------------
+        System.out.println("Introduzca la cantidad de litros de su cafetera");
+        System.out.println("Entre 0.5 a 1 litros digite (1) de 1 a 2 litros (2) de 2 a 3 litros (3) de 3 a más litros (4)");
+        int litros=leer.nextInt();
+        c1.darTamañoCafetera(litros);
+        
+        //-------------------------------------------------------------------------------------------------------------------
+        int volumen=c1.dimensionElectrodomestico();
+        System.out.println("El volumen de la caja de su electrodomestico es: "+volumen+" centímetros cúbicos");
+
+
+
+
+
+   }
+    
+}
+(Super Clase Electrodomesticos)-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nuevoproyecto;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author evann
+ */
+public class Electrodomesticos {
+    //Atributos
+    Scanner leer=new Scanner(System.in);
+    protected String clase;
+    protected String marca;
+    protected String modelo;
+    protected String origen;
+    protected int cantidad;
+    protected String funcion;
+    protected int alto;
+    protected int ancho;
+    protected int largo;
+    protected int volumen_caja;
+
+    
+    //Setter y Getters
+
+    public void setLeer(Scanner leer) {
+        this.leer = leer;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setFuncion(String funcion) {
+        this.funcion = funcion;
+    }
+
+    public void setAlto(int alto) {
+        this.alto = alto;
+    }
+
+    public void setAncho(int ancho) {
+        this.ancho = ancho;
+    }
+
+    public void setLargo(int largo) {
+        this.largo = largo;
+    }
+
+    public Scanner getLeer() {
+        return leer;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public String getFuncion() {
+        return funcion;
+    }
+
+    public int getAlto() {
+        return alto;
+    }
+
+    public int getAncho() {
+        return ancho;
+    }
+
+    public int getLargo() {
+        return largo;
+    }
+    
+
+    
+    
+    //Constructores
+    public Electrodomesticos() {
+        this.marca = "Sin Datos";
+        this.modelo = "Sin Datos";
+        this.origen = "Sin Datos";
+        this.cantidad = 0;
+        this.funcion = "Sin Datos";
+        this.alto = 0;
+        this.ancho = 0;
+        this.largo = 0;
+        this.volumen_caja=0;
+        this.clase="Sin Datos";
+    }
+    
+    public Electrodomesticos(String marca, String modelo, String origen, int cantidad, String funcion, int alto, int ancho, int largo,int volumen_caja, String clase) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.origen = origen;
+        this.cantidad = cantidad;
+        this.funcion = funcion;
+        this.alto = alto;
+        this.ancho = ancho;
+        this.largo = largo;
+        this.volumen_caja=volumen_caja;
+        this.clase=clase;
+    }
+    
+    
+    
+
+    
+    //Metodos
+
+    public int dimensionElectrodomestico(){
+        System.out.println("\nBienvenido al sistema de dimensionamiento de producto");
+        System.out.println("Ingrese alto de producto en cm");
+        alto=leer.nextInt();
+        System.out.println("Ingrese largo de producto en cm");
+        largo=leer.nextInt();
+        System.out.println("Ingrese ancho de producto en cm");
+        ancho=leer.nextInt();
+        
+        
+        volumen_caja=alto*largo*ancho;
+        
+        System.out.println("\nLas dimensiones de su producto son 1-Alto :"+alto+"cms 2-Ancho :"+ancho+"cms 3 -Largo :"+largo+" cms");
+        
+       return volumen_caja;
+    
+    }
+    
+    
+    public void mostrarDatos(){
+        
+        System.out.println("El producto seleccionado es: "+clase);
+        System.out.println("La función del producto es: "+funcion);
+        System.out.println("La marca del producto es: "+marca);
+        System.out.println("El modelo del producto es: "+modelo);
+        System.out.println("La cantidad en stock es: "+cantidad);
+        System.out.println("La procedencia del producto es: "+origen);
+        System.out.println("El alto del producto es: "+alto);
+        System.out.println("El largo del producto es: "+largo);
+        System.out.println("El ancho del producto es: "+ancho);
+    
+    
+    }
+    
+    
+}
+
+(Subclase Horno)--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nuevoproyecto;
+
+
+
+public class Horno extends Electrodomesticos {
+    //Atributos
+    private String tipo;
+    private int cant_quemadores;
+    private int niveles;
+    
+    
+    
+    //Setters y Getters
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setCant_quemadores(int cant_quemadores) {
+        this.cant_quemadores = cant_quemadores;
+    }
+
+    public void setNiveles(int niveles) {
+        this.niveles = niveles;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public int getCant_quemadores() {
+        return cant_quemadores;
+    }
+
+    public int getNiveles() {
+        return niveles;
+    }
+    
+    
+    
+    
+    //Constructores 
+    
+    
+
+    public Horno() {
+        this.tipo="Sin Datos";
+        this.cant_quemadores=0;
+        this.niveles=0;
+        this.marca="Sin Datos";
+        this.modelo="Sin Datos";
+        this.origen="Sin Datos";
+        this.cantidad=0;
+        this.funcion="Sin Datos";
+        this.alto=0;
+        this.ancho=0;
+        this.largo=0;
+        this.volumen_caja=0;
+        this.clase="Sin Datos";
+        
+    }
+
+    public Horno(String tipo, int cant_quemadores, int niveles, String marca, String modelo, String origen, int cantidad, String funcion, int alto, int ancho, int largo, int volumen_caja, String clase) {
+        super(marca, modelo, origen, cantidad, funcion, alto, ancho, largo, volumen_caja, clase);
+        this.tipo = tipo;
+        this.cant_quemadores = cant_quemadores;
+        this.niveles = niveles;
+    }
+    
+    
+    
+    public void recomendarHorno(int cant_quemadores, int niveles, String tipo){
+        this.cant_quemadores=cant_quemadores;
+        this.niveles=niveles;
+        this.tipo=tipo;
+        
+        
+        if (tipo.equalsIgnoreCase("electrico")){
+            if(niveles==1){
+                System.out.println("Recomendación: Usted requiere un Horno Electrico de un nivel, nuestra recomendación es Ursus Trotter, \n" +
+"Horno Eléctrico UT-BACKOFEN26");
+            
+            }if(niveles==2){
+                System.out.println("Recomendacion: Usted requiere un Horno Electricco de dos niveles, nuestra recomendación es Horno Eléctrico Somela 42 Litros Black Oven");
+                
+            }if(niveles>=3){
+                System.out.println("Recomendacion: Usted requiere un Horno Eléctrico de 3 o más niveles, nuestra recomendación es  Cuisinart Compacto Aifryer");
+            
+            
+            }else{
+                System.out.println("Datos mal ingresados;");
+            
+            }
+        
+        }else if(tipo.equalsIgnoreCase("gas")){
+            if (cant_quemadores==1){
+                System.out.println("Recomendación: Usted requiere un Horno a Gas con un quemador; nuestra recomendación es Horno 65×65 Mage Hogar industrial basico");
+                
+            
+            }else if (cant_quemadores==2){
+                System.out.println("Recomendación: Usted requiere un Horno a Gas con dos quemadores; nuestra recomendación es Horno 65×58 Doble Cámara Gastromaq industrial doble");
+            
+            
+            }else if (cant_quemadores>=3){
+                System.out.println("Recomendación: Usted requiere un Horno a Gas con tres quemadores o más; nuestra recomendación es Horno 3 Cámaras 65×65 Maigas industrial triple");
+            
+            }else{
+                System.out.println("Datos mal ingresados");
+            
+            }
+        
+        
+        }else if(tipo.equalsIgnoreCase("leña")){
+            
+            System.out.println("Recomendación: Indepedientemente de la cantidad de quemadores o niveles nuestra recomendación es: Cocina a leña Amesti Annetta Negra");
+        
+        }else{
+            System.out.println("Caso invalido");
+        }
+    
+    
+    
+    }
+    
+}
+
+(Subclase Cafetera)--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nuevoproyecto;
+
+/**
+ *
+ * @author evann
+ */
+public class Cafetera extends Electrodomesticos{
+    //Atributos propios
+    private String color;
+    private int litros;
+    
+    //Setters y Getetrs
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setLitros(int litros) {
+        this.litros = litros;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getLitros() {
+        return litros;
+    }
+
+    
+    
+    
+    
+    public Cafetera() {
+    }
+
+    public Cafetera(String color, int litros, String marca, String modelo, String origen, int cantidad, String funcion, int alto, int ancho, int largo, int volumen_caja, String clase) {
+        super(marca, modelo, origen, cantidad, funcion, alto, ancho, largo, volumen_caja, clase);
+        this.color = color;
+        this.litros = litros;
+    }
+
+    
+    public void darTamañoCafetera(int litros){
+        this.litros=litros;
+        
+        
+        switch(litros){
+            case 1: System.out.println("El tamaño de su cafetera es pequeño, perfecto para una persona");
+            break;
+            
+            case 2: System.out.println("El tamaño de su cafetera es normal, perfecto para dos personas");
+            break;
+            
+            case 3: System.out.println("El tamaño de su cafetera es grande, perfecto para un grupo de 4 a más personas");
+            break;
+            
+            case 4: System.out.println("El tamaño de su cafetera es industrial, perfecto para eventos con más de 5 personas");
+            break;
+            
+            default: System.out.println("Datos mal ingresados;");
+        
+        
+        }
+        
+        
+        
+    }
+   
+    
+    
+}
