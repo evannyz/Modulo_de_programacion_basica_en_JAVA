@@ -1,0 +1,11 @@
+4Ta clase de Diagrama UML en Java, hoy revisamos dentro del espectro de diagramas uml, los diagramas de clase 
+y la manera basica para declararlos, se realiza un ejercicio grupal donde se plantea el problema 
+de la poca participación de votantes en Chile y se plantea una posible solución junto a los diagramas de clase 
+asociados, como documentación se revisa material ppt visto en clases 
+
+Documentación:
+
+ppts expuestas en clase
+
+Diagramas de clase
+https://www.youtube.com/watch?v=fmYsWVVNvxA&ab_channel=JOSERAMONGARCIASEVILLA

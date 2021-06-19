@@ -1,0 +1,58 @@
+Evidencia sin nombre ni hogar, parte 3, del 14/06:
+Describir brevemente una problemática, y su posible solución informática. Luego, enumerar los requerimientos funcionales de aquella solución. Finalmente, representar gráficamente, como en los diagramas de clases, las clases que formarán parte de la solución.
+
+4Ta Clase Diagrmas UML de caso de uso
+
+
+
+Problematica : cantidad de votos cerca del 19% de participantes totales.
+Solución a implementar: Sistema de voto en linea 
+
+Requerimientos funcionales para : Promover la participación de una mayor cantidad de personas en el sistema de votación 
+
+1Requerimiento: Cambiar el sistema actual de voto por uno con implementación web o una app, basicamente validar si una persona es apta para votar
+2Requerimiento: obtener Localizacion gps
+3Requerimiento: Cambiar mesa actual por mesa más cercana
+2Requerimiento: Verificar usuario con: clave unica+ codigo en dispositivo movil o correo+ validación de carnet 
+3requerimiento: A las personas sin alcance de tecnologias como un notebook o smartphones mediante su localizacion gps enviarlo al registro mas cercano
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Proyecto voto digital
+
+(De los 19 millones habitantes de Chile cerca de 14 millones estaba habilitado para sufragar)
+
+pero 6458000 app solo lo hizo 
+
+De la población habilitada para sufragar solo el 40% app lo hizo 
+Por lo que se busca cambiar el sistema de votación normal a voto digital para abarcar más votantes, que puedan sufirir complicaciones basicas como traslado al lugar de voto, o casos de persona con baja movilidad 
+
+Solución a implementar: servicio que dependiendo de la ubicación  y hora nacional permita a un votante habilitado poder hacerlo de manera remota (esto incluye verificación de persona mediante clave unica y lectura de código de cedula de identidad), en caso de algún evento el programa calcula el lugar de votación más cercano y menos concurrido para votar.
+
+Condiciones de voto
+
+Ser chileno mayor de 18 años y no haber sido condenado a pena aflictiva (tres años y un día o mayor).
+Ser extranjero avecindado en Chile por más de cinco años, y que además no hayan sido condenados a pena aflictiva.
+
+
+
+
+Extranjeros en chile: 
+
+Venezolanos: 455.000 personas.
+Peruanos: 235.000 personas.
+Haitianos: 185.000 personas.
+Colombianos: 160.000 personas.
+Bolivianos: 120.000 personas.
+
+
+
+Requerimiento funcional (//Se adjunta diagramas de uso)
+
+
+1. Verificar si un usuario esta habilitado para votar(Que cumpla condiciones de voto como si es extranjero que haya residido 5 años en el país)//Basicamente validación ante servel
+2 Ubicar al usuario mediante GPS
+3 Ubicar temporalmente al usuario
+4 validar clave única y código carnet
+5 si es necesario para los que tuvieran problemas con el voto virtual, cambiar de mesa a la más cercana
+6 entregar soporte a personas que presenten otro inconveniente
